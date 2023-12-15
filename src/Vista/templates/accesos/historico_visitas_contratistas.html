@@ -1,0 +1,116 @@
+<head>
+    <style>
+        .label-tarjetaTM {
+            background: #66378c;
+        }
+    </style>
+</head>
+<div class="row">
+    <div class="col-xs-12">
+        <a role="button" data-toggle="collapse" href="#collapseFiltros" aria-expanded="false"
+            aria-controls="collapseFiltros" style="display: block;">
+            <span class="">
+                <i class="fa fa-filter"></i> Filtros
+                <i class="fa fa-caret-right fa-fw" id="collapseFiltros_caret"></i>
+            </span>
+        </a>
+        <div class="collapse" id="collapseFiltros">
+            <form>
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div class="form-group">
+                            <label for="ubicacion" class="control-label">Ubicacion: </label>
+                            <select name="ubicacion" id="ubicacion" class="form-control">
+                                <option value="">Seleccione</option>
+                                {{{UBICACION}}}
+                                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                                {{{/UBICACION}}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="tipos_accesos" class="control-label">Tipos de acceso: </label>
+                            <select name="tipos_accesos" id="tipos_accesos" class="form-control">
+                                <option value="">Seleccione</option>
+                                {{{TIPOS_ACCESOS}}}
+                                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                                {{{/TIPOS_ACCESOS}}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label" for="credencial">N° credencial</label>
+                        <input id="credencial" name="credencial" type="text" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="otros_criterios" class="control-label">Otro criterio</label> 
+                            <input type='text' name="otros_criterios" id="otros_criterios" class="form-control">
+                            <label for="" class="control-label" style="font-size: 11px;">(nombre, apellido, DNI, credencial, origen)</label> 
+                        </div>
+                    </div>
+                     <div class="col-md-2">
+                        <label class="control-label" for="sin_cierre">Incluir Sin Cierre</label>
+                        <div class="btn-group btn-group-justified" data-toggle="buttons">
+                            <label class="btn btn-default btn-md">
+                                <input type="checkbox" autocomplete="off" id="sin_cierre" name="sin_cierre">
+                                <span id="incluir_sin_cierre"> <span class="pull-left fa fa-fw fa-square-o"></span>
+                                    Filtrar </span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="fecha_desde" class="control-label">
+                                Fecha desde
+                                <span class="text-danger">*</span></label>
+                            <div class='input-group date' id='fecha_desde'>
+                                <input type='text' class="form-control" data-toggle="tooltip" title="Fecha Desde"
+                                    id="fecha_desde_fecha" value="{{{FECHA_DESDE}}}" name="fecha_desde_fecha">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="fecha_hasta" class="control-label">
+                                Fecha hasta
+                                <span class="text-danger">*</span></label>
+                            <div class='input-group date' id='fecha_hasta'>
+                                <input type='text' class="form-control" data-toggle="tooltip" title="Fecha Desde"
+                                    id="fecha_hasta_fecha" value="{{{FECHA_HASTA}}}" name="fecha_hasta_fecha">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6 text-right" style="margin-top: 30px;">
+                        <a id='filtrar' name='filtrar' class="btn btn-primary">FILTRAR</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12 alert alert-warning default-filtro">
+        <b>Filtro por defecto de los últimos 7 días.</b>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <table id="historico_visitas_contratistas" class="table table-striped dataTables dataTable no-footer dtr-inline"
+        style="width:100%;"></table>
+</div>
+<div>
+    <div class="col-md-10 text-left">
+        <button class="btn btn-default btn_au accion_exportador" style="margin-left:-35px;"
+            value="{{{BOTON_EXCEL}}}"><span class="fa fa-file-text-o"></span> DESCARGAR EXCEL</button>
+    </div>
+</div>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <title>Control de Accesos | Ministerio de Transporte</title>
+	    <link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+
+	   	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	     <link rel="stylesheet" href="/cdn/estiloIS/3/estilois.css"/>
+	   
+	    <script src="/cdn/js/jquery.js" charset="utf-8"></script>
+	    <script src="/cdn/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/moment.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/es.js" charset="utf-8"></script>
+	</head>
+
+<!-- //// CSS //// -->
+<style>
+		h4, h5, h6 {
+			color:#0072bc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.box-shadow {
+			box-shadow:13px 9px 22px 1px rgba(0,0,0,0.4);
+		}
+
+		.prefijo {
+			margin-top: 30px;
+		}
+
+		 #return-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.7);
+				width: 50px;
+				height: 50px;
+				display: block;
+				text-decoration: none;
+				-webkit-border-radius: 35px;
+				-moz-border-radius: 35px;
+				border-radius: 35px;
+				display: none;
+				-webkit-transition: all 0.3s linear;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				background: black;
+			}
+
+			.active
+			a:active, a:hover {
+			outline: 0;
+			}
+
+			#return-to-top i {
+				color: #fff;
+				margin: 0;
+				position: relative;
+				left: 16px;
+				top: 13px;
+				font-size: 19px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				   background: rgba(0, 0, 0, 0.9);
+			}
+			#return-to-top:hover i {
+				   color: #fff;
+				   top: 5px;
+			}
+
+	</style>
+
+<body>
+
+	<a href="javascript:" id="return-to-top" style="display: block;">
+	        <i class="fa fa-arrow-up">
+	        </i></a>
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	    <div class="container main bar">
+	        <div class="row">
+	            <div role="main" class="col-md-12">
+	                <div class="page-header">
+
+	                </div>
+	            </div>
+	        </div>
+
+	        <h2>Índice</h2> 
+				<li><a href="#sec_introduccion"><b>INTRODUCCIÓN</b></a></li>
+				<li><b>ALTAS</b></li>
+					<ul>
+						<li><a href="#sec_usuarios">USUARIOS</a></li>
+						<li><a href="#sec_empleados">EMPLEADOS</a></li>
+						<li><a href="#sec_contratistas">CONTRATISTAS</a></li>
+						<li><a href="#sec_advertencias">ADVERTENCIAS</a></li>
+						<li><a href="#sec_relojes">RELOJES</a></li>
+						<li><a href="#sec_pertenencias">PERTENENCIAS</a></li>
+						<li><a href="#sec_visitas_enroladas">VISITAS ENROLADAS</a></li>
+						<li><a href="#sec_tarjetas">TARJETAS</li>
+					</ul>
+				<li><b>REGISTRO</b></li>
+					<ul>
+						<li><a href="#sec_carga_offline_para_empleados">CARGA OFFLINE PARA EMPLEADOS</a></li>
+						<li><a href="#sec_carga_offline_para_contratistas">CAGA OFFLINE PARA CONTRATISTAS</a></li>
+						<li><a href="#sec_carga_offline_para_visitas">CARGA OFFLINE PARA VISITAS</a></li>
+						<li><a href="#sec_registro_de_accesos_sin_cierre">REGISTRO DE ACCESOS SIN CIERRE</a></li>
+					</ul>		
+
+				<li><b>REPORTES</b></li>
+				<ul>
+					<li><a href="#sec_reportes_empleados">EMPLEADOS</a></li>
+					<li><a href="#sec_contratistas_visitas">CONTRATISTAS y VISITAS</a></li>	
+					
+				</ul>
+				
+				<li><b>MIS CONSULTAS</b></a></li>
+					<ul>
+						<li><a href="#sec_mis_horarios">MIS HORARIOS</a></li>
+							
+					</ul>
+				
+				
+				
+					<li><a href="#sec_sesion"><b>CERRAR SESIÓN</b></a></li>
+								
+		<hr>
+	    </div>
+
+	    <!-- // CONTENIDO // -->
+	<div class="container main">
+		<section>
+			<h4 id="sec_introduccion" class="justificado">INTRODUCCION</h4>
+			<p>La Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación, ha diseñado un Sistema informático para el Acceso de Personas al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos. <br>Para ello ha diseñado, desarrollado e implementado un Sistema que permite:</p>
+			<ul>
+				<li>Administrar el ingreso de personal interno, externo y visitas, en forma electrónica (online).</li>
+				<li>Cargas de datos (offline) para casos especiales.</li>
+				<li>Controlar, auditar, dar Altas/Bajas y Modificaciones a los agentes.</li>
+				<li>Asignar distintos roles según el tipo de responsabilidades de los agentes.</li>
+				<li>Poder controlar el estado de los relojes biometricos</li>				
+			</ul>
+		</section>
+
+			<h4>ACCESO AL SISTEMA</h4>
+	            <p> Para acceder al sistema de Presentismo, el usuario deberá ingresar a la siguiente dirección:
+	            <a href="https://intranet.transporte.gob.ar/ " target="_blank">intranet.transporte.gob.ar</a> y despues ingresar al modulo <b>Control de Accesos</b>.</p>
+	            <p>Para ingresar al sistema, el usuario deberá usar su usuario y contraseña de dominio, una ves ingresado los datos podra navegar segun las credenciales que posea.</p>
+	            <img src="./img/instructivo/admin_CIET/ingreso_al_sistema.jpg" alt="login" class="box-shadow" width="100%">
+	            <section>
+	            <h4>ALTAS</h4>
+	            <h5 id="sec_usuarios">USUARIOS</h5>
+	            <p>Al ingresar al sistema la primer pantalla que visualizaremos sera la de <b>Usuarios</b>Correspondiente a la solapa desplegable <i>Altas</i>, este apartado permite dar de alta nuevos usuarios completando obligatoriamente los campos Nombre y Apellido y DNI; o dar de baja usuarios pre-existentes. Es condición excluyente para ser registrado como usuario, haber sido registrado previamente como empleado.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_usuarios.jpg" alt="pantalla de usuarios" class="box-shadow" width="100%">
+	            <p class="prefijo">Para ingresar a la pantalla de <b>Registrar Usuario</b> hacemos click en el boton <i>Nuevo</i>.<br>Ingresaremos en la siguiente pantalla:</p>
+	            <img src="./img/instructivo/admin_CIET/registro_usuario.jpg" alt="registro de usuario" class="box-shadow" width="100%">
+	            <p class="prefijo">Deberemos completar los campos <i>Nombre de Usuario</i> y <i>Documento</i> para poder asociar el usuario a los datos del empleado. Se podrá modificar los datos y el perfil de cada usuario, a fin de restringir o brindarle acceso a otras tareas. El Administrador CIET podra asignar perfiles de <i>Registro de Acceso</i> y <i>Administrador CIET</i>.</p>
+	            </section>	           
+	            	<h5 id="sec_empleados">EMPLEADOS</h5>
+	            <p>En esta seccion podremos visualizar el listado completo de los <i>Empleados</i> con sus correspondientes datos:</p>
+	            	<ul>
+	            		<li>Documento</li>
+	            		<li>Nombre</li>
+	            		<li>Apellido</li>
+	            		<li>Ubicacion Principal</li>
+	            		<li>Ubicaciones Autorizadas</li>
+	            		<li>Dependencia Principal</li>
+	            		<li>Contrato</li>
+	            		<li>Enrolado</li>	            		
+	            	</ul>
+	            <p>Tambien contaremos con opciones de filtrado como <i>Dependencias</i>, <i>Ubicaciones</i>, <i>Ubicacion Principal</i>, <i>Tipo de Contrato</i> y <i>Enrolado</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_empleados.jpg" alt="patalla de empleados" class="box-shadow" width="100%">
+	            <p class="prefijo">Cada empleado contara con una columna llamada <i>Acciones</i> que contendra dos iconos llamados <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">) y <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">).<br>Tambien contaremos con un exportador a <b>Excel</b> donde podremos visualizar todos los datos de los empleados.</p>
+	            <h6 class="prefijo">ENROLAR</h6>
+	            <p class="prefijo">Al hacer click en el icono de <i>Enrolar</i> ingresaremos a la pantalla de enrolamiento en la que deberemos enrolar previamente al empleado en el reloj biometrico para luego buscar las huellas seleccionando el boton <i>Buscar</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_enrolamiento.jpg" alt="pantalla de enrolamiento" class="box-shadow" width="100%">
+	            <h6 class="prefijo">EDITAR</h6>
+	            <p class="prefijo">Al ingresar en la pantalla de <b>Editar</b>, podremos modificar los campos <i>Ubicaciones autorizadas</i> y <i>Ubicacion principal</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_editar.jpg" alt="pantalla de editar" class="box-shadow" width="100%">
+	            <section>
+	            	<h5 id="sec_contratistas">CONTRATISTAS</h5>
+	            <p>En esta seccion tendremos el listado de <b>Contratistas</b> en la que podremos ver el detalle de los contratistas cargados en el sistema y dar de alta.</p>
+	            <img src="./img/instructivo/admin_CIET/listado_contratistas.jpg" alt="listado de contratistas" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta un contratista hacemos click en el boton <i>Nuevo</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/registrar_contratista.jpg" alt="registrar contratista" class="box-shadow" width="100%">
+	            <p class="prefijo">Ingresaremos a una pantalla donde podremos registrar un contratista completando los campos obligatorios <i>CUIT de Contratista</i>, <i>Nombre</i>, <i>Direccion</i>, <i>Provincia</i> y <i>Localidad</i>.<br>Para finalizar el alta seleccionamos el boton <b>Guardar</b>.<br>Tambien en el listado de contratistas contaremos con tres iconos <i>Lista de personal</i> (<img src="./img/instructivo/iconos_botones/icono_lista_de_personal.png">), <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">), y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">).<br>En la lista de personal podremos registrar al empleado para ese contratista selecionando el icono en cuestion (<img src="./img/instructivo/iconos_botones/icono_lista_de_personal.png">) y a continuacion el boton <b>Nuevo</b>.</p>
+	            <img src="./img/instructivo/admin_CIET/registro_personal_contratista.jpg" alt="registrar personal" class="box-shadow" width="100%">
+	            <p class="prefijo">Deberemos completar un formulario ingresando todos los datos obligatorios como <i>Documento</i>, <i>Nombre</i> y <i>Apellido</i> del personal.<br>Tambien deberemos ingresar el numero de documento del <i>Autorizante</i> y la fecha de inicio y fecha de culminacion.<br>Para finalizar seleccionamos el boton <b>Guardar</b>.</p>
+	            <img src="./img/instructivo/admin_CIET/contratista_empleado.jpg" alt="contratista en lista" class="box-shadow" width="100%">
+	            <p class="prefijo">Podemos observar que tendremos disponible un icono para asignarle permisos de acceso en las distintas ubicaciones disponibles (<img src="./img/instructivo/iconos_botones/permisos.png">).</p>
+	            <img src="./img/instructivo/admin_CIET/permisos_de_acceso.jpg" alt="permisos de acceso" class="box-shadow" width="100%">
+	            <p class="prefijo">Deberemos completar la <i>Ubicacion</i>, <i>Fecha inicial</i> y <i>Fecha final</i>.<br>En todas las pantallas podremos editar (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y eliminar (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) los datos ingresados.</p>
+	            </section>
+	            <h5 id="sec_advertencias">ADVERTENCIAS</h5>
+	            <p>En esta seccion se podran cargar advertencias para los agentes respecto a determinadas cuestiones que puedan surgir sobre ingresos o egresos a los edificios.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_advertencias.jpg" alt="pantalla de advertencias" class="box-shadow" width="100%">
+	            <p class="prefijo">Podremos visulizar el listado de las advertencias ingresadas en el sistema en las cuales se podran dar de alta, <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">).<br>Para dar de alta una nueva advertencia seleccionamos el boton <i>Nuevo</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/registrar_advertencia.jpg" alt="pantalla de registrar advertencia" class="box-shadow" width="100%">
+	            <p class="prefijo">Completamos todos los campos obligatorios del formulario con los datos de la <i>Persona</i> y los datos del <i>Solicitante</i>.<br>Tambien tendremos disponible la opcion de dar de alta una <i>Advertencia Generica</i>, que seran mensajes que podremos agregar cuando demos de alta o modificamos una <i>Advertencia</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/advertencia_generica.jpg" alt="advertencia generica" class="box-shadow" width="100%">
+	            <section>
+	            	<h5 id="sec_relojes">RELOJES</h5>
+	            <p>En esta seccion podremos visualizar el estado de los relojes biometricos con sus correspondientes datos como <i>Numero de Serie</i>, <i>Ubicacion</i>, <i>Estado</i> (<img src="./img/instructivo/iconos_botones/icono_reloj.png">) y <i>Acciones</i> como poder configurar como <i>Enrolador Actual</i> (<img src="./img/instructivo/iconos_botones/enrolador_actual.png">) y <i>Ver accesos restringidos</i> en caso de que el reloj biometrico tenga habilitada esta opcion (<img src="./img/instructivo/iconos_botones/accesos_habilitados.png">).<br>Cuando los relojes esten <i>Online</i> el icono de los relojes se pondra de color verde (<img src="./img/instructivo/iconos_botones/icono_reloj_2.png">)</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_relojes.jpg" alt="pantalla de relojes" class="box-shadow" width="100%">
+	            <p class="prefijo">Al seleccionar el icono de <i>Accesos Registringidos</i> (<img src="./img/instructivo/iconos_botones/accesos_habilitados.jpg">) ingresaremos en la siguiente pantalla:</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_acceso_restringido.jpg" alt="acceso restringido" class="box-shadow" width="100%">
+	            <p class="prefijo">Seleccionando el boton <i>Agregar</i> podremos cargar los empleados ingresado el numero de documento.<br>Los empleados deberan tener la ubicacion del reloj en cuestion y solo podran acceder los que se encuentren en el listado de ese reloj.</p>
+	            <img src="./img/instructivo/admin_CIET/agregar_acceso_restringido.jpg" alt="agregar acceso restringido" class="box-shadow" width="100%">
+	            </section>
+	            <h5 id="sec_pertenencias">PERTENENCIAS</h5>
+	            <p>En esta seccion podremos cargar los agentes que ingresen a alguna dependencia con objetos electronicos.<br>Podremos dar de <i>alta</i>, <i>Modificar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">).</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_pertenencias.jpg" alt="pantalla de pertenencias" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta una <i>Pertenencia</i> deberemos hacer click en el boton <i>Nuevo</i>.<br>Deberemos completar un formulario con los datos de la <i>Persona</i> y empleado <i>Solicitante</i> al igual que en la seccion de <strong>Advertencias</strong>.</p>
+	            <img src="./img/instructivo/admin_CIET/registrar_pertenencia.jpg" alt="registro de pertenencia" class="box-shadow" width="100%">
+	            <section>
+	            	<h5 id="sec_visitas_enroladas">VISITAS ENROLADAS</h5>
+	            <p>En esta seccion tendremos disponible el listado de <i>Visitas enroladas</i> en el cual podremos enrolar a las visitas que ingresen con frecuencia en las diferentes dependencias.<br>En el listado tendremos a las diferentes visitas con sus correspondientes datos como <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i> y <i>Ubicaciones Autorizadas</i>. Tendremos disponible una columna llamada <strong>Acciones</strong> con tres iconos, <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">), <i>Modificar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">).<br>Contaremos con un <b>filtro</b> desplegable en donde podremos filtrar por <i>Ubicaciones Autorizadas</i> y <i>Enrolado</i>.<br>Tambien tendremos un boton para visualizar las visitas <i>Inactivas</i> y un boton para realizar una exportacion via <i>Excel</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/visitas_enroladas.jpg" alt="pantalla de visitas enroladas" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta la visita deberemos hacer click en el boton <i>Nuevo</i>, deberemos completar todos los campos obligatorios como <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i>, <i>Ubicaciones Autorizadas</i>, <i>Nombre y Apellido del Autorizante</i>, <i>Fecha Desde</i> y <i>Fecha Hasta</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/alta_visita_enrolada.jpg" alt="alta de visita enrolada" class="box-shadow" width="100%">
+	            <p class="prefijo">Para acceder a la pantalla de enrolamiento biometrico para la visita deberemos hacer click en el icono de <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">) y buscar las huellas de la visita que deberan ser registradas previamente en el reloj biometrico de la dependencia correspondiente de la misma forma que en la seccion de <b>Empleados</b>.</p>
+	            <h5 id="sec_tarjetas" class="prefijo">TARJETAS</h5>
+	            <p>En esta seccion podremos enrolar tarjetas para acceder al edificio.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_tarjetas.jpg" alt="pantalla para ingresar tarjetas" class="box-shadow" width="100%">
+	            <p class="prefijo">Deberemos ingresar el <i>Numero de Tarjeta</i> y el sistema nos permitira seleccionar entre dos opciones <strong>Añadir a lista a enrolar</strong> y <strong>Añadir desde lector</strong>, este ultimo permite realizar la funcion desde el reloj biometrico</p><br><p>Luego deberemos seleccionar uno de los relojes biometricos disponibles en el campo <i>Reloj Seleccionado</i> ademas del campo <i>Lista de tarjetas a Enrolar</i> en donde se almacenaran los numeros de tarjeta ingresados para poder enrolarse.<br>Por ultima contaremos con un campo <i>Lista de Tarjetas a Desenrolar</i> en donde podremos ingresar los numeros de tarjeta que necesitemos desenrolar del sistema. Cada funcion contara con un boton para llevar a cabo cada accion requerida.</p>
+	            <img src="./img/instructivo/admin_CIET/pantalla_tarjetas_2.jpg" alt="pantalla para ingresar tarjetas" class="box-shadow" width="100%">
+	            </section>
+	            <h4>REGISTRO</h4>
+	            <p>En esta seccion tendremos los formularios de <i>Registro de Acceso Manual</i> los cuales nos permitiran registrar horarios de forma manual para casos excepcionales.</p>
+	            <ul>
+	            	<li>Carga offline Para Empleados</li>
+	            	<li>Carga Offline Para Contratistas</li>
+	            	<li>Carga Offline Para Visitas</li>
+	            	<li>Registro de Accesos Sin Cierre</li>
+	            </ul>
+	            <img src="./img/instructivo/admin_CIET/registro_acceso_manual.jpg" alt="registro de acceso manual" class="box-shadow" width="100%">
+	            <h5 class="prefijo" id="sec_carga_offline_para_empleados">CARGA OFFLINE PARA EMPLEADOS</h5>
+	            <p>En este formulario podremos realizar una carga manual para los empleados completando los campos obligatorios como <i>Ubicacion</i>, <i>Fecha</i>, <i>Documento</i>, <i>Nombre y Apellido del Empleado</i>, <i>Horario de Ingreso</i> y <i>Horario de Egreso.</i> Tambien se podran cargar observaciones.</p>
+	            <img src="./img/instructivo/admin_CIET/carga_offline_empleados.jpg" alt="carga offline para empleados" class="box-shadow" width="100%">
+	            <h5 class="prefijo" id="sec_carga_offline_para_contratistas">CARGA OFFLINE PARA CONTRATISTAS</h5>
+	            <p>Es este formulario podremos realizar una carga manual para contratistas. Los campos obligatorios seran los mismos que para los empleados, el unico campo que se agrega es el de <i>Credencial</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/carga_offline_contratistas.jpg" alt="carga offline para contratistas" class="box-shadow" width="100%">
+	            <h5 class="prefijo" id="sec_carga_offline_para_visitas">CARGA OFFLINE PARA VISITAS</h5>
+	            <p>En este formulario podremos realizar una carga manual para las visitas. Deberemos completar todos los campos obligatorios para la <i>Visita</i> como <i>Ubicacion</i>, <i>Fecha</i>, <i>Documento (Visita)</i>, <i>Nombre</i>, <i>Apellido</i>, <i>Horario de Ingreso</i>, <i>Horario de Egreso</i>, <i>Origen (Empresa/Particular</i>, <i>Destino de la Visita</i> y <i>Numero de Credencial</i> y los campos obligatorios para el <i>Empleado Autorizante</i> como <i>Documento (Empleado)</i> y <i>Nombre y Apellido</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/carga_offline_visitas.jpg" alt="carga offline para visitas" class="box-shadow" width="100%">
+	            <h5 class="prefijo" id="sec_registro_de_accesos_sin_cierre">REGISTRO DE ACCESOS SIN CIERRE</h5>
+	            <p>En esta seccion podremos visualizar el listado de todos los accesos que quedaron sin egreso. Contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Tipo</i> y <i>Fecha Desde</i>.</p>
+	            <img src="./img/instructivo/admin_CIET/registro_sincierre.jpg" alt="registro de acceso sin cierre" class="box-shadow" width="100%">
+	            <p class="prefijo">Para realizar la confirmacion del cierre de acceso deberemos hacer click en el icono (<img src="./img/instructivo/iconos_botones/icono_salida.png">).</p>
+	            <img src="./img/instructivo/admin_CIET/confirmacion_salida.jpg" alt="confirmacion de salida" class="box-shadow" width="100%">
+	            <p class="prefijo">Al seleccionar <b>Guardar</b> podremos marcar la salida y tambien agregar una observacion.</p>
+	            <h4>REPORTES</h4>
+	            <p>En esta seccion se podra obtener informacion acerca de los ingresos y egresos de las personas, tanto para <i>Empleados</i>, <i>Contratistas</i> y <i>Visitas</i>.</p>
+	            <h5 id="sec_reportes_empleados">EMPLEADOS</h5>
+	            <p>En este apartado se podrá obtener la información que se requiera respecto a los empleados, Contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Dependencia</i>, <i>Fecha Desde</i>, <i>Fecha Hasta</i> y <i>Otros Criterios</i>, para realizar la busqueda debemos hacer click en el boton <b>Filtrar</b>.<br>En el listado cada tipo de <i>Ingreso</i> y <i>Egreso</i> estaran diferenciados por:</p>
+	            <ul>
+	            	<li>Registro de Comision Horaria <img src="./img/instructivo/iconos_botones/comision_horaria.png"></li>
+	            	<li>Registro desde puesto CIET <img src="./img/instructivo/iconos_botones/online.png"></li>
+	            	<li>Registro Biometrico <img src="./img/instructivo/iconos_botones/reloj.png"></li>
+	            	<li>Registro Biometrico MECON <img src="./img/instructivo/iconos_botones/biohacienda.png"></li>
+	            	<li>Registro Manual <img src="./img/instructivo/iconos_botones/offline.png"></li>
+	            	<li>Sin Registro <img src="./img/instructivo/iconos_botones/sinregistro.png"></li>
+	            </ul>
+	            <img src="./img/instructivo/admin_CIET/reportes_empleados.jpg" alt="reportes de empleados" class="box-shadow" width="100%">
+	            <h5 class="prefijo" id="sec_contratistas_visitas">CONTRATISTAS Y VISITAS</h5>
+	            <p>En esta seccion se podran obtener el historico de los datos correspondientes a contratistas y visitas. Al igual que en el historico de empleados contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Tipo de Acceso</i>, <i>N° de Credencial</i>, <i>Fecha Desde</i> y <i>Fecha Hasta</i>, ademas de un campo llamado <i>Otros Criterios</i> en donde podremos realizar una busqueda mas especifica.</p>
+	            <img src="./img/instructivo/admin_CIET/historico_contratistas_visitas.jpg" alt="historico de contratistas y visitas" class="box-shadow" width="100%">
+	            <p class="prefijo">En ambas pantallas contaremos con la opcion de exportar mediante <i>Excel</i>.</p>
+	            <section>
+	            	<h5 id="sec_mis_horarios">MIS HORARIOS</h5>
+	            <p>En esta seccion el usuario logueado podra visualizar los horarios y sus propios registros dentro del sistema.</p>
+	            <img src="./img/instructivo/admin_CIET/mis_horarios.jpg" alt="mis horarios" class="box-shadow" width="100%">
+	            </section>
+
+	            <section id="sec_sesion" class="justificado">
+	            <h4>CERRAR SESIÓN</h4>
+	            <p>Para salir del sistema el usuario debe <b>CERRAR SESIÓN</b> en el botón que se encuentra en la esquina superior derecha.</p>
+	            <img src="./img/instructivo/iconos_botones/cerrar_sesion.png" alt= "Cerrar Sesion." class="box-shadow" style="display: block; margin:auto;">
+	        </section>
+	        <p style="float: right;">Manual de Uso Versión v2.0.0</p>
+	        <script src="./js/ancla.js" charset="utf-8"></script>
+	        </div>
+	</div>
+	</body>
+</html>
+		

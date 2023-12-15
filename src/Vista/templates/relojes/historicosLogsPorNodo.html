@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="container">
+        <form method="GET" action="" onsubmit="return false">
+            <div class="form-group">
+                <label style="display: block;">
+                    <span class="">
+                        <i class="fa fa-filter"></i> Filtros
+                    </span>
+                </label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-group control-label" for="codigo_error">Codigos</label>
+                        <select id="codigo_error" name="codigo_error" class="form-control heigh">
+                            <option value="">Todos</option>
+                            {{{CODIGOS}}}
+                            <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                            {{{/CODIGOS}}}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-group control-label" for="fecha_desde">Fecha Desde</label>
+                        <div class='input-group date' id='datetimeInicialFecha'>
+                            <input type='text' class="form-control" name="fecha_desde" id="fecha_desde" />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-group control-label" for="fecha_hasta">Fecha Hasta</label>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class='input-group date' id='datetimeFinalFecha'>
+                                    <input type='text' class="form-control" name="fecha_hasta" id="fecha_hasta" />
+                                    <span class="input-group-addon"><span
+                                            class="glyphicon glyphicon-calendar"></span></span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class='input-group date'>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button" id="filtrar">FILTRAR</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="alert col-xs-12">
+      <span class="label label-success"><span class="fa fa-fw fa-desktop"></span> {{{CONEXION_EXITOSA}}}</span>&nbsp;&nbsp;
+      <span class="label label-danger"><span class="fa fa-fw fa-clock-o"></span>{{{SIN_CONEXION}}}</span>&nbsp;
+      <span class="label label-danger"><span class="fa fa-fw fa-clock-o"></span>{{{TIMEOUT_CONNECTION}}}</span>&nbsp;              
+      <span class="label label-fichadaIncorrectaSincro"><span class="fa fa-fw fa-desktop"></span> {{{SINCRONIZACION_NI_EMPLEADO_NI_VISITA_ENROLADA}}}</span>&nbsp;&nbsp;
+      <span class="label label-fichadaIncorrectaAcceso"><span class="fa fa-fw fa-clock-o"></span> {{{ACCESO_NI_EMPLEADO_NI_VISITA_ENROLADA}}}</span>&nbsp;&nbsp;
+      <span class="label label-success"><span class="fa fa-fw fa-clock-o"></span>{{{OPERACION_EXITOSA}}}</span>&nbsp;
+    </div>
+  </div>
+<div class="row">
+    <div class="col-sm-12">
+        <table id="tabla" class="table table-striped dataTables dataTable no-footer dtr-inline" style="width:100%;">
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 text-right">
+        <a href="{{{CANCELAR}}}" class="btn btn-default">VOLVER</a>
+    </div>
+</div>

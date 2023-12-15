@@ -1,0 +1,9 @@
+DROP TABLE `empleado_dependencia_directa`;
+
+ALTER TABLE `tipo_novedades` 
+CHANGE COLUMN `nombre` `nombre` VARCHAR(80) NOT NULL ;
+
+INSERT INTO tipo_novedades (nombre) VALUES('09 A) Licencia Anual Ordinaria'),('10 A) Afecciones/Lesiones de corto tratamiento (enfermo)'),('10 B) Enfermedad en horas de labor'),('10 C) Afecciones/Lesiones de largo tratamiento'),('10 D) Accidente de trabajo'),('10 G) Maternidad'),('10 H) Adopción'),('10 I) Atención de hijos menores'),('10 J) Atención del grupo familiar'),('13 A) Licencia para rendir examen'),('13 D) Matrimonio Agente o hijo de Agente'),('13 E) Actividades deportivas no rentadas'),('13 II A) Ejercicio transitorio de otro cargo'),('13 II B) Razones particulares (6 meses cada 10 años - sin goce de haberes)'),('13 II C) Razones de estudio'),('13 II D) Lic. para acompañar al cónyuge'),('13 II E) Cargo -hs. De cátedra'),('14 A) Nacimiento de hijo'),('14 B) Fallecimiento de familiar'),('14 C) Razones especiales'),('14 D) Donación de sangre'),('14 F) Razones particulares'),('14 G) Mesa examinadora'),('14 H) Ausente con aviso a descuento'),('15 A) Horario para estudiante (reducción horaria)'),('15 B) Reducción horaria madres lactantes'),('15 C) Asistencia a congresos'),('Art. 46 CCTG 214/06 Servicio Extraordinario'),('Art. 135 CCTG 214/06 Maternidad (nacimiento sin vida)'),('Art. 138 CCGT 214/06 Maternidad excedencia (3-6 meses)'),('Art. 2 Decreto 618/87 Alojamiento U.T.'),('Art. 88 Inc. A CCTS Personal Prof Minist. Salud. Decreto 1133/2009'),('Decreto 973 Licencia Artística'),('Ley 23.691 Citación a Tribunales'),('Ley 24.571 Festividad religiosa judía'),('Ley 24.757 Festividad religiosa islámica'),('Ausencia Injustificada'),('Sin Novedad'),('Comisión de servicio por el día'),('Entrada demorada'),('Salida anticipada');
+
+
+INSERT INTO db_version VALUES('4', now());

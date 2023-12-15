@@ -1,0 +1,133 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA_PERS}}}" id="linkAjaxBuscarPersonaPers" />
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA_AUT}}}" id="linkAjaxBuscarPersonaAut" />
+
+	<div class="row">
+		<!--	datos de persona-->
+		<div class="col-md-6">
+			<div class="section-title">Personal</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="error_persona" style="display: none;" class="text-danger"></span>
+					<span id="success_persona" style="display: none;" class="text-success"></span>
+					<!-- Documento -->
+					<div class="form-group">
+						<label class="control-label" for="persona_documento">Documento<span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" placeholder="Buscar&hellip;" id="persona_documento"
+							name="persona_documento" value="{{{PERSONA_DOCUMENTO}}}" readonly>
+					</div>
+					<!-- Nombre -->
+					<div class="form-group">
+						<label class="control-label" for="persona_nombre">Nombre<span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="persona_nombre" name="persona_nombre"
+							value="{{{PERSONA_NOMBRE}}}">
+					</div>
+
+					<!-- Apellido -->
+					<div class="form-group">
+						<label class="control-label" for="persona_apellido">Apellido<span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="persona_apellido" name="persona_apellido"
+							value="{{{PERSONA_APELLIDO}}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--	datos de autorizante-->
+		<div class="col-md-6">
+			<div class="section-title">Autorizante</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="error_autorizante" style="display: none;" class="text-danger"></span>
+					<span id="success_autorizante" style="display: none;" class="text-success"></span>
+					<!-- Documento del Autorizante -->
+					<div class="form-group">
+						<label class="control-label" for="autorizante_documento">Documento del Autorizante<span
+								class="text-danger">*</span></label>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Buscar&hellip;"
+								id="autorizante_documento" name="autorizante_documento"
+								value="{{{AUTORIZANTE_DOCUMENTO}}}">
+							<span class="input-group-btn">
+								<!-- <button type="submit" class="btn btn-default" formaction="../contratistaspersonal/buscar_documento_autorizante"><i
+										class="fa fa-search"></i></button> -->
+								<button type="button" class="btn btn-default" onclick="buscarPersonaAutorizante()"><i
+										class="fa fa-search"></i></button>
+							</span>
+						</div>
+
+					</div>
+					<!-- Nombre del Autorizante -->
+					<div class="form-group">
+						<div class="form-group">
+							<label class="control-label" for="autorizante_nombre">Nombre del Autorizante<span
+									class="text-danger">*</span></label>
+							<input type="text" class="form-control" id="autorizante_nombre" name="autorizante_nombre"
+								value="{{{AUTORIZANTE_NOMBRE}}}" readonly>
+						</div>
+					</div>
+
+					<!-- Apellido del Autorizante -->
+					<div class="form-group">
+						<div class="form-group">
+							<label class="control-label" for="autorizante_apellido">Apellido del Autorizante<span
+									class="text-danger">*</span></label>
+							<input type="text" class="form-control" id="autorizante_apellido"
+								name="autorizante_apellido" value="{{{AUTORIZANTE_APELLIDO}}}" readonly>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="section-title">ART</div>
+		</div>
+		<div class='col-sm-6'>
+			<div class="form-group">
+				<label for="art_inicio" class="control-label">
+					Fecha de Inicio
+					<span class="text-danger">*</span></label>
+				<div class='input-group date' id='art_inicio'>
+					<input type='text' class="form-control" data-toggle="tooltip"
+						title="Fecha de inicio del Permiso de Acceso" id="art_inicio" value="{{{ART_INICIO}}}"
+						name="art_inicio">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+				</div>
+			</div>
+		</div>
+		<div class='col-sm-6'>
+			<div class="form-group">
+				<label for="art_fin" class="control-label">
+					Fecha de Culminación
+					<span class="text-danger">*</span></label>
+				<div class='input-group date' id='art_fin'>
+					<input type='text' class="form-control" data-toggle="tooltip"
+						title="Fecha de inicio del Permiso de Acceso" id="art_fin" value="{{{ART_FIN}}}" name="art_fin">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="contratistaspersonal"
+				value="{{{OPERACION}}}" id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

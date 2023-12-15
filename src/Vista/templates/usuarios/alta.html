@@ -1,0 +1,108 @@
+<form id="reunionForm" method='POST' action="">
+  <input type="hidden" value="{{{LINK_AJAX_BUSCAR_EMPLEADO}}}" id="linkAjaxBuscarEmpleado" />
+  <div class="col-xs-12">
+  <div class="row">    
+    <div class="form-group">
+      <label for="usuario" class="control-label">Nombre Usuario</label>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar&hellip;" name="username" value="{{{USER.username}}}"
+          id="username">
+        <span class="input-group-btn">
+          <button name="buscar" value="1" type="submit" formaction="?c=usuarios&amp;a=alta" class="btn btn-default"><i
+              class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="nombre" class="control-label">Nombre y Apellido</label>
+      <input class="form-control" name="nombre" value="{{{USER.nombre}}} {{{USER.apellido}}}" readonly />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label for="email" class="control-label">Email</label>
+      <input class="form-control" value="{{{USER.email}}}" name="email" readonly />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group">
+      <label class="control-label" for="rol">Rol</label>
+      <select class="form-control" id="rol" type="text" name="rol" />
+      <option disabled selected value="">Seleccione un Rol</option>
+      {{{ROLES}}}
+      <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+      {{{/ROLES}}}
+      </select>
+    </div>
+  </div>
+  <div class="row dependencia">
+    <div class="form-group">
+      <label class="control-label" for="dependencias">Dependencias</label>
+      <select class="form-control" id="dependencias" type="text" name="dependencias[]" multiple="multiple" />
+      {{{DEPENDENCIAS}}}
+      <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+      {{{/DEPENDENCIAS}}}
+      </select>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          Datos del <strong>ABM de Empleados</strong>
+        </div>
+        <div class="panel-body">
+          <div class="alert alert-warning" role="alert">
+            <strong>Atención:</strong> Para completar el registro deberá asociar el usuario con los datos de empleado
+            que
+            figura en el <strong><i>ABM de Empleados</i></strong> obligatoriamente.
+          </div>
+          <span id="error_autorizante" style="display: none;" class="text-danger"></span>
+          <span id="success_autorizante" style="display: none;" class="text-success"></span>
+          <div class="form-group">
+            <label class="control-label" for="empleado_documento">
+              Documento
+              <span class="required">*</span>
+            </label>
+            <input type="hidden" name="empleado_id">
+            <div class='input-group'>
+              <input type="text" class="form-control tabulable" name="empleado_documento" id="empleado_documento"
+                maxlength="10" minlength="6" value="{{{EMPLEADO_DNI}}}">
+              <span class="input-group-btn">
+                <button class="btn btn-default" id="btn_buscar_documento" type="button" data-toggle="tooltip"
+                  title="Buscar Empleado" onclick="buscarEmpleadoUsuario()"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="persona_nombre">
+              Nombre y Apellido
+            </label>
+            <input type="text" class="form-control" name="persona_nombre" id="persona_nombre" maxlength="100"
+              minlength="2" value="{{{EMPLEADO_FULLNAME}}}" readonly>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="empleado_ubicacion">
+              Ubicación
+            </label>
+            <input type="text" class="form-control" name="empleado_ubicacion" id="empleado_ubicacion" maxlength="100"
+              minlength="2" value="{{{UBICACION}}}" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 text-right">
+      <button type="submit" class="btn btn-primary" data-placement="left" value="1" name="guardar" id = 'guardar'
+        id="guardar">GUARDAR</button>
+      <a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <title>Control de Accesos | Ministerio de Transporte</title>
+	    <link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+
+	   	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	     <link rel="stylesheet" href="/cdn/estiloIS/3/estilois.css"/>
+	   
+	    <script src="/cdn/js/jquery.js" charset="utf-8"></script>
+	    <script src="/cdn/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/moment.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/es.js" charset="utf-8"></script>
+	</head>
+
+<!-- //// CSS //// -->
+<style>
+		h4, h5, h6 {
+			color:#0072bc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.box-shadow {
+			box-shadow:13px 9px 22px 1px rgba(0,0,0,0.4);
+		}
+
+		.prefijo {
+			margin-top: 30px;
+		}
+
+		 #return-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.7);
+				width: 50px;
+				height: 50px;
+				display: block;
+				text-decoration: none;
+				-webkit-border-radius: 35px;
+				-moz-border-radius: 35px;
+				border-radius: 35px;
+				display: none;
+				-webkit-transition: all 0.3s linear;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				background: black;
+			}
+
+			.active
+			a:active, a:hover {
+			outline: 0;
+			}
+
+			#return-to-top i {
+				color: #fff;
+				margin: 0;
+				position: relative;
+				left: 16px;
+				top: 13px;
+				font-size: 19px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				   background: rgba(0, 0, 0, 0.9);
+			}
+			#return-to-top:hover i {
+				   color: #fff;
+				   top: 5px;
+			}
+
+	</style>
+
+<body>
+
+	<a href="javascript:" id="return-to-top" style="display: block;">
+	        <i class="fa fa-arrow-up">
+	        </i></a>
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	    <div class="container main bar">
+	        <div class="row">
+	            <div role="main" class="col-md-12">
+	                <div class="page-header">
+
+	                </div>
+	            </div>
+	        </div>
+
+	        <h2>Índice</h2> 
+				<li><a href="#sec_introduccion"><b>INTRODUCCIÓN</b></a></li>
+				<li><b>ALTAS</b></li>
+				<ul>
+					<li><a href="#sec_empleados"><b>EMPLEADOS</b></a></li>
+				</ul>
+				<li><b>MIS CONSULTAS</b></li>
+				<ul>
+					<li><a href="#sec_mis_horarios"><b>MIS HORARIOS</b></a></li>
+				</ul>
+
+				<li><a href="#sec_sesion"><b>CERRAR SESIÓN</b></a></li>
+
+				<hr>
+	    </div>
+	    	    <!-- // CONTENIDO // -->
+	<div class="container main">
+		<section>
+			<h4 id="sec_introduccion" class="justificado">INTRODUCCION</h4>
+			<p>La Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación, ha diseñado un Sistema informático para el Acceso de Personas al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos.</p>
+		</section>
+		<h4>ACCESO AL SISTEMA</h4>
+				<p> Para acceder al sistema de Presentismo, el usuario deberá ingresar a la siguiente dirección:
+				<a href="https://intranet.transporte.gob.ar/ " target="_blank">intranet.transporte.gob.ar</a> y despues ingresar al modulo <b>Control de Accesos</b>.</p>
+	            <p>Para ingresar al sistema, el usuario deberá usar su usuario y contraseña de dominio, una ves ingresado los datos podra navegar segun las credenciales que posea.</p>
+	            <img src="./img/instructivo/enrolador/ingreso_al_sistema.png" alt="login" class="box-shadow" width="100%">
+	            <h5 id="sec_empleados" class="prefijo">EMPLEADOS</h5>
+	            <p>En esta seccion podremos visualizar el listado completo de los <i>Empleados</i> con sus correspondientes datos:</p>
+	            	<ul>
+	            		<li>Documento</li>
+	            		<li>Nombre</li>
+	            		<li>Apellido</li>
+	            		<li>Ubicacion Principal</li>
+	            		<li>Ubicaciones Autorizadas</li>
+	            		<li>Dependencia Principal</li>
+	            		<li>Contrato</li>
+	            		<li>Enrolado</li>	            		
+	            	</ul>
+	            	<p>Tambien contaremos con opciones de filtrado como <i>Dependencias</i>, <i>Ubicaciones</i>, <i>Ubicacion Principal</i>, <i>Tipo de Contrato</i>, <i>Enrolado</i> y un boton para poder visualizar el listado de empleados <i>inactivos</i>.</p>
+	            	<img src="./img/instructivo/enrolador/empleados.png" alt="Pantalla de empleados" class="box-shadow" width="100%">
+	            	<p class="prefijo">Cada empleado contara con una columna llamada <i>Acciones</i> que contendra el icono <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">).<br>Tambien contaremos con un exportador a <b>Excel</b> donde podremos visualizar todos los datos de los empleados.</p>
+	            	<h6 class="prefijo">ENROLAR</h6>
+	            <p class="prefijo">Al hacer click en el icono de <i>Enrolar</i> ingresaremos a la pantalla de enrolamiento en la que deberemos enrolar previamente al empleado en el reloj biometrico para luego buscar las huellas seleccionando el boton <i>Buscar</i>.</p>
+	            <img src="./img/instructivo/enrolador/pantalla_enrolar.png" alt="Pantalla de enrolar" class="box-shadow" width="100%">
+	            <section>
+	            	<h4>MIS CONSULTAS</h4>
+	            <h5 id="sec_mis_horarios">MIS HORARIOS</h5>
+	            <p>En esta seccion el usuario logueado podra visualizar los horarios y sus propios registros dentro del sistema.</p>
+	            <img src="./img/instructivo/enrolador/mis_horarios.png" alt="Pantalla de horarios" class="box-shadow" width="100%">
+	            </section>
+
+	            <section id="sec_sesion" class="justificado">
+	            <h4>CERRAR SESIÓN</h4>
+	            <p>Para salir del sistema el usuario debe <b>CERRAR SESIÓN</b> en el botón que se encuentra en la esquina superior derecha.</p>
+	            <img src="./img/instructivo/iconos_botones/cerrar_sesion.png" alt= "Cerrar Sesion." class="box-shadow" style="display: block; margin:auto;">
+	        </section>
+	        <p style="float: right;">Manual de Uso Versión v1.3.0</p>
+	        <script src="../js/ancla.js" charset="utf-8"></script>
+	        </div>
+	</div>
+	</body>
+</html>

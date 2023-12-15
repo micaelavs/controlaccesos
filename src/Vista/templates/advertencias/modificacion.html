@@ -1,0 +1,144 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA_PERS}}}" id="linkAjaxBuscarPersonaPers" />
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA_SOL}}}" id="linkAjaxBuscarPersonaSol" />
+
+	<div class="row">
+		<!--	datos de persona-->
+		<div class="col-md-6">
+			<div class="section-title">Personal</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="error_persona" style="display: none;" class="text-danger"></span>
+					<span id="success_persona" style="display: none;" class="text-success"></span>
+					<!-- Documento -->
+					<div class="form-group">
+						<label class="control-label" for="persona_documento">Documento<span
+								class="text-danger">*</span></label>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Buscar&hellip;" id="persona_documento"
+								name="persona_documento" value="{{{PERSONA_DOCUMENTO}}}">
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" onclick="buscarPersonaPersonal()"><i
+										class="fa fa-search"></i></button>
+							</span>
+						</div>
+					</div>
+					<!-- Nombre -->
+					<div class="form-group">
+						<label class="control-label" for="persona_nombre">Nombre<span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="persona_nombre" name="persona_nombre"
+							value="{{{PERSONA_NOMBRE}}}" required>
+					</div>
+
+					<!-- Apellido -->
+					<div class="form-group">
+						<label class="control-label" for="persona_apellido">Apellido<span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="persona_apellido" name="persona_apellido"
+							value="{{{PERSONA_APELLIDO}}}" required>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--	datos de solicitante-->
+		<div class="col-md-6">
+			<div class="section-title">solicitante</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="error_solicitante" style="display: none;" class="text-danger"></span>
+					<span id="success_solicitante" style="display: none;" class="text-success"></span>
+					<!-- Documento del solicitante -->
+					<div class="form-group">
+						<label class="control-label" for="solicitante_documento">Documento del solicitante<span
+								class="text-danger">*</span></label>
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Buscar&hellip;"
+								id="solicitante_documento" name="solicitante_documento"
+								value="{{{SOLICITANTE_DOCUMENTO}}}">
+							<span class="input-group-btn">
+								<!-- <button type="submit" class="btn btn-default" formaction="../contratistaspersonal/buscar_documento_solicitante"><i
+										class="fa fa-search"></i></button> -->
+								<button type="button" class="btn btn-default" onclick="buscarPersonasolicitante()"><i
+										class="fa fa-search"></i></button>
+							</span>
+						</div>
+
+					</div>
+					<!-- Nombre del solicitante -->
+					<div class="form-group">
+						<div class="form-group">
+							<label class="control-label" for="solicitante_nombre">Nombre del solicitante</label>
+							<input type="text" class="form-control" id="solicitante_nombre" name="solicitante_nombre"
+								value="{{{SOLICITANTE_NOMBRE}}}" readonly>
+						</div>
+					</div>
+
+					<!-- Apellido del solicitante -->
+					<div class="form-group">
+						<div class="form-group">
+							<label class="control-label" for="solicitante_apellido">Apellido del solicitante</label>
+							<input type="text" class="form-control" id="solicitante_apellido"
+								name="solicitante_apellido" value="{{{SOLICITANTE_APELLIDO}}}" readonly>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="advertencia_generica" class="control-label">Mensaje Genérico: </label>
+				<select name="advertencia_generica" id="advertencia_generica" class="form-control">
+					<option value="">Seleccione</option>
+					{{{ADVERTENCIA_GENERICA}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/ADVERTENCIA_GENERICA}}}
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="ubicacion" class="control-label">Ubicacion: </label>
+				<select name="ubicacion" id="ubicacion" class="form-control">
+					<option value="">Todas</option>
+					{{{UBICACION}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/UBICACION}}}
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6 text-center text-info">
+			<strong>- o -</strong>
+		</div>
+	</div>
+	<div class="row">		
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="msj"> Mensaje <span
+						class="text-danger">*</span></label>
+				<textarea name="msj" id="msj" rows="3" class="form-control" style="resize: none;" autofocus> {{{MSJ}}} </textarea>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="advertencia"
+				value="{{{OPERACION}}}" id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

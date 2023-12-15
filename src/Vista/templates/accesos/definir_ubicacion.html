@@ -1,0 +1,31 @@
+<section id="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h3>
+							<label for="id_ubicacion_actual">
+								Seleccione la <strong>Ubicación</strong> en la que quiere operar
+							</label>
+						</h3>
+					</div>
+					<form action="{{{FORM_ACTION}}}" method="post">
+						<div class="panel-body">
+							<div class="form-group">
+								<select name="id_ubicacion_actual" id="id_ubicacion_actual" class="form-control"
+										required>
+									<option value="">- Seleccione una Ubicación -</option>
+									{{{UBICACION}}}
+						                <option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+					                {{{/UBICACION}}}
+								</select>
+							</div>
+							<div class="form-group text-right">
+								<button class="btn btn-primary" id="acceder">acceder</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>

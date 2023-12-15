@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Control de Accesos | Instructivo de ADMINISTRADOR</title>
+	<link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+	
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	<link rel="stylesheet" href="/cdn/estiloIS/2/estilois.css">
+	
+	<script>
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+			$('[data-toggle="popover"]').popover();
+		});
+	</script>
+	<style>
+		
+		h3, h5, hr {
+			color: #0094d4;
+		}
+		
+		.fondo {
+			background-color: #DAE6EA;
+		}
+		
+		p {
+			font-size: 20px;
+		}
+		
+		e {
+			font-size: 15px;
+			font-family: monospace;
+		}
+		
+		.img-100 {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header" style="height: 80px;">
+			<a class="navbar-brand" href="">
+				<img src="" height="50" alt="">
+			</a>
+		</div>
+		
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+	</div><!-- /.container-fluid -->
+</nav>
+
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	<div class="container main">
+		
+		<div class="row">
+			<div role="main" class="col-md-12">
+				<div class="page-header">
+					<h1>Control de Acceso
+						<small>- Manual de Administrador</small>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- // CONTENIDO // -->
+	<div class="container main">
+		
+		<h3> OBJETO</h3>
+		<p>La <strong>Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación</strong>, ha
+			diseñado
+			un <strong>Sistema informático para el Acceso de Personas </strong> al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos.</p>
+		<p><strong>
+			Para ello ha diseñado, desarrollado e implementado un Sistema que permite:</strong></p>
+		<br>
+		<p>a. Administrar el ingreso de personal interno, externo y visitas, en forma electrónica (online).</p>
+		<p>b. Cargas (offline) para supuestos especiales.</p>
+		<p>c. Controlar, auditar, dar Altas/Bajas y Modificaciones al mismo.</p>
+		<p>d. Asignar distintos roles según el tipo de responsabilidades de los agentes.</p>
+		<p>e. Permitir el acceso informático a los funcionarios, a fin de que puedan ingresar a los registros del sistema utilizando los recursos tecnológicos, con solo su usuario y contraseña.</p>
+		
+		<h3>ALCANCE</h3>
+		
+		<p>El presente sistema es de utilización obligatoria a todos los agentes y funcionarios públicos que
+			por competencia específica controlan el Acceso de ingreso y egreso de personasal Ministerio
+			de Transporte y sus dependencias.</p>
+		<p>
+			Las personas que ingreesan al Ministerio de Transporte de la Nación y sus dependendencia serán registradas en el sistema según sean:</p>
+		<p>
+			<strong>Personal interno de la sede:</strong> refiere a quienes ingresan al edificio en donde realizan sus tareas.</p>
+		<p>
+			<strong>Personal externo de la sede:</strong> es el personal perteneciente al Ministerio de Transporte y sus
+			dependencias que acceden a una sede que no es donde ejercen sus tareas.
+		</p>
+		<p>
+			<strong>Contratistas y sus dependientes:</strong> refiere a las personas que se vinculan contractualmente,
+			incluyendo a quienes dependen laboralmente de él.</p>
+		<p>
+			<strong>Visitas:</strong> a todos aquellas personas ajenas al organismo que deseen ingresar al Ministerio y
+			sus dependencias.
+		</p>
+		<br>
+		
+		<h3>ROLES</h3>
+		<p><strong>El Sistema de Control de Acceso distingue 4 roles:</strong></p>
+		<p>1. Administrador</p>
+		<p>2. Agente de registro</p>
+		<p>3. Usuario ABM (altas/ bajas/ modificaciones)</p>
+		<p>4. Auditor</p>
+		<br>
+		
+		
+		<h3>FUNCIONALIDADES</h3>
+		
+		
+		<p><strong>1. REGISTRO:</strong></p>
+		<p>
+			Es la pantalla principal del Sistema de Control de Acceso, a través de la cual los agentes
+			autorizados cargaran los datos de las personas que acceden al Edificio y/o sus dependencias.
+			Este Rol es exclusivo de los agentes de Registro de Personal que ingresa o egresa del organismo.
+		</p>
+		<p>
+			Asimismo tendrán acceso manual de ingreso y egreso.
+		</p>
+		<p><strong>2. REPORTES:</strong></p>
+		<p>El Sistema informa el historial de personas que ingresan y egresan de los organismos, días,
+			horarios y si existió alguna observación por parte de los agentes autorizados al efecto. Los
+			reportes sólo están disponibles para los roles de <strong>“Administrador” y “Auditor”.</strong> y se pueden descargar en Excel.</p>
+		<p><strong>3. ABM (ALTAS/BAJAS/MODIFICACIONES)</strong></p>
+		<p>El sistema permite dar de alta,baja y modificar los datos de las personas que accedan al edificio,
+			este rol solo podrá ser ejecutado por el<strong>“Usuario Administrador” y por el “Usuario ABM”.</strong></p>
+		
+		<p>Estos podrán dar el alta, baja o modificar el estado de:</p>
+		<p><strong>Usuarios</strong>.</p>
+		<p><strong>Áreas</strong>.</p>
+		<p><strong>Personas</strong>.</p>
+		<p><strong>Empleados</strong>.</p>
+		<p><strong>Ubicaciones</strong>.</p>
+		<p><strong>Contratistas y su personal</strong>.</p>
+		<div class="container"><p>Asignar Ubicaciones.</p></div>
+		<p><strong>Advertencias.</strong></p>
+		<div class="container"><p>Registro Offline para supuestos especiales.</p></div>
+		
+		
+		<br>
+		<h3>REQUERIMIENTOS TÉCNICOS</h3>
+		<P>Navegador actualizado.</P>
+		<p>Tener instalado el Acrobat Reader o similar.</p>
+		<p>Contar con acceso a Internet.</p>
+		<p>Contar con Usuario, contraseña e email institucional.</p>
+		<br>
+		<h3>ACCESO AL SISTEMA</h3>
+		<p>Para acceder al aplicativo, el usuario deberá ingresar a la siguiente dirección:
+			<a href="http://intranet.transporte.gob.ar/control_accesos/">http://intranet.transporte.gob.ar/control_accesos/</a>.
+		</p>
+		
+		<p>Luego para poder navegar en el sistema, deberá cargar su usuario y contraseña.</p>
+		<p>
+			Una vez logueado podrá navegar por el mismo según sus autorizaciones habilitadas según el tipo de usuario que corresponda.</p>
+		<br>
+		<p>
+			<img src="./img/Us/c1.png" class="img-100">
+		</p>
+		<br>
+		<h3>NAVEGACIÓN DEL ADMINISTRADOR</h3>
+		
+		<h5>1. Reportes:</h5>
+		<div class="container"><h5>1.1 Reporte de Empleados o Contratistas y Visitas</h5></div>
+		<p>
+            El Administrador que requiere obtener información acerca de los ingresos y egresos de las personas,
+            al acceder al Sistema deberá seleccionar el botón correspondiente según el reporte que elija, sea al de empleados, contratistas y Visitas.
+            Así tal y como puede visualizarse en la imagen que se ejemplifica.
+        </p>
+		
+		<br>
+		<p><img src="img/Adm/admv2_1.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>1.2. Información a obtener en los Reportes de Empleados:</h5></div>
+		<p>
+            El administrador podrá obtener la información que requiera respecto al Control de Acceso de los empleados. En particular podrá conocer la Dirección a la que pertenece,
+            la ubicación, Documento Nacional de Identidad, nombre, apellido, fecha de ingreso/egreso y hora de ingreso/egreso de las personas que accedieron en algunas de las ubicaciones.
+        </p>
+        <p>
+            El usuario administrador verá en la pantalla dos tipos de ingresos: Online y Offline.
+        </p>
+        <p>
+            En el caso que el ingreso se registre normal y habitualmente es definido como Online y los registros Offline
+            refieren a ingresos que fueron días anteriores, pero que su carga fue realizada días posteriores.
+		</p>
+		<br>
+		<p><img src="img/Adm/admv2_2.png" class="img-100"></p>
+		<br>
+
+        <div class="container"><h5>1.3 Registro de Acceso Manual</h5></div>
+        <p>
+            Los Registros de acceso Manual serán de Carga Offline para empleados del Ministerio,
+            destacando que este tipo de uso sólo podrán realizarlo los usuarios administradores y esta habilitado para días siguientes al actual.
+            A continuación se ilustran según el tipo de tarea que debe registrar.
+        </p>
+        <br />
+        <img src="img/Adm/admiv2_3.png" width="100%">
+        <br />
+        <br />
+        <p>En el supuesto que se requiera el acceso offline para empleados.
+            El administrador deberá cargar todos los campos obligatorios y guardado el registro, el sistema reflejara que la carga ha sido offline y exitosa.
+        </p>
+        <br />
+        <img src="img/Adm/adminv2_4.png" width="100%">
+        <br /><br />
+        <p>En los casos que sea seleccionado el registro de accesos sin cierre, que por algún motivo excepcional, (ej corte de luz al momento de su egreso) no pudo ser registrado su egreso, el usuario administrador puede registrar el egreso de forma manual, con el fin de que no queden registros de ingresos sin cerrar.</p>
+        <br />
+        <img src="img/Adm/adminv2_5.png" width="100%">
+        <br /><br />
+        <div class="container"><h5>1.4 Información a obtener en los Reportes de Contratistas y Visitas</h5></div>
+		<p>El administrador podrá obtener la información que requiera respecto al <strong>Control de
+			Acceso </strong> de los los contratistas y Visitas. En particular podrá conocer Ubicación, Tipo de
+			Visita, Documento Nacional de Identidad, nombre, apellido, hora de ingreso/egreso y
+			fecha de ingreso/egreso de las personas que accedieron a algunas de los edificios.</p>
+
+        <br />
+        <img src="img/Au/c3.png" width="100%">
+		<br>
+		<div class="container"><h5>1.5 Filtros</h5></div>
+		
+		<p>El administrador podrá filtrar la información según su necesidad particular seleccionando
+			el Botón Filtros, y el Sistema se habilitará para que pueda obtener la información por:
+			Ubicación, Dirección, Fechas Desde y Fecha Hasta.</p>
+		<br>
+		<p><img src="img/Au/c4.png" class="img-100"></p>
+		<br>
+		
+		<h3>ALTAS, BAJAS Y MODIFICACIONES (ABM)</h3>
+		
+        <p>El administrador es el agente designado para dar de <strong>Alta, la Baja y Modificaciones</strong> en las distintas funcionalidades del Sistema, es decir de los Usuarios, las Áreas, las Personas, los Empleados, las Ubicaciones, los Contratistas, las Advertencias, tal y como a continuación se puede observar en la imagen.</p>
+		<br>
+		<p><img src="img/Adm/c1.png" class="img-100"></p>
+		<br>
+		
+		<div class="container"><h5>2.1 Altas de Usuarios:</h5></div>
+		
+		<p>El administrador podrá dar el alta a usuarios seleccionando los botones <strong>Usuario</strong> y luego
+			abajo de la derecha de la pantalla <strong>Nuevo.</strong></p>
+		<br>
+		<p><img src="img/Adm/c2.png" class="img-100"></p>
+		<br>
+		
+		
+		<p>La pantalla posterior que desplegará el Sistema permitirá que el Administrador cargue todos los
+			datos solicitados en los Campos y finalizar el Alta del Usuario y luego deberá Guardar la
+			Información.</p>
+		<p>*El Sistema solo permite dar de alta a Usuarios a quienes estén debidamente autorizados.</p>
+		<br>
+		<p><img src="img/Adm/c3.png" class="img-100"></p>
+		<br>
+
+        <br />
+		<div class="container"><h5>2.2 Alta de Áreas
+		</h5></div>
+		<p>El administrador podrá dar el alta a nuevas áreas seleccionando los botones <strong> Áreas</strong> y
+			luego abajo de la derecha de la pantalla <strong>Nuevo.</strong></p>
+		<br>
+		<p><img src="img/Adm/c4.png" class="img-100"></p>
+		<br>
+		
+		<p>La pantalla posterior que desplegará el Sistema permitirá que el Administrador cargue todos los
+			datos solicitados en los Campos y finalizar el Alta del Área y luego deberá Guardar la Información.</p>
+		<p>*El Sistema solo permite dar de alta a Áreas a los usuarios debidamente autorizados.</p>
+		
+		<br>
+		<p><img src="img/Adm/c5.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>2.3 Alta de Personas
+		</h5></div>
+		<p>El administrador podrá dar el alta a Personas seleccionando el botón y luego abajo de la
+			derecha de la pantalla <strong>Agregar.</strong></p>
+		<br>
+		
+		<p><img src="img/Adm/c6.png" class="img-100"></p>
+		<br>
+		<p>La pantalla posterior que desplegará el Sistema permitirá que el Administrador cargue
+			todos los datos solicitados en los Campos y finalizar el Alta de la Persona y luego
+			deberá Guardar la Información.</p>
+		<p>*El Sistema solo permite dar de alta a Personas a los usuarios debidamente
+			autorizados.</p>
+		<br>
+		<p><img src="img/Adm/c7.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>2.4 Alta de Empleados
+		</h5></div>
+		<p>El administrador podrá dar el alta a Empleados seleccionando el botón correspondiente
+			y luego abajo de la derecha de la pantalla <strong>Agregar.</strong></p>
+		<br>
+		<p><img src="img/Adm/c8.png" class="img-100"></p>
+		<br>
+		<p>La pantalla posterior que desplegará el Sistema permitirá que el Administrador cargue
+			todos los datos solicitados en los Campos y finalizar el Alta del empleado y luego deberá
+			Agregar la Información a fin de guardarla.</p>
+		<p>*El Sistema solo permite dar de alta a Empleados a los usuarios debidamente
+			autorizados.</p>
+		<div class="container"><h5>2.5 Alta de Ubicaciones
+		</h5></div>
+		<p>El agente administrador podrá dar el alta a ubicaciones de edificios seleccionando
+			el botón Ubicaciones y Agregar, que se encuentra al final derecho de la pantalla.</p>
+		<br>
+		<p><img src="img/Adm/c9.png" class="img-100"></p>
+		<br>
+		<p>El Sistema desplegará una pantalla a fin de que el Administrador complete los
+			campos de la misma, y finalmente deberá Agregar la información para que quede
+			registrada.</p>
+		<br>
+		<p><img src="img/Adm/c10.png" class="img-100"></p>
+		<br>
+		<p>El Sistema abrirá una pantalla a fin de que se carguen todos los datos solicitados en los
+			campos a completar.</p>
+		<p>Sólo aquellos agentes con autorización podrán hacerlo.</p>
+		<br>
+		<p><img src="img/Adm/c11.png" class="img-100"></p>
+		<br>
+		<h5>Alta de Contratistas</h5>
+		<div class="container"><h5>2.6.1 Contratistas
+		</h5></div>
+		<p>El administrador podrá dar el Alta de contratistas, seleccionando el botón Contratistas
+			y luego, abajo a la derecha, el botón Guardar.</p>
+		<br>
+		<p><img src="img/Adm/c12.png" class="img-100"></p>
+		<br>
+		<p>Allí el Sistema desplegará una pantalla a fin de que el Administrador pueda completar los
+			campos para el Nuevo Alta del Contratista y finalmente deberá Guardar la información
+			para que quede registrado.</p>
+		<br>
+		<p><img src="img/Adm/c13.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>2.6.2 Empleados del Contratista.
+		</h5></div>
+		<p>El administrador del Sistema, deberá dar el Alta a los Empleados de los Contratistas. En la
+			misma pantalla que se abre para visualizar los contratistas podrá observar un botón que
+			simula una silueta y un signo más, permitirar que ingresando allí pueda cargar los datos del
+			Nuevo empleado del contratista.
+		</p>
+		<br>
+		<p><img src="img/Adm/c14.png" class="img-100"></p>
+		<br>
+		<p>Seleccionando en el signo + el Sistema desplegará una pantalla con campos a rellenar por
+			el agente administrador.
+			Cabe destacar que deberá cargar los campos de Documento Nacional de identidad,
+			Nombre y Apellido fechas de Desde y hasta el vencimiento de la ART (Aseguradora de
+			Riesgo de Trabajo).</p>
+		<br>
+		<p><img src="img/Adm/c15.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>2.7 ADVERTENCIAS:
+		</h5></div>
+		<p>El Administrador podrá cargar advertencias para los <strong>agentes usuarios </strong>respecto a
+			determinadas cuestiones que puedan surgir respecto a las personas que ingresen o Egresen
+			de los Edificios. Para ello deberá seleccionar el Botón advertencias.</p>
+		<p>Allí deberá seleccionar entre el Botón de <strong>Nuevo </strong> o el de <strong>Advertencias
+			Genérica.</strong></p>
+		<br>
+		<p><img src="img/Adm/c16.png" class="img-100"></p>
+		<br>
+		<p>Seleccionando el botón <strong>Nuevo</strong>, el Sistema desplegará un formulario a completar por el
+			agente administrador. Finalmente, guardará la información para que quede
+			registrada.</p>
+		<br>
+		<p><img src="img/Adm/c17.png" class="img-100"></p>
+		<br>
+		<p>Seleccionando el botón <strong>Advertencia genérica</strong> el Sistema desplegará la siguiente
+			imagen</p>
+		<br>
+		<p><img src="img/Adm/c18.png" class="img-100"></p>
+		<br>
+		<p>A fin de cargar una advertencia genérica nueva deberá seleccionar el botón <strong>Agregar</strong></p>
+		<br>
+		<p><img src="img/Adm/c19.png" class="img-100"></p>
+		<br>
+		<h3>MODIFICACIONES</h3>
+		<p>El Administrador del Sistema debe identificar el símbolo que a continuación se detalla
+			en la imagen, el cuál describe en todos los diferentes módulos la posibilidad de
+			<strong>Modificar o Editar </strong>a los registros ya realizados.</p>
+		<br>
+		<p><img src="img/Adm/c20.png"></p>
+		<br>
+		<h3>BAJAS</h3>
+		<p>El Sistema permite al Administrador a Eliminar o Dar la baja a toda la Información
+			Registrada en el mismo.</p>
+		<p>A tal fin deberá seleccionar el módulo de Baja que se encuentra representado por el
+			siguiente Símbolo.</p>
+		<br>
+		<p><img src="img/Adm/c21.png"></p>
+		<br>
+	
+	
+	</div>
+	
+	<div class="footer container">
+		<div class="row">
+			<div class="col-md-9">
+				<a href="http://www.transporte.gob.ar/" class="btn btn-info">Reportar un error</a>
+			</div>
+			<div class="col-md-3">
+				<a href="http://www.transporte.gob.ar/"><img
+						src="http://www.transporte.gob.ar/UserFiles/logo_direccion(1).png"
+						alt="Ir al Sitio Ministerio de Transporte"></a>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

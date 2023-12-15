@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />    
+    <title>{{{TITLE}}}</title>
+    <link rel="shortcut icon" href="https://www.transporte.gob.ar/_img/favicon.png" />
+    {{{CSS_FILES}}}
+    <link rel="stylesheet" href="{{{CSS_FILE}}}"/>
+    {{{/CSS_FILES}}}
+    {{{JS_FILES}}}
+    <script src="{{{JS_FILE}}}" charset="utf-8"></script>  
+    {{{/JS_FILES}}}
+  </head>
+  <body>
+    {{{CABECERA}}}
+    <div class="container-fluid">
+         <div class="row">
+           <div class="col-lg-12">
+            <div class="pull-right">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <span class=" text-primary"><i
+                          class="fa fa-user fa-fw"></i> {{{NOMBRE_USUARIO}}}</span>
+                </li>
+                <li class="breadcrumb-item">
+                    <span class=" text-primary"><i
+                          class="fa fa-suitcase fa-fw"></i> {{{ROL_USUARIO}}}</span>
+                </li>
+                {{{UBICACION_USUARIO}}}
+              </ol>
+            </div>
+            <div class="page-header header-half menos_top">
+              <h2><i  aria-hidden="true"></i> {{{TITULO}}} <small>| {{{SUBTITULO}}}</small> {{{EXTRAS}}}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 mensajeria">
+        		{{{ERROR}}}
+        			<div class="alert alert-danger fade in alert-dismissable">
+        				<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        				  <i class="fa fa-times-circle"></i> {{{MSJ}}}
+        			</div>
+        		{{{/ERROR}}}
+        		{{{AVISO}}}
+        			<div class="alert alert-success fade in alert-dismissable">
+        				<a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+        				  <i class="fa fa-check"></i> {{{MSJ}}}
+        			</div>
+        		{{{/AVISO}}}
+            {{{AVISO_GENERICO}}}
+              <div class="alert alert-{{{TIPO_ALERT}}} fade in alert-dismissable">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                  <i class="{{{FA_ICON}}}" aria-hidden="true"></i> {{{MSJ}}}
+              </div>
+            {{{/AVISO_GENERICO}}}
+        </div>
+      </div>
+        {{{CONTENT}}}
+      <br/>  
+    </div>
+    <br/> 
+    {{{JS}}}
+    <script type="text/javascript">{{{JS_CODE}}}</script>
+    {{{/JS}}}
+    {{{JS_FOOTER}}}
+    <script type="text/javascript" src="{{{JS_SCRIPT}}}"></script>
+    {{{/JS_FOOTER}}}
+    {{{PIE}}}
+  </body>
+</html>

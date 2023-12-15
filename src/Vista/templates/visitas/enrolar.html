@@ -1,0 +1,101 @@
+
+<div class="row">
+    <div class="col-sm-12">
+        <h5 class="text-secundary"><u>{{{NOMBRE}}} {{{APELLIDO}}}</u></h5>
+    </div>
+</div>
+<div class="row">
+
+    <fieldset class="col-md-4">
+        <legend>
+            Persona
+        </legend>
+        <dl class="dl-horizontal">
+            <dt>Documento:</dt>
+            <dd>{{{DOCUMENTO}}}</dd>
+            <dt>Apellido:</dt>
+            <dd>{{{APELLIDO}}}</dd>
+            <dt>Nombre:</dt>
+            <dd>{{{NOMBRE}}}</dd>
+        </dl>
+    </fieldset>
+
+    <fieldset class="col-md-4">
+        <legend>Ubicaciones</legend>
+        <dl class="dl-horizontal">
+            <dt>Nombre de Ubicación</dt>
+            <dd>{{{UBICACION_NOMBRE}}}</dd>
+            <dt>Calle</dt>
+            <dd>{{{UBICACION_CALLE}}}</dd>
+            <dt>Número</dt>
+            <dd>{{{UBICACION_NUMERO}}}</dd>
+        </dl>
+    </fieldset>
+
+    <fieldset class="col-md-4">
+        <legend>Autorizante</legend>
+        <dl class="dl-horizontal">
+            <dt>Nombre</dt>
+            <dd>{{{AUTORIZANTE_NOMBRE}}}</dd>
+        </dl>
+    </fieldset>
+</div>
+<hr/>
+<div class="row m-b-0">
+    <div class="col-md-6 m-b-0">
+        <div class="m-b-0 alert alert-danger" style="{{{NO_ENROLADO}}}" role="alert" id="enrolar" >
+            <span class="fa fa-fw fa-times-circle"></span> <strong> Usuario no enrolado</strong> 
+        </div>
+        <div class="m-b-0 alert alert-success" style="{{{ENROLADO}}}" role="alert">
+            <span class="fa fa-fw fa-check-circle"></span> <strong> Usuario enrolado</strong> 
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">{{{RE_ENROLAMIENTO}}}enrolamiento</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <button class="btn btn-primary" id="buscar-template"
+                            data-access-id="{{{DOCUMENTO}}}" data-ubicacion-id="{{{UBICACION_ID}}}" type="button">
+                        Buscar
+                    </button>
+                </div>
+                <div class="col-xs-8">
+                    <div class="x" id="template-data" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6" style="{{{ENROLADO}}}">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title celeste">Re envio de huellas a ubicación</div>
+                </div>
+            </div>
+            <div class="row">
+            
+                <div class="col-xs-3">
+                    <div class="form-group text-right">
+                        <button class="btn btn-primary" id="actualizar-template" data-access-id="{{{DOCUMENTO}}}" data-ubicacion-id="{{{UBICACION_ID}}}"  type="button">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 text-right">
+        <a class="btn btn-default" href="{{{CANCELAR}}}">CANCELAR</a>
+    </div>
+</div>

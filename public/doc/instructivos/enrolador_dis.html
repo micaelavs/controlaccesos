@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <title>Control de Accesos | Ministerio de Transporte</title>
+	    <link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+
+	   	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	     <link rel="stylesheet" href="/cdn/estiloIS/3/estilois.css"/>
+	   
+	    <script src="/cdn/js/jquery.js" charset="utf-8"></script>
+	    <script src="/cdn/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/moment.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/es.js" charset="utf-8"></script>
+	</head>
+
+<!-- //// CSS //// -->
+<style>
+		h4, h5, h6 {
+			color:#0072bc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.box-shadow {
+			box-shadow:13px 9px 22px 1px rgba(0,0,0,0.4);
+		}
+
+		.prefijo {
+			margin-top: 30px;
+		}
+
+		 #return-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.7);
+				width: 50px;
+				height: 50px;
+				display: block;
+				text-decoration: none;
+				-webkit-border-radius: 35px;
+				-moz-border-radius: 35px;
+				border-radius: 35px;
+				display: none;
+				-webkit-transition: all 0.3s linear;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				background: black;
+			}
+
+			.active
+			a:active, a:hover {
+			outline: 0;
+			}
+
+			#return-to-top i {
+				color: #fff;
+				margin: 0;
+				position: relative;
+				left: 16px;
+				top: 13px;
+				font-size: 19px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				   background: rgba(0, 0, 0, 0.9);
+			}
+			#return-to-top:hover i {
+				   color: #fff;
+				   top: 5px;
+			}
+
+	</style>
+
+<body>
+
+	<a href="javascript:" id="return-to-top" style="display: block;">
+	        <i class="fa fa-arrow-up">
+	        </i></a>
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	    <div class="container main bar">
+	        <div class="row">
+	            <div role="main" class="col-md-12">
+	                <div class="page-header">
+
+	                </div>
+	            </div>
+	        </div>
+
+	        <h2>Índice</h2> 
+				<li><a href="#sec_introduccion"><b>INTRODUCCIÓN</b></a></li>
+				<li><b>ALTAS</b></li>
+				<ul>
+					<li><a href="#sec_usuarios"><b>USUARIOS</b></a></li>
+					<li><a href="#sec_personas"><b>PERSONAS</b></a></li>
+					<li><a href="#sec_empleados"><b>EMPLEADOS</b></a></li>
+					<li><a href="#sec_relojes"><b>RELOJES</b></a></li>
+						<ul>
+							<li><a href="#sec_editar">EDITAR</a></li>
+							<li><a href="#sec_sincronizaciones">SINCRONIZACIONES</a></li>
+							<li><a href="#sec_alta_reloj_daemon">ALTA DE RELOJ EN DAEMON</a></li>
+							<li><a href="#sec_recarga_reloj">RECARGA DE RELOJ</a></li>
+							<li><a href="#sec_eliminar_reloj">ELIMINAR RELOJ</a></li>
+							<li><a href="#sec_enrolador_actual">ENROLADOR ACTUAL</a></li>
+							<li><a href="#sec_actualizar_huellas_personas">ACTUALIZAR HUELLA DE PERSONAS</a></li>
+							<li><a href="#sec_logs_reloj">LOGS DEL RELOJ</a></li>
+							<li><a href="#sec_accesos_restringidos">ACCESOS RESTRINGIDOS HABILITADOS</a></li>
+						</ul>
+					<li><a href="#sec_alerta_reloj"><b>ALERTA RELOJ</b></a></li>
+					<li><a href="#sec_visitas_enroladas"><b>VISITAS ENROLADAS</b></a></li>
+					<li><a href="#sec_accesos_bio_hacienda"><b>ACCESOS BIO HACIENDA</b></a></li>
+				</ul>
+
+				<li><b>REPORTES</b></li>
+				<ul>
+					<li><a href="#sec_reporte_empleados"><b>EMPLEADOS</b></a></li>
+					<li><a href="#sec_contratistas_visitas"><b>CONTRATISTAS Y VISITAS</b></a></li>					
+				</ul>
+
+				<li><b>MIS CONSULTAS</b></li>
+				<ul>
+					<li><a href="#sec_mis_horarios"><b>MIS HORARIOS</b></a></li>
+					<li><a href="#sec_mis_solicitudes"><b>MIS SOLICITUDES</b></a></li>
+				</ul>
+
+				<li><a href="#sec_sesion"><b>CERRAR SESIÓN</b></a></li>
+		<hr>
+	    </div>
+	    	    <!-- // CONTENIDO // -->
+	<div class="container main">
+		<section>
+			<h4 id="sec_introduccion" class="justificado">INTRODUCCION</h4>
+			<p>La Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación, ha diseñado un Sistema informático para el Acceso de Personas al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos.</p>
+		</section>
+		<h4>ACCESO AL SISTEMA</h4>
+				<p> Para acceder al sistema de Presentismo, el usuario deberá ingresar a la siguiente dirección:
+	            <a href="https://intranet.transporte.gob.ar/ " target="_blank">intranet.transporte.gob.ar</a> y despues ingresar al modulo <b>Control de Accesos</b>.</p>
+	            <p>Para ingresar al sistema, el usuario deberá usar su usuario y contraseña de dominio, una ves ingresado los datos podra navegar segun las credenciales que posea.</p>
+	            <img src="./img/instructivo/enrolador_dis/ingreso_al_sistema.jpg" alt="login" class="box-shadow" width="100%">
+	            <section>
+	            	<h4>ALTAS</h4>
+	            	<h5 id="sec_usuarios">USUARIOS</h5>
+	            	<p>Este apartado permite dar de alta nuevos usuarios completando obligatoriamente los campos Nombre y Apellido y DNI; o dar de baja usuarios pre-existentes. Es una condición necesaria para ser registrado como usuario haber sido registrado previamente como empleado.</p>
+	            	<img src="./img/instructivo/enrolador_dis/pantalla_usuarios.png" alt="pantalla de usuarios" class="box-shadow" width="100%">
+	            	<p class="prefijo">Para ingresar a la pantalla de <b>Registrar Usuario</b> hacemos click en el boton <i>Nuevo</i>.<br>Ingresaremos en la siguiente pantalla:</p>
+	            	<img src="./img/instructivo/enrolador_dis/registro_usuario.png" alt="registro de usuario" class="box-shadow" width="100%">
+	            	<p class="prefijo">Deberemos completar los campos <i>Nombre de Usuario</i> y <i>Documento</i> para poder asociar el usuario a los datos del empleado. Se podrá modificar los datos y el perfil de cada usuario, a fin de restringir o brindarle acceso a otras tareas. Se podran asignar todos los roles de usuario existentes dentro del sistema.</p>
+	            	<h5 id="sec_personas" class="prefijo">PERSONAS</h5>
+	            <p>En esta seccion podremos visualizar el listado completo de personas registradas dentro del sistema, todos los empleados, visitas y contratistas se visualizaran en esta pantalla.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_personas.png" alt="pantalla de personas" class="box-shadow" width="100%">
+	            <p class="prefijo">Tambien tendremos disponible el boton <i>Agregar</i> para poder dar de alta una persona o actualizar los datos de la persona en el que caso de que ya exista dentro del sistema.</p>
+	            <img src="./img/instructivo/enrolador_dis/registrar_persona.png" alt="registrar persona" class="box-shadow" width="100%">
+	            <h5 id="sec_empleados" class="prefijo">EMPLEADOS</h5>
+	            <p>En esta seccion podremos visualizar el listado completo de los <i>Empleados</i> con sus correspondientes datos:</p>
+	            	<ul>
+	            		<li>Documento</li>
+	            		<li>Nombre</li>
+	            		<li>Apellido</li>
+	            		<li>Ubicacion Principal</li>
+	            		<li>Ubicaciones Autorizadas</li>
+	            		<li>Dependencia Principal</li>
+	            		<li>Contrato</li>
+	            		<li>Enrolado</li>	            		
+	            	</ul>
+	            	<p>Tambien contaremos con opciones de filtrado como <i>Dependencias</i>, <i>Ubicaciones</i>, <i>Ubicacion Principal</i>, <i>Tipo de Contrato</i>, <i>Enrolado</i> y un boton para poder visualizar el listado de empleados <i>inactivos</i>.</p>
+	            	<img src="./img/instructivo/enrolador_dis/pantalla_empleados.png" alt="pantalla de personas" class="box-shadow" width="100%">
+	            	<p class="prefijo">Para dar de alta un <i>Empleado</i> deberemos seleccionar el boton <b>Nuevo</b> ingresaremos en una pantalla donde visualizaremos un formulario el cual deberemos completar ingresando todos los datos obligatorios como <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i>, <i>CUIT</i>, <i>Email</i>, <i>Genero</i>, <i>Dependencia Principal</i>, <i>Fecha Desde</i>, <i>Fecha Hasta</i>, <i>Cargo</i>, <i>Ubicaciones Autorizadas</i> y <i>Ubicacion Principal</i>.</p>
+	            	<img src="./img/instructivo/enrolador_dis/alta_empleados.png" alt="alta de empleados" class="box-shadow" width="100%">
+	            	<p class="prefijo">Cada empleado contara con una columna llamada <i>Acciones</i> que contendra cuatro iconos <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">), <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Borrar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">).<br>Tambien contaremos con un exportador a <b>Excel</b> donde podremos visualizar todos los datos de los empleados.</p>
+	            	<h6 class="prefijo">ENROLAR</h6>
+	            <p class="prefijo">Al hacer click en el icono de <i>Enrolar</i> ingresaremos a la pantalla de enrolamiento en la que deberemos enrolar previamente al empleado en el reloj biometrico para luego buscar las huellas seleccionando el boton <i>Buscar</i>.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_enrolar.png" alt="pantalla de enrolar" class="box-shadow" width="100%">
+	            <h6 class="prefijo">EDITAR</h6>
+	            <p class="prefijo">Al ingresar en la pantalla de <b>Editar</b>, podremos modificar todos los campos detallados anteriormente en el formulario de <i>Alta de Empleado</i>.</p>
+	            <h5 id="sec_relojes" class="prefijo">RELOJES</h5>
+	            <p>En esta seccion podremos visualizar el estado de los relojes biometricos con sus correspondientes datos como <i>DNS</i>, <i>Numero de IP</i>, <i>Nodo</i>, <i>Ubicacion</i>, <i>Estado</i> y <i>Ultima conexion</i>.</p><p>Cuando los relojes esten <i>Online</i> el icono de los mismos se pondra de color verde (<img src="./img/instructivo/iconos_botones/icono_reloj_2.png">), caso contrario se encontraran en color rojo (<img src="./img/instructivo/iconos_botones/icono_reloj.png">) </p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_relojes.png" alt="pantalla de relojes" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta un Reloj biometrico en el sistema deberemos seleccionar el boton <b>Agregar</b>.</p>
+	            <img src="./img/instructivo/enrolador_dis/alta_reloj.png" alt="Alta de reloj" class="box-shadow" width="100%">
+	            <p class="prefijo">Deberemos completar todos los campos obligatorios y seleccionar <i>Guardar</i>.</p><p>En la columna <i>Acciones</i> contaremos con varias opciones como <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) , <i>Sincronizaciones</i> (<img src="./img/instructivo/iconos_botones/sincronizaciones.png">) , <i>Alta Reloj en Daemon</i> (<img src="./img/instructivo/iconos_botones/alta_reloj.png">) , <i>Eliminar Reloj</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) , <i>Connfigurar como Enrolador Actual</i> (<img src="./img/instructivo/iconos_botones/enrolador_actual.png">) , <i>Actualizar huellas de personas</i> (<img src="./img/instructivo/iconos_botones/actualizar_huellas.png">) , <i>Ver logs del reloj</i> (<img src="./img/instructivo/iconos_botones/ver_logs.png">) y <i>Ver accesos Restringidos habilitados</i> (<img src="./img/instructivo/iconos_botones/accesos_habilitados.png">) .</p><br><p>A continuacion pasaremos a describir la funcionalidad de cada uno de estas opciones:
+	            	<h6 id="sec_editar" class="prefijo">EDITAR</h6>
+	            <p>En la pantalla de <i>Editar</i> podremos modificar cada uno de los campos descriptos anteriormente.</p>
+	            <img src="./img/instructivo/enrolador_dis/modificar_reloj.png" alt="Modificacion de reloj" class="box-shadow" width="100%">
+	            <h6 id="sec_sincronizaciones" class="prefijo">SINCRONIZACIONES</h6>
+	            <p class="prefijo">En la pantalla de <i>Sincronizaciones</i> podremos visualizar el listado completo de todas las marcaciones registradas en el reloj cuando el mismo sincroniza los datos almacenados mediante su estado Offline (Sin conexion).</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_marcaciones.png" alt="Pantalla de Marcaciones" class="box-shadow" width="100%">
+	            <p class="prefijo">Al ingresar podremos visualizar dentro del listado los diferentes <i>Numeros de Lote</i> que contendran las marcaciones que el sistema obtuvo cuando el reloj se sincronizo al volver estar <i>Online</i>, cada lote de marcaciones estara separado y podremos ingresar en los mismos seleccionando el icono (<img src="./img/instructivo/iconos_botones/ver_logs.png">).</p>
+	            <img src="./img/instructivo/enrolador_dis/marcaciones.png" alt="Marcaciones" class="box-shadow" width="100%">
+	            <p class="prefijo">Podremos visualizar las marcaciones correspondientes al lote seleccionado.<br>Tambien contaremos con un exportador mediante Excel para poder observar los datos mas detalladamente.</p>
+	            	<h6 id="sec_alta_reloj_daemon" class="prefijo">ALTA DE RELOJ EN DAEMON</h6>
+	            <p>Al seleccionar esta opcion el sistema pondra en funcionamiento Online el reloj biometrico ingresado en el listado</p>
+	            	<h6 id="sec_recarga_reloj" class="prefijo">RECARGA DE RELOJ EN DAEMON</h6>
+	            <p>Al seleccionar esta opcion podremos reiniciar el reloj biometrico en caso de que se produje algun inconveniente.</p>
+	            	<h6 id="sec_eliminar_reloj" class="prefijo">ELIMINAR RELOJ</h6>
+	            <p>Al seleccionar esta opcion podremos eliminar el reloj biometrico del listado.</p>
+	            	<h6 id="sec_enrolador_actual" class="prefijo">ENROLADOR ACTUAL</h6>
+	            <p>Al seleccionar esta opcion podremos configurar el reloj biometrico como enrolador actual en el cual podremos enrolar las huellas digitales para luego buscarlas en el sistema.</p>
+	            	<h6 id="sec_actualizar_huellas_personas" class="prefijo">ACTUALIZAR HUELLAS DE PERSONAS</h6>
+	            <p>Al seleccionar esta opcion podremos actualizar todas las huellas de los empleados que posean la ubicacion del reloj biometrico.</p>
+	            	<h6 id="sec_logs_reloj" class="prefijo">VER LOGS DEL RELOJ</h6>
+	            <p>En esta seccion podremos visualizar un listado de logs con actualizaciones de los estados de los relojes.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_logs_relojes.png" alt="pantalla de logs de los relojes" class="box-shadow" width="100%">
+	            	<h6 id="sec_accesos_restringidos" class="prefijo">VER ACCESOS RESTRINGIDOS HABILITADOS</h6>
+	            <p>En esta seccion podremos visualizar y agregar a los empleados que podran ingresar por el reloj biometrico, al estar activada esta opcion desde las opciones del reloj, solo podran ingresar por ese reloj biometrico los empleados que se encuentren este listado.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_acceso_restringido.png" alt="pantalla de acceso restringido" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta un acceso restringido deberemos seleccionar el boton <i>Agregar</i>, ingresaremos a una pantalla donde solo debremos ingresar el numero de documento del empleado que necesitemos agregar.</p>
+	            <img src="./img/instructivo/enrolador_dis/registrar_acceso_restringido.png" alt="resigtro de acceso registringido" class="box-shadow" width="100%">
+	            <h5 id="sec_alerta_reloj" class="prefijo">ALERTA DE RELOJ</h5>
+	            <p>En esta seccion podremos dar de alta los empleados que recibiran las notificaciones via email de los estados de los relojes biometricos.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_alerta_reloj.png" alt="pantalla de alerta del reloj" class="box-shadow" width="100%">
+	            <p class="prefijo">Para ingresar un empleado en el listado de alertas deberemos seleccionar el boton <i>Nuevo</i>, ingresaremos a una pantalla en donde deberemos ingresar la direccion de email del empleado para poder darlo de alta en el listado.</p>
+	            <img src="./img/instructivo/enrolador_dis/registro_alerta_reloj.png" alt="registro de reloj" class="box-shadow" width="100%">
+	            <h5 id="sec_visitas_enroladas" class="prefijo">VISITAS ENROLADAS</h5>
+	            <p>En esta seccion tendremos disponible el listado de <i>Visitas enroladas</i> en el cual podremos enrolar a las visitas que ingresen con frecuencia en las diferentes dependencias.<br>En el listado tendremos a las diferentes visitas con sus correspondientes datos como <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i> y <i>Ubicaciones Autorizadas</i>. Tendremos disponible una columna llamada <strong>Acciones</strong> con tres iconos, <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">), <i>Modificar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">).<br>Contaremos con un <b>filtro</b> desplegable en donde podremos filtrar por <i>Ubicaciones Autorizadas</i> y <i>Enrolado</i>.<br>Tambien tendremos un boton para visualizar las visitas <i>Inactivas</i> y un boton para realizar una exportacion via <i>Excel</i>.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_visitas_enroladas.png" alt="pantalla de visitas enroladas" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta la visita deberemos hacer click en el boton <i>Nuevo</i>, deberemos completar todos los campos obligatorios como <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i>, <i>Ubicaciones Autorizadas</i>, <i>Nombre y Apellido del Autorizante</i>, <i>Fecha Desde</i> y <i>Fecha Hasta</i>.</p>
+	            <img src="./img/instructivo/enrolador_dis/alta_visita_enrolada.png" alt="alta de visitas enroladas" class="box-shadow" width="100%">
+	            <p class="prefijo">Para acceder a la pantalla de enrolamiento biometrico para la visita deberemos hacer click en el icono de <i>Enrolar</i> (<img src="./img/instructivo/iconos_botones/boton_enrolar.png">) y buscar las huellas de la visita que deberan ser registradas previamente en el reloj biometrico de la dependencia correspondiente de la misma forma que en la seccion de <b>Empleados</b>.</p>
+	            <h5 id="sec_accesos_bio_hacienda" class="prefijo">ACCESOS BIO HACIENDA</h5>
+	            <p>En esta seccion podremos consular y sincronizar los accesos de los biometricos del edificio de hacienda, dentro del presente listado se podran visualizar todos los accesos de las personas que no forman parte de los empleados del Ministerio.</p>
+	            <img src="./img/instructivo/enrolador_dis/pantalla_bio_hacienda.png" alt="listado bio hacienda" class="box-shadow" width="100%">
+	            </section>
+	            <section>
+	            	<h4>REPORTES</h4>
+	            <h5 id="sec_reporte_empleados" class="prefijo">EMPLEADOS</h5>
+	            <p>En este apartado se podrá obtener la información que se requiera respecto a los empleados, Contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Dependencia</i>, <i>Fecha Desde</i>, <i>Fecha Hasta</i> y <i>Otros Criterios</i>, para realizar la busqueda debemos hacer click en el boton <b>Filtrar</b>.<br>En el listado cada tipo de <i>Ingreso</i> y <i>Egreso</i> estaran diferenciados por:</p>
+	            <ul>
+	            	<li>Registro de Comision Horaria <img src="./img/instructivo/iconos_botones/comision_horaria.png"></li>
+	            	<li>Registro desde puesto CIET <img src="./img/instructivo/iconos_botones/online.png"></li>
+	            	<li>Registro Biometrico <img src="./img/instructivo/iconos_botones/reloj.png"></li>
+	            	<li>Registro Biometrico MECON <img src="./img/instructivo/iconos_botones/biohacienda.png"></li>
+	            	<li>Registro Manual <img src="./img/instructivo/iconos_botones/offline.png"></li>
+	            	<li>Sin Registro <img src="./img/instructivo/iconos_botones/sinregistro.png"></li>
+	            </ul>
+	            <img src="./img/instructivo/enrolador_dis/reportes_empleados.jpg" alt="reporte de empleados" class="box-shadow" width="100%">
+	            <h5 class="prefijo" id="sec_contratistas_visitas">CONTRATISTAS Y VISITAS</h5>
+	            <p>En esta seccion se podran obtener el historico de los datos correspondientes a contratistas y visitas. Al igual que en el historico de empleados contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Tipo de Acceso</i>, <i>N° de Credencial</i>, <i>Fecha Desde</i> y <i>Fecha Hasta</i>, ademas de un campo llamado <i>Otros Criterios</i> en donde podremos realizar una busqueda mas especifica.</p>
+	            <img src="./img/instructivo/enrolador_dis/historico_contratistas_visitas.jpg" alt="pantalla de contratistas y visitas" class="box-shadow" width="100%">
+	            <p class="prefijo">En ambas pantallas contaremos con la opcion de exportar mediante <i>Excel</i>.</p>
+	            </section>
+	            <section>
+	            	<h4>MIS CONSULTAS</h4>
+	            <h5 id="sec_mis_horarios" class="prefijo">MIS HORARIOS</h5>
+	            <p>En esta seccion el usuario logueado podra visualizar los horarios y sus propios registros dentro del sistema.</p>
+	            <img src="./img/instructivo/enrolador_dis/mis_horarios.jpg" alt="Pantalla de mis horarios" class="box-shadow" width="100%">
+	            <h5 id="sec_mis_solicitudes" class="prefijo">MIS SOLICITUDES</h5>
+	            <p>En esta seccion podremos dar de alta <i>Solicitudes</i>.</p>
+	            <img src="./img/instructivo/enrolador_dis/mis_solicitudes.png" alt="pantalla mis solicitudes" class="box-shadow" width="100%">
+	            <p class="prefijo">Dentro de la pantalla para dar de alta una solicitud deberemos seleccionar el boton <i>Nueva Solicitud</i>.</p>
+	            <img src="./img/instructivo/enrolador_dis/nueva_solicitud.png" alt="Nueva Solicitud" class="box-shadow" width="100%">
+	            <p class="prefijo">Deberemos completar todo los campos para dar de alta la solicitud los cuales seran <i>Tipo de Solicitud</i>, <i>Entidad Destino</i>, <i>Firma Certificada</i> y <i>Observaciones</i>(Esta ultima como opcional).<br>Tambien dependiendo del tipo de solicitud que ingresemos el sistema nos habilitara campos adicionales a completar. Contaremos tambien con la opcion de esportarcion mediante <b>Excel</b>.</p>
+	            </section>
+	            
+	            <section id="sec_sesion" class="justificado">
+	            <h4>CERRAR SESIÓN</h4>
+	            <p>Para salir del sistema el usuario debe <b>CERRAR SESIÓN</b> en el botón que se encuentra en la esquina superior derecha.</p>
+	            <img src="./img/instructivo/iconos_botones/cerrar_sesion.png" alt= "Cerrar Sesion." class="box-shadow" style="display: block; margin:auto;">
+	        </section>
+	        <p style="float: right;">Manual de Uso Versión v1.2.0</p>
+	        <script src="../js/ancla.js" charset="utf-8"></script>
+	        </div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="container">
+        <form method="GET" action="" onsubmit="return false">
+            <div class="form-group">
+                <label style="display: block;">
+                    <span class="">
+                        <i class="fa fa-filter"></i> Filtros
+                    </span>
+                </label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-group control-label" for="ubicaciones_autorizadas">Ubicaciones Autorizadas</label>
+                        <select id="ubicaciones_autorizadas" name="ubicaciones_autorizadas" class="form-control heigh">
+                            <option value="">Todos</option>
+                            {{{UBICACIONES_AUTORIZADAS}}}
+                                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                            {{{/UBICACIONES_AUTORIZADAS}}}
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-group control-label" for="enrolado">Enrolado</label>
+                        <select id="enrolado" name="enrolado" class="form-control heigh">
+                            <option value="">Todos</option>
+                            <option value="2">Si</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-group control-label" for="estado">Estado</label>
+                        <div class="row">
+                            <a href="{{{LINK_ESTADO}}}" class="btn {{{CLASS_ESTADO}}}"><i class="fa fa-random"></i> {{{ESTADO}}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <table id="tabla" class="table table-striped dataTables dataTable no-footer dtr-inline" style="width:100%;">
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 text-right">
+        <a class="btn btn-primary" href="{{{LINK}}}">NUEVO</a>
+    </div>
+</div>

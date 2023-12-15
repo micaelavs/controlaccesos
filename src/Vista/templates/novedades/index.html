@@ -1,0 +1,60 @@
+
+<div class="row" id="url-base" data_url='{{{URL_BASE}}}'>
+  <div class="col-xs-12">
+    <a role="button" data-toggle="collapse" href="#collapseFiltros" aria-expanded="false" aria-controls="collapseFiltros"
+      style="display: block;">
+      <span class="">
+        <i class="fa fa-filter"></i> Filtros
+        <i class="fa fa-caret-right fa-fw" id="collapseFiltros_caret"></i>
+      </span>
+    </a>
+    <div class="collapse" id="collapseFiltros">
+      <div class="row">
+         	<div class="col-md-3">
+	            <div class="form-group">
+	              	<label for="tipo_novedad_filtro" class="control-label">Tipo Novedad</label>
+	              	<select name="tipo_novedad_filtro" id="tipo_novedad_filtro" class="form-control">
+	                <option value="">Seleccione</option>
+	                {{{TIPO_NOVEDAD}}}
+	                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+	                {{{/TIPO_NOVEDAD}}}
+	              </select>
+	            </div>
+           </div>
+      	   <div class="col-xs-3">
+            <div class="form-group">
+                <label for="fecha_desde_filtro" class="control-label">Fecha Desde</label>
+                <div class="input-group date fecha_desde_filtro">
+                    <input type="text" class="form-control" id="fecha_desde_filtro"
+                        name="fecha_desde_filtro" value="">
+                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                </div>
+            </div>
+       	  </div>
+        	<div class="col-xs-3">
+              <div class="form-group">
+                  <label for="fecha_hasta_filtro" class="control-label">Fecha Hasta</label>
+                  <div class="input-group date fecha_hasta_filtro">
+                      <input type="text" class="form-control fecha_hasta_filtro" id="fecha_hasta_filtro"
+                          name="fecha_hasta_filtro" value="">
+                      <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<table id="tabla" class="table table-striped dataTables dataTable no-footer dtr-inline novedades_listado"></table>
+<div>
+    <div class="col-md-11 text-right">
+        <a class="btn btn-primary" href="{{{LINK}}}">NUEVO</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 exportador">   
+        <button class="btn btn-default accion_exportador" value="{{{BOTON_EXCEL}}}"><span class="fa fa-file-text-o"></span> EXCEL</button> 
+    </div>
+
+</div>

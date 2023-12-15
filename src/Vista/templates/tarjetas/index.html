@@ -1,0 +1,112 @@
+
+<div class="row">	
+    <div class="col-xs-12" id="mensajes"></div>
+</div>
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3 text-right">
+        <label class="float-md-right control-label">
+            <p><i>Campos requeridos(<span class="text-danger">*</span>)</i></p>
+        </label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table id="listado_tarjetas" class="table table-striped dataTables"></table>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label" for="reloj_lista"> Reloj Seleccionado <span class="required">*</span></label><br>
+                        <select class="form-control" id="reloj_lista" tabindex="16" name="reloj_lista[]">
+                            <option value=""> Seleccione un reloj </option>
+                            {{{RELOJES}}}
+                                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                            {{{/RELOJES}}}
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <label class="control-label" for="nroTarjeta" id="lbNroCodigo">Nro Tarjeta</label>
+                    <input class="form-control input" type="text" name="nroTarjeta" id="nroTarjeta" value="">
+                    <span class="text-danger p-muted" id="span_error"></span>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-primary" type="button" style="margin-top: 25px" onclick="inserta_nroTarjeta()">Añadir a lista a enrolar</button>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label" for="tarjetas_lista">Lista de Tarjetas Enrolar <span class="required">*</span></label><br>
+                        <select class="form-control" id="tarjetas_lista" tabindex="16" name="tarjetas_lista[]" multiple="multiple">
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label class="control-label" for="tarjetas_lista_des">Lista de Tarjetas Desenrolar <span class="required">*</span></label><br>
+                        <select class="form-control" id="tarjetas_lista_des" tabindex="16" name="tarjetas_lista_des[]" multiple="multiple">
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-3"></div>
+                <div class="col-md-2">
+                    <input id="bt_tarjeta" type="button" class="btn btn-warning " value="Añadir desde lector" onClick="popUpTarjeta()" />
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary" id="enrolar-tm"  type="button"> Enrolar Lista en Reloj </button>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary" id="desenrolar-tm"  type="button"> Desenrolar Lista en Reloj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-8"></div>
+    <div class="col-md-4 text-right">
+        <a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+    </div>
+</div>
+
+
+<!--Modal Nro. Tarjeta Lector-->
+<div class="modal fade" id="modalNumeroTarjeta" tabindex="-1" data-operacion="">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h5 class="modal-title" id="tituloModalNroTarjeta">Aproxime la tarjeta al lector</h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group" id="div_caja_texto">
+              <input type="text" class="oculto" id="modal_nro_tarjeta" name="modal_nro_tarjeta" value="">
+              <input type="hidden" id="hdNroTarjeta" name="hdNroTarjeta" value=""/>
+          </div>
+          <div class="form-group">
+              <h6 class="modal-title">La tarjeta por asignar es: <span id="textoTarjetaAsignar"></span></h6>
+          </div>
+          <div class="form-check">
+              <input type="checkbox"  style="display: inline;" class="form-check-input" id="chk_ocultar_caja_texto" onClick="ocultarCajaTexto()"/>
+              <span class="form-check-label" for="chk_ocultar_caja_texto">Mostrar/Ocultar caja de texto</span>
+          </div> 
+        </div>   
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-bottom: 0px !important">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="modal_btn_guardar_nro_tarjeta" disabled>Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Fin Modal Nro. Tarjeta Lector-->

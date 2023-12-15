@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Control de Accesos | Instructivo de AUDITOR</title>
+	<link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+	
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	<link rel="stylesheet" href="/cdn/estiloIS/2/estilois.css">
+	
+	<script>
+		$(document).ready(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+			$('[data-toggle="popover"]').popover();
+		});
+	</script>
+	<style>
+		
+		h3, h5, hr {
+			color: #0094d4;
+		}
+		
+		.fondo {
+			background-color: #DAE6EA;
+		}
+		
+		p {
+			font-size: 20px;
+		}
+		
+		em {
+			font-size: 15px;
+			font-family: monospace;
+		}
+		
+		.img-100 {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header" style="height: 80px;">
+			<a class="navbar-brand" href="https://desa.transporte.gob.ar/estilo/diseno.html#">
+				<img src="./img/logo_ministerio_grande_blanco.png" height="50" alt="">
+			</a>
+		</div>
+		
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+	</div><!-- /.container-fluid -->
+</nav>
+
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	<div class="container main">
+
+		<div class="row">
+			<div role="main" class="col-md-12">
+				<div class="page-header">
+					<h1>Control de Acceso
+						<small>- Manual de Auditor</small>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- // CONTENIDO // -->
+	<div class="container main">
+
+		<h3> OBJETO</h3>
+		<p>La <strong>Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación</strong>, ha
+			diseñado
+			un <strong>Sistema informático para el Acceso de Personas </strong> para sus distintas dependencias,
+			permitiendo
+			su implementación a otros organismos.</p>
+
+		<p><strong>Para ello ha diseñado, desarrollado e implementado un Sistema que permite:</strong></p>
+		<p>a. Administrar el ingreso de personal interno, externo y visitas.</p>
+		<p>b. Controlar, auditar, dar Altas/ Bajas y Modificaciones al mismo.</p>
+		<p>c. Asignar distintos roles según el tipo de responsabilidades de los agentes.
+		<p>
+		<p>d. Permitir el acceso adecuado a los funcionarios a fin de que puedan acceder a la información del sistema
+			utilizando los recursos tecnológicos, con solo ingresar su usuario y contraseña.</p>
+		<br>
+
+		<h3>ALCANCE</h3>
+
+		<p>El presente sistema es de utilización obligatoria a todos los agentes y funcionarios públicos que
+			por competencia específica controlan el Acceso de ingreso y egreso de personasal Ministerio
+			de Transporte y sus dependencias.</p>
+		<p>
+			Excepcionalmente y por cuestiones de caso fortuito o fuerza mayor podrán exceptuar la
+			utilización del sistema de control. Dichos supuestos serán identificados en el apartado final del
+			presente Manual en el apartado <strong>Otras Consideraciones que mas adelante se detallaran.</strong></p>
+		<p>
+			Las personas que ingresan al Ministerio de Transporte de la Nación y sus dependencias serán
+			registradas en el sistema según sean:</p>
+		<p>
+			<strong>Personal interno de la sede:</strong> refiere a quienes ingresan al edificio en donde realizan sus
+			tareas</p>
+		<p>
+			<strong>Personal externo de la sede:</strong> es el personal perteneciente al Ministerio de Transporte y sus
+			dependencias que acceden a una sede que no es donde ejercen sus tareas.</p>
+		<p>
+			<strong>Contratistas y sus dependientes:</strong> refiere a las personas que se vinculan contractualmente,
+			incluyendo a quienes dependen laboralmente de él.</p>
+		<p>
+			<strong>Visitas:</strong> a todos aquellas personas ajenas al organismo que deseen ingresar al Ministerio y
+			sus dependencias.
+		</p>
+		<br>
+
+		<h3>ROLES</h3>
+		<p><strong>El Sistema de Control de Acceso distingue 4 roles:</strong></p>
+
+		<p>1. Administrador</p>
+		<p>2. Agente de registro</p>
+		<p>3. Usuario ABM (altas/ bajas/ modificaciones)</p>
+		<p>4. Auditor</p>
+
+		<br>
+
+
+		<h3>FUNCIONALIDADES</h3>
+
+		<p><strong>1. REGISTRO:</strong></p>
+		<p>
+			Es la pantalla principal del Sistema de Control de Acceso, a través de la cual los agentes
+			autorizados cargaran los datos de las personas que acceden al Edificio y/o sus dependencias.
+			Este Rol es exclusivo de los agentes de Registro de Personal que ingresa o egresa al organismo.
+		</p>
+		<p><strong>2. REPORTES:</strong></p>
+		<p>El Sistema informa el historial de personas que ingresan y egresan de los organismos, días,
+			horarios y si existió alguna observación por parte de los agentes autorizados al efecto. Los
+			reportes sólo están disponibles para los roles de <strong>“Administrador” y “Auditor”.</strong></p>
+		<p><strong>3. ABM (ALTAS/BAJAS/MODIFICACIONES)</strong></p>
+		<p>El sistema permite darde alta,baja y modificar los datos de las personas que accedan a el edificio,
+			este rol solo podrá ser ejecutado por el<strong>“Usuario Administrador” y por el “Usuario ABM”.</strong></p>
+
+		<p>Estos podrán dar el alta, baja o modificar el estado de:</p>
+		<p><strong>Usuarios</strong></p>
+		<p><strong>Áreas</strong></p>
+		<p><strong>Personas</strong></p>
+		<p><strong>Empleados</strong></p>
+		<p><strong>Ubicaciones</strong></p>
+		<p><strong>Contratistas</strong></p>
+		<p>De su personal</p>
+		<div class="container"><p>Asignaciones a Edificios</p></div>
+		<p><strong>Advertencias</strong></p>
+		<div class="container"><p>Advertencias genéricas</p></div>
+
+
+		<br>
+		<h3>REQUERIMIENTOS TÉCNICOS</h3>
+		<P>Navegador actualizado.</P>
+		<p>Tener instalado el Acrobat Reader o similar.</p>
+		<p>Contar con acceso a Internet.</p>
+		<p>Contar con Usuario, contraseña y email institucional.</p>
+		<br>
+		<h3>ACCESO AL SISTEMA</h3>
+		<p>Para acceder al aplicativo, el usuario deberá ingresar a la siguiente dirección:
+			<a href="http://intranet.transporte.gob.ar/control_accesos/">http://intranet.transporte.gob.ar/control_accesos/.</a>
+		</p>
+
+		<p>Luego para poder navegar en el sistema, deberá cargar su usuario y contraseña. Una vez
+			logueado podrá navegar por el mismo según sus autorizaciones habilitadas</p>
+		<br>
+		<p>
+			<img src="./img/Au/c1.png" class="img-100">
+		</p>
+		<br>
+		<h3>NAVEGACIÓN DEL AUDITOR</h3>
+
+		<h5>Reportes</h5>
+		<div class="container"><h5>Reporte de Empleados o Contratistas y Visitas</h5></div>
+		<p>El Auditor que desea obtener información acerca de los ingresos y egresos de las personas, al
+			ingresar al Sistema deberá seleccionar el botón correspondiente segun el reporte que
+			requiera es de empleados, contratistas y Visitas. Así tal y como puede visualizarse en la
+			imagen que se ejemplifica.
+		</p>
+
+		<br>
+		<p><img src="./img/Au/c1.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>1.2. Información a obtener en los Reportes de Empleados:</h5></div>
+		<p>El administrador podrá obtener la información que requiera respecto al <strong>Control de Acceso</strong>
+			de los empleados. En particular podrá conocer la Dirección a la que pertenece, la
+			ubicación, Documento Nacional de Identidad, nombre, apellido, fecha de ingreso/egreso y hora de
+			ingreso/egreso de las personas que accedieron a algunas de los edificios.</p>
+		<br>
+		<p><img src="./img/Au/c2.png" class="img-100"></p>
+		<br>
+
+		<div class="container"><h5>1.3 Información a obtener en los Reportes de Contratistas y Visitas</h5></div>
+		<p>El administrador podrá obtener la información que requiera respecto al <strong>Control de Acceso</strong>
+			de los los contratistas y Visitas. En particular podrá conocer Ubicación, Tipo de Visita,
+			Documento Nacional de Identidad, nombre, apellido, hora de ingreso/egreso y fecha de
+			ingreso/egreso de las personas que accedieron a algunas de los edificios.</p>
+
+		<br>
+		<p><img src="./img/Au/c3.png" class="img-100"></p>
+		<br>
+		<div class="container"><h5>1.4 Filtros</h5></div>
+
+		<p>El administrador podrá filtrar la información según su necesidad particular seleccionando el
+			Botón Filtros, y el Sistema se habilitará para que pueda obtener la información por:
+			Ubicación, Dirección, Fechas Desde y Fecha Hasta.</p>
+		<br>
+		<p><img src="./img/Au/c4.png" class="img-100"></p>
+		<br>
+
+
+	</div>
+
+	<div class="footer container">
+		<div class="row">
+			<div class="col-md-9">
+				<a href="http://www.transporte.gob.ar/" class="btn btn-info">Reportar un error</a>
+			</div>
+			<div class="col-md-3">
+				<a href="http://www.transporte.gob.ar/"><img
+							src="http://www.transporte.gob.ar/UserFiles/logo_direccion(1).png"
+							alt="Ir al Sitio Ministerio de Transporte"></a>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

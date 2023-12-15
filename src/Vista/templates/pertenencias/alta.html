@@ -1,0 +1,153 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="alta" method='POST' action="" enctype="multipart/form-data">
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONAL}}}" id="linkAjaxBuscarPersonal" />
+	<div class="row">
+		<div class="col-md-6">
+			<div class="section-title">Personal</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<!-- Documento -->
+					<span id="error_personal" style="display: none;" class="text-danger"></span>
+					<span id="success_personal" style="display: none;" class="text-success"></span>
+					<div class="form-group">
+						<label class="control-label" for="persona_documento">Documento <span
+									class="required">*</span></label>
+							<div class='input-group'>
+								<input type="text"
+									   class="form-control"
+									   name="persona_documento"
+									   id="persona_documento"
+									   value="{{{persona_documento}}}">
+								<span class="input-group-btn">
+									<button type="button"
+											class="btn btn-primary"
+											id="btn_buscar_documento"
+											onclick="buscarPersona()"
+											data-toggle="tooltip"
+											title="Buscar Personal por Documento">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+						
+					</div>
+					<!-- Nombre -->
+					<div class="form-group">
+						<label class="control-label" for="persona_nombre">
+							Nombre <span class="required">*</span>
+						</label>
+						<input type="text" class="form-control tabulable" name="persona_nombre"
+							   id="persona_nombre" maxlength="64" minlength="2"
+							   value="{{{persona_nombre}}}">
+					</div>
+					<!-- Apellido -->
+					<div class="form-group">
+						<label class="control-label" for="persona_apellido">
+							Apellido <span class="required">*</span>
+						</label>
+						<input type="text" class="form-control tabulable" name="persona_apellido"
+							   id="persona_apellido" maxlength="64" minlength="2"
+							   value="{{{persona_apellido}}}">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="section-title">Solicitante</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<span id="error_solicitante" style="display: none;" class="text-danger"></span>
+					<span id="success_solicitante" style="display: none;" class="text-success"></span>
+					<!-- Documento del Solicitante -->
+					<input type="hidden" value="{{{LINK_AJAX_BUSCAR_SOLICITANTE}}}" id="linkAjaxBuscarSolicitante" />
+					<div class="form-group">
+						<label class="control-label" for="solicitante_documento">Documento del
+							Solicitante</label>
+						<div class='input-group'>
+							<input type="text" class="form-control col-xs-12"
+								   name="solicitante_documento"
+								   id="solicitante_documento"
+								   value="{{{solicitante_documento}}}">
+							<span class="input-group-btn">
+								
+								<button class="btn btn-primary"
+										id="btn_buscar_documento_solicitante"
+										type="button"
+										onclick="buscarSolicitante()"
+										data-toggle="tooltip"
+										title="Buscar Solicitante por Documento">
+									<i class="fa fa-search"></i>
+								</button>
+							</span>
+						</div>
+					</div>
+					<!-- Nombre del Solicitante -->
+					<div class="form-group">
+						<label class="control-label" for="solicitante_nombre">
+							Nombre del Solicitante
+						</label>
+						<input type="text" class="form-control tabulable" name="solicitante_nombre"
+							   id="solicitante_nombre" disabled
+								value="{{{solicitante_nombre}}}">
+					</div>
+					<!-- Apellido del Solicitante -->
+					<div class="form-group">
+						<label class="control-label" for="solicitante_apellido">
+							Apellido del Solicitante
+						</label>
+						<input type="text" class="form-control tabulable" name="solicitante_apellido"
+							   id="solicitante_apellido" disabled
+							   value="{{{solicitud_apellido}}}">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class='col-md-12'>
+					<div class="form-group">
+						<label class="control-label" for="texto">Pertenencias <span
+									class="required">*</span></label>
+						<textarea name="texto" id="texto" cols="5" rows="2"
+								  class="form-control tabulable"
+								  style="resize: none;">{{{TEXTO}}}</textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="ubicacion_id">Ubicación <span
+							class="required">*</span></label>
+				<select name="ubicacion_id" id="ubicacion_id"
+						class="form-control" data-toggle="tooltip"
+						title="Seleccione una Ubicación para asociarlo a la Pertenencia">
+					<option value="0">Todas</option>
+					{{{UBICACION}}}
+						<option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+					{{{/UBICACION}}}
+				</select>
+			</div>
+		</div>
+	</div>
+	
+    <br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="operacion" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

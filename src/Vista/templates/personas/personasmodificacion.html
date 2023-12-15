@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3">
+        <label class="float-md-right control-label"><p><i>Campos requeridos(*)</i></p></label>
+    </div>
+</div>
+
+
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+
+    <div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-4">
+				<div class="form-group">
+					<label class="control-label"for="nombre">Nombre<span class="text-danger">*</span></label>
+					<input type="text" class="form-control" id="nombre" name="nombre" value="{{{NOMBRE}}}">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<label for="apellido" class="control-label">Apellido</label>
+					<textarea name="apellido"id="apellido"rows="3"class="form-control">{{{APELLIDO}}}</textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-4">
+					<label class="form-check-label control-label" for="genero">
+						Genero
+					</label>
+				<div class="form-check">
+					<input class="form-check-input" type="checkbox" value="1" {{{GENERO}}} name="genero" id="genero">
+				</div>
+			</div>
+		</div>
+		
+    <br>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 text-right">
+            <button type="submit" class="btn btn-primary" data-placement="left" name="personas" value="{{{OPERACION}}}" id='boton_titulo' title="Guardar">GUARDAR</button>
+            <a href="{{{CANCELAR}}}" class="btn btn-default" >CANCELAR</a>
+        </div>
+    </div>
+</form>
+

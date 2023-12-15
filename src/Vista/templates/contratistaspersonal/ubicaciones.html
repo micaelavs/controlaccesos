@@ -1,0 +1,128 @@
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-xs-2">
+        <div class="form-group">
+            <label for="ubicacion" class="control-label">
+                Ubicación <span class="required">*</span>
+            </label>
+            <select name="ubicacion" id="ubicacion" class="form-control">
+                <option value="">Seleccione</option>
+                {{{UBICACION}}}
+                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                {{{/UBICACION}}}
+            </select>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="acceso_inicio" class="control-label">
+                Fecha inicial
+            </label>
+            <div class='input-group date' id='fecha_acceso_inicio'>
+                <input type='text' class="form-control" data-toggle="tooltip"
+                    title="Fecha de inicio del Permiso de Acceso" id="acceso_inicio" name="fecha_acceso_inicio">
+                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="acceso_fin" class="control-label">
+                Fecha final
+            </label>
+            <div class='input-group date' id='fecha_acceso_fin'>
+                <input type='text' class="form-control" data-toggle="tooltip" title="Fecha de fin del Permiso de Acceso"
+                    id="acceso_fin" name="fecha_acceso_fin">
+                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-1">
+        <div class="form-group">
+            <label for="" class="control-label">
+                Agregar
+            </label>
+            <button type="submit" id='boton_titulo' class="btn btn-primary" data-toggle="tooltip" title="Agregar Permiso de Acceso a Ubicación"
+                    name="ubicaciones_agregar" value="{{{OPERACION}}}"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-1">
+    </div>
+    <input type="hidden" value="{{{IDCONTRATISTA}}}" id="idContratista" />
+    <div class="col-sm-10">
+        <table id="contratistaubicaciones" class="table table-striped dataTables dataTable no-footer dtr-inline"
+            style="width:100%;"></table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6 text-right">
+        <!-- <a class="btn btn-primary" href="{{{LINK}}}">NUEVO</a> -->
+        <a href="{{{CANCELAR}}}" class="btn btn-default" >VOLVER</a>
+    </div>
+</div>
+</form>
+
+
+<div class="modal" id="modal_editar" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form  method='POST' action="{{{FORM_EDITAR}}}" enctype="multipart/form-data">
+                <div class="modal-header">
+                <h5 class="modal-title">Edición de Ubicación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="ubicacion_id" id="ubicacion_id_modal">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="ubicacion" class="control-label">
+                                    Ubicación
+                                </label>
+                                <span id="ubicacion_nombre_modal" class="form-control" disabled></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="acceso_inicio" class="control-label">
+                                    Fecha inicial
+                                </label>
+                                <div class='input-group date' id='fecha_acceso_inicio_modal'>
+                                    <input type='text' class="form-control" data-toggle="tooltip"
+                                        title="Fecha de inicio del Permiso de Acceso" id="fecha_acceso_inicio_modal" name="fecha_acceso_inicio">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="acceso_fin" class="control-label">
+                                    Fecha final
+                                </label>
+                                <div class='input-group date' id='fecha_acceso_fin_modal'>
+                                    <input type='text' class="form-control" data-toggle="tooltip" title="Fecha de fin del Permiso de Acceso"
+                                        id="fecha_acceso_fin_modal" name="fecha_acceso_fin">
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="margin-bottom: 0px;">Agregar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>

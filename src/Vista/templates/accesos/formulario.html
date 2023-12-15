@@ -1,0 +1,465 @@
+<!--suppress ALL -->
+<form action="{{{FORM_ALTA}}}" method="POST" id="alta" name="alta" autocomplete="off">
+	<!-- Visitante -->
+	<div class="row">
+		<h5 class="col-xs-12 mtop-05">Ingresante </h5>
+		<div class="col-xs-12">
+			<div class="form-group">
+				<label for="persona_documento" class="control-label">Documento <span class="required">*</span></label>
+				<div class='input-group'>
+					<input type="text" class="form-control tabulable validar_acceso" name="persona_documento"
+						   id="persona_documento" maxlength="10" minlength="6" tabindex="1"
+						value="{{{PERSONA_DOCUMENTO}}}">
+					<div class="input-group-btn">
+						<button tabindex="2" class="btn btn-primary"
+								id="btn_buscar_documento"
+								type="button"
+								data-toggle="tooltip"
+								title="Buscar Persona">
+							<span class="fa fa-search"></span>
+						</button>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	<!--</div>-->
+	<div class="row" id="acceso" style="display: none">
+
+		<div id="empleado">
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="text-center" id="nombre_empleado"><strong></strong></h3>
+						</div>
+						<div class="panel-body">
+							es empleado y no
+							requiere
+							autorización de acceso!
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12" id="advertencias_empleado">
+					<div class="panel panel-danger">
+						<div class="panel-heading">
+							<h3 class="text-center"><strong>Advertencias</strong></h3>
+						</div>
+						<div class="panel-body" id ='panel_advertencias'>
+							<ul id ='lista_advertencias_empleado' style="word-wrap: break-word;">
+							</ul>
+						</div>
+					</div>							
+				</div>
+				<div class="col-xs-12" id="pertenencias_empleado">
+					<div class="panel panel-success">
+						<div class="panel-heading">
+							<h3 class="text-center"><strong>Pertenencias</strong></h3>
+						</div>
+						<div class="panel-body" id ='panel_pertenencias'>
+							<ul id ='lista_pertenencias_empleado' style="word-wrap: break-word;">
+							</ul>
+						</div>
+					</div>							
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="control-label" for="persona_observaciones_empleado">Observaciones</label>
+						<textarea tabindex="5" name="persona_observaciones_empleado" id="persona_observaciones_empleado" rows="2" 
+						class="form-control tabulable" style="resize: none"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div id="visita_enrolada">
+		
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                <h3 class="text-center" id="nombre_visita_enrolada"><strong></strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                es una <strong>visita enrolada</strong> y no
+                                requiere
+                                autorización de acceso!
+                            </div>
+                        </div>
+                    </div>					
+                    <div class="col-md-12">
+						<div class="col-xs-12" id="advertencias_visita_enrolada">
+							<div class="panel panel-danger">
+								<div class="panel-heading">
+									<h3 class="text-center"><strong>Advertencias</strong></h3>
+								</div>
+								<div class="panel-body" id ='panel_advertencias'>
+									<ul id ='lista_advertencias_visita_enrolada' style="word-wrap: break-word;">
+									</ul>
+								</div>
+							</div>							
+						</div>
+						<div class="col-xs-12" id="pertenencias_visita_enrolada">
+							<div class="panel panel-success">
+								<div class="panel-heading">
+									<h3 class="text-center"><strong>Pertenencias</strong></h3>
+								</div>
+								<div class="panel-body" id ='panel_pertenencias'>
+									<ul id ='lista_pertenencias_visita_enrolada' style="word-wrap: break-word;">
+									</ul>
+								</div>
+							</div>							
+						</div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="persona_observaciones_visita_enrolada">Observaciones</label>
+                            <textarea tabindex="5" name="persona_observaciones_visita_enrolada" id="persona_observaciones_visita_enrolada" rows="2"class="form-control tabulable" style="resize: none"
+							></textarea>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		<div id="contratista">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-info">
+						<div class="panel-heading">
+							<h3 class="text-center" id="nombre_personal_contratista">
+								<strong></strong>
+							</h3>
+						</div>
+						<div class="panel-body">
+							<p>
+								es personal de contratista
+								<strong id="nombre_contratista"></strong>
+								y está pre-autorizado por:
+								<strong id="autorizante_contratista"></strong>
+							</p>
+							<div class="well well-sm" id = 'fechas_art'>
+								<div class="row">
+									<div class="col-xs-12">
+										<span id="vigencia_art" class="label"><i
+													class="fa fa-clock-o"></i> Vigencia ART</span>
+									</div>
+									<div class="col-xs-12">
+										<div class="row" style="margin-top:.5em;">
+											<div class="col-xs-6">
+												<small>
+													Desde:
+													<span id="art_inicio"></span>
+												</small>
+											</div>
+											<div class="col-xs-6">
+												<small>
+													Hasta:
+													<span id="art_hasta"></span>
+												</small>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /ART info-->
+							<!-- Acceso info-->
+							<div class="well well-sm" id = 'fechas_acc'>
+								<div class="row">
+									<div class="col-xs-12">
+										<span id="acceso_span"  class="label"><i
+														class="fa fa-clock-o"></i> Acceso</span>
+									</div>
+									<div class="col-xs-12">
+										<div class="row" style="font-size:.9rem;margin-top:.5em;">
+											<div class="col-xs-6">
+												<small>
+													Desde:
+													<span id="acceso_inicio"></span>
+												</small>
+											</div>
+											<div class="col-xs-6">
+												<small>
+													Hasta:
+													<span id="acceso_fin"></span>
+												</small>
+											</div>											
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /Acceso info-->
+						</div>
+						<div class="panel-body" id = 'vencido_contratista' style="display: none">
+							<p style="color:red;"><small><i>
+								ADVERTENCIA: SU PERMISO SE ENCUENTRA VENCIDO O NO TIENE ACCESO A ESTE EDIFICIO. PUEDE CARGARLO COMO VISITA (SUS DATOS SE REFLEJARAN EN EL REPORTE COMO VISITA) O COMUNICARSE A QUIÉN CORRESPONDA Y ACTUALIZAR SU PERMISO DE ACCESO AL EDIFICIO.
+							</i></small></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="col-xs-12" id="advertencias_contratista">
+						<div class="panel panel-danger">
+							<div class="panel-heading">
+								<h3 class="text-center"><strong>Advertencias</strong></h3>
+							</div>
+							<div class="panel-body" id ='panel_advertencias'>
+								<ul id ='lista_advertencias_contratista' style="word-wrap: break-word;">
+								</ul>
+							</div>
+						</div>							
+					</div>
+					<div class="col-xs-12" id="pertenencias_contratista">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="text-center"><strong>Pertenencias</strong></h3>
+							</div>
+							<div class="panel-body" id ='panel_pertenencias'>
+								<ul id ='lista_pertenencias_contratista' style="word-wrap: break-word;">
+								</ul>
+							</div>
+						</div>							
+					</div>
+				</div>
+				<!-- Observaciones -->
+				<div class="col-md-12" id="obs_contratista">
+					<div class="form-group">
+						<label class="control-label" for="persona_observaciones_contratista">Observaciones</label>
+						<textarea tabindex="6" name="persona_observaciones_contratista" id="persona_observaciones_contratista" rows="2"
+								  class="form-control tabulable" style="resize: none"
+							></textarea>
+					</div>
+				</div>
+				<!-- /Observaciones -->
+			</div>
+		</div>
+		<div id="campos_persona">
+	
+			<div class="row">
+				<div class="col-md-12">
+					<div class="col-xs-12" id="advertencias_visita">
+						<div class="panel panel-danger">
+							<div class="panel-heading">
+								<h3 class="text-center"><strong>Advertencias</strong></h3>
+							</div>
+							<div class="panel-body" id ='panel_advertencias'>
+								<ul id ='lista_advertencias_visita' style="word-wrap: break-word;">
+								</ul>
+							</div>
+						</div>							
+					</div>
+					<div class="col-xs-12" id="pertenencias_visita">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h3 class="text-center"><strong>Pertenencias</strong></h3>
+							</div>
+							<div class="panel-body" id ='panel_pertenencias'>
+								<ul id ='lista_pertenencias_visita' style="word-wrap: break-word;">
+								</ul>
+							</div>
+						</div>							
+					</div>
+				</div>
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label" for="persona_nombre">Nombre <span
+											class="required">*</span></label>
+								<span id="error_persona_nombre" class="text-danger"></span>
+								<input tabindex="3" type="text" class="form-control tabulable" name="persona_nombre"
+									   id="persona_nombre" maxlength="100" minlength="2">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="control-label" for="persona_apellido">Apellido <span
+											class="required">*</span></label>
+								<span id="error_persona_apellido" class="text-danger"></span>
+								<input tabindex="4" type="text" class="form-control tabulable" name="persona_apellido"
+									   id="persona_apellido" maxlength="100" minlength="2">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="control-label" for="origen">
+							Origen <small>(Empresa/Particular)</small> <span class="required">*</span>
+						</label>
+						<input tabindex="7" type="text" class="form-control tabulable" name="origen"
+							   id="origen" maxlength="64" minlength="2" value="{{{ORIGEN}}}">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="control-label" for="destino">
+							Destino de la Visita <span class="required">*</span>
+						</label>
+						<input tabindex="8" type="text" class="form-control tabulable" name="destino"
+							   id="destino" maxlength="100" minlength="2" value="{{{DESTINO}}}">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="form-group">
+						<label class="control-label" for="persona_observaciones_campos_persona">
+							Observaciones
+						</label>
+						<textarea tabindex="9" name="persona_observaciones_campos_persona" id="persona_observaciones_campos_persona" rows="2"
+								  class="form-control tabulable" style="resize: none"
+						>{{{OBSERVACIONES}}}</textarea>
+					</div>
+				</div>
+			</div>
+			<!-- /Visitante -->
+			<!-- Autorizante -->
+			<div class="row">
+				<h5 class="col-xs-12 mtop-05">Autorizante</h5>
+				<div class="form-group col-md-6">
+					<label class="control-label" for="autorizante_nombre">
+						Nombre y Apellido <i class="fa fa-search"></i><span class="required">*</span>
+					</label>
+					<span id="error_autorizante_nombre" class="text-danger"></span>
+					<input tabindex="10" type="text" class="form-control tabulable" name="autorizante_nombre"
+						   id="autorizante_nombre">
+				</div>
+				<div class="form-group col-md-6">
+					<label class="control-label" for="autorizante_documento">Documento<span
+								class="required">*</span></label>
+					<span id="error_autorizante_documento" class="text-danger"></span>
+					<div class='input-group'>
+						<input tabindex="11" type="text" class="form-control tabulable validar_acceso"
+							   name="autorizante_documento"
+							   id="autorizante_documento" maxlength="10" minlength="6"
+							   onkeypress="if (event.keyCode === 13) { event.stopPropagation(); event.preventDefault(); $('#btn_buscar_autorizante').click()}" value="{{{PERSONA_AUTORIZANTE}}}">
+						<div class="input-group-btn">
+							<!-- <button tabindex="12" class="btn btn-primary"
+									id="btn_buscar_autorizante"
+									type="submit"
+									formaction="?c=acceso&amp;a=buscar_autorizante"
+									data-toggle="tooltip"
+									title="Buscar Autorizante">
+								<span class="fa fa-search"></span>
+							</button> -->
+
+							<div class="input-group-btn">
+								<button tabindex="2" class="btn btn-primary"
+										id="btn_buscar_autorizante"
+										type="button"
+										data-toggle="tooltip"
+										title="Buscar Autorizante">
+									<span class="fa fa-search"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="oficina_contacto">
+                        Oficina Contacto
+                    </label>
+                    <input tabindex="10" type="text" class="form-control tabulable"  name="oficina_contacto"
+                           id="oficina_contacto" disabled>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="oficina_interno">
+                        Oficina Interno
+                    </label>
+                    <input tabindex="10" type="text" class="form-control tabulable"  name="oficina_interno"
+                           id="oficina_interno" disabled>
+                </div>
+
+            </div>
+			<!-- /Autorizante -->
+		</div>
+
+		<!-- Credencial -->
+		<div class="row" id = 'credencialTarjeta'>			
+				<h5 class="col-xs-12 mtop-05">Credencial/Tarjeta</h5>
+				<div class="form-group col-xs-8">
+					<label class="control-label" for="credencial" id="lbNroCodigo">Número Credencial<span class="required">*</span></label>
+					<input tabindex="13" type="text" class="form-control col-xs-12 tabulable validar_acceso"
+						   name="credencial"
+						   id="credencial" maxlength="6" minlength="1"
+						   placeholder="Ingrese número de credencial"
+						   onkeypress="if (event.keyCode === 13) { event.stopPropagation(); event.preventDefault(); $('#btn_insertar').click()}" value="{{{CREDENCIAL}}}">
+				</div>
+				<div class="form-group col-xs-4">
+					<label class="control-label" for="bt_tarjeta">Tarjeta</label>
+					<input id="bt_tarjeta" type="button" class="btn btn-warning " value="Buscar" onClick="popUpTarjeta()" />
+				</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-xs-4">
+				<label class="control-label" for="hora_entrada">Hora</label>
+				<input tabindex="14" type="text" class="form-control text-center" name="hora_entrada" id="hora_entrada" disabled>
+			</div>			
+		</div>
+		<!-- /Credencial -->
+		<!-- Botones -->
+		<div class="row">
+			<div class="form-group col-md-12 mtop-05 text-right">
+				<input tabindex="15" type="submit"
+					   id="btn_insertar"
+					   class="btn btn-primary"
+					   name="button"
+					   value="guardar"
+					   data-toggle="tooltip"
+					   title="Registrar Entrada">
+				<a href="/index.php/accesos/index" class="btn btn-default"
+				   data-toggle="tooltip" tabindex="16"
+				   title="Cancelar Registro de Entrada">Cancelar</a>
+			</div>
+		</div>
+		<!-- /Botones -->		
+
+		<input type="hidden" id="hdNroTarjeta" name="hdNroTarjeta" value=""/>		
+		
+	</div>
+</form>
+
+<!--Modal Nro. Tarjeta Lector-->
+<div class="modal fade" id="modalNumeroTarjeta" tabindex="-1" data-operacion="">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title" id="tituloModalNroTarjeta">Aproxime la tarjeta al lector</h5>
+      </div>
+      <div class="modal-body">
+        <div class="form-group" id="div_caja_texto">
+            <input type="text" class="oculto" id="modal_nro_tarjeta" name="modal_nro_tarjeta" value="">
+        </div>
+        <div class="form-group">
+			<h6 class="modal-title">La tarjeta por asignar es: <span id="textoTarjetaAsignar"></span></h6>
+        </div>
+		<div class="form-check">
+			<input type="checkbox"  style="display: inline;" class="form-check-input" id="chk_ocultar_caja_texto" onClick="ocultarCajaTexto()"/>
+			<span class="form-check-label" for="chk_ocultar_caja_texto">Mostrar/Ocultar caja de texto</span>
+		</div> 
+      </div>   
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="margin-bottom: 0px !important">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="modal_btn_guardar_nro_tarjeta" disabled>Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Fin Modal Nro. Tarjeta Lector-->
+
+<style>
+	.typeahead > li {
+		overflow: hidden;
+		padding: 0;
+		margin: 0;
+	}
+
+	.typeahead > li > a {
+		margin: 0;
+		padding: .1em .3em;
+		text-decoration: none;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		font-size: .8rem;
+	}
+</style>

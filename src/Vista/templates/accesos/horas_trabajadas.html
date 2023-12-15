@@ -1,0 +1,106 @@
+<head>
+    <style>
+        .label-tarjetaTM {
+            background: #66378c;
+        }
+    </style>
+</head>
+<div class="row">
+    <div class="col-xs-12">
+        <a role="button" data-toggle="collapse" href="#collapseFiltros" aria-expanded="false"
+            aria-controls="collapseFiltros" style="display: block;">
+            <span class="">
+                <i class="fa fa-filter"></i> Filtros
+                <i class="fa fa-caret-right fa-fw" id="collapseFiltros_caret"></i>
+            </span>
+        </a>
+        <div class="collapse" id="collapseFiltros">
+            <form>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <div class="form-group">
+                            <label for="dependencia" class="control-label">Dependencia: </label>
+                            <select name="dependencia" id="dependencia" class="form-control">
+                                <option value="">Seleccione</option>
+                                {{{DEPENDENCIA}}}
+                                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                                {{{/DEPENDENCIA}}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fecha_desde" class="control-label">
+                                Fecha desde
+                                <span class="text-danger">*</span></label>
+                            <div class='input-group date' id='fecha_desde'>
+                                <input type='text' class="form-control" data-toggle="tooltip" title="Fecha Desde"
+                                    id="fecha_desde_fecha" value="{{{FECHA_DESDE}}}" name="fecha_desde_fecha">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fecha_hasta" class="control-label">
+                                Fecha hasta
+                                <span class="text-danger">*</span></label>
+                            <div class='input-group date' id='fecha_hasta'>
+                                <input type='text' class="form-control" data-toggle="tooltip" title="Fecha Desde"
+                                    id="fecha_hasta_fecha" value="{{{FECHA_HASTA}}}" name="fecha_hasta_fecha">
+                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="otro_criterio" class="control-label">Otro criterio</label> 
+                            <input type='text' name="otro_criterio" id="otro_criterio" class="form-control">
+                            <label for="" class="control-label" style="font-size: 11px;">(nombre, apellido, DNI o CUIT de la persona)</label> 
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3"></div>
+                        <div class="col-md-2 text-right" style="margin-top: 10px;">
+                            <a id='filtrar' name='filtrar' class="btn btn-primary">FILTRAR</a>
+                        </div>
+                    </div>    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="alert col-xs-12">
+        <span class="label label-comision"><span class="fa fa-fw fa-desktop"></span> Comisión Horaria</span> Registro de
+        Comisión horaria.&nbsp;&nbsp;
+        <span class="label label-info"><span class="fa fa-fw fa-desktop"></span> On line</span> Registro desde puesto de
+        CIET.&nbsp;&nbsp;
+        <span class="label label-success"><span class="fa fa-fw fa-clock-o"></span>Reloj</span> Registro
+        Biométrico.&nbsp;&nbsp;
+        <span class="label label-bioHacienda"><span class="fa fa-fw fa-clock-o"></span>BIO Hacienda</span> Registro
+        Biométrico MECON.&nbsp;&nbsp;
+        <span class="label label-warning"><span class="fa fa-fw fa-desktop"></span> Off line</span> Registro
+        Manual.&nbsp;&nbsp;
+        <span class="label label-danger"><span class="fa fa-fw fa-desktop"></span> Sin registro</span> Registro sin
+        salida marcada.&nbsp;&nbsp;
+    </div>
+    <div class="col-xs-12 alert alert-warning default-filtro">
+        <b>Filtro por defecto de los últimos 7 días.</b>
+    </div>
+</div>
+<div style="display:none;" class="alert alert-info fade in alert-dismissable" id="alerta"></div>
+<hr>
+<div class="row">
+    <table id="horas_trabajadas" class="table table-striped dataTables dataTable no-footer dtr-inline"
+        style="width:100%;"></table>
+</div>
+<div>
+    <div class="col-md-10 text-left">
+        <button class="btn btn-default btn_au accion_exportador" style="margin-left:-35px;"
+            value="{{{BOTON_EXCEL}}}"><span class="fa fa-file-text-o"></span> DESCARGAR EXCEL</button>
+    </div>
+</div>

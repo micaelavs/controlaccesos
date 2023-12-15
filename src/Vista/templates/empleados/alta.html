@@ -1,0 +1,201 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA}}}" id="buscarDatosPersonaAjax" />
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_EMPLEADO}}}" id="buscarDatosEmpleadoAjax" />
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label class="control-label" for="documento">Documento<span class="text-danger">*</span></label>
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Buscar&hellip;" id="documento" name="documento"
+					value="{{{DOCUMENTO}}}">
+				<span class="input-group-btn"> -->
+					<!-- <button type="button" class="btn btn-default" onclick="buscarDatosPersonaEmpleado()"><i
+							class="fa fa-search"></i></button> -->
+							<button type="submit" class="btn btn-default" 
+							formaction="../empleados/buscar_user"><i
+								class="fa fa-search"></i></button>		
+				</span>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="nombre">Nombre<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="nombre" name="nombre" value="{{{NOMBRE}}}">
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="apellido">Apellido<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="apellido" name="apellido" value="{{{APELLIDO}}}">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="cuit">Cuit<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="cuit" name="cuit" value="{{{CUIT}}}">
+			</div>
+		</div>
+		<div class="col-md-5">
+			<div class="form-group">
+				<label class="control-label" for="email">Email<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="email" name="email" value="{{{EMAIL}}}">
+			</div>
+		</div>
+		<div class="col-md-3">
+			<label class="form-check-label control-label" for="genero">
+				Genero
+				<span class="text-danger">*</span></label>
+			<select class="form-control" id="genero" name="genero">
+				<option value="">Seleccione</option>
+				{{{GENERO}}}
+				<option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+				{{{/GENERO}}}
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="form-group">
+				<label for="dependencia" class="control-label">Dependencia Principal <span
+						class="text-danger">*</span></label>
+				<select name="dependencia" id="dependencia" class="form-control">
+					<option value="">Seleccione una Dependencia Principal</option>
+					{{{DEPENDENCIA}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/DEPENDENCIA}}}
+				</select>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<label for="fecha_desde_principal" class="control-label">
+					Fecha desde Ub. Principal
+					<span class="text-danger">*</span></label>
+				<div class='input-group date' id='fecha_desde_principal'>
+					<input type='text' class="form-control" data-toggle="tooltip"
+						title="Fecha de inicio del Permiso de Acceso" id="fecha_desde_p" value="{{{DESDE_PRINCIPAL}}}" name="fecha_desde_p">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<label for="fecha_hasta_principal" class="control-label">
+					Fecha hasta Ub. Principal
+				</label>
+				<div class='input-group date' id='fecha_hasta_principal'>
+					<input type='text' class="form-control" data-toggle="tooltip"
+						title="Fecha de inicio del Permiso de Acceso" id="fecha_hasta_p" value="{{{HASTA_PRINCIPAL}}}" name="fecha_hasta_p">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="form-group">
+				<label for="contrato" class="control-label">Contrato <span class="text-danger">*</span></label>
+				<select name="contrato" id="contrato" class="form-control">
+					<option value="">Seleccione un contrato</option>
+					{{{CONTRATO}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/CONTRATO}}}
+				</select>
+			</div>
+		</div>
+		<div class="col-xs-2">
+			<div class="form-group">
+				<label for="cargo" class="control-label">Cargo <span class="text-danger">*</span></label>
+				<select name="cargo" id="cargo" class="form-control">
+					<option value="">Seleccione</option>
+					{{{CARGOS}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/CARGOS}}}
+				</select>
+			</div>
+		</div>
+		<div class="col-xs-2">
+			<div class="funkyradio">
+				<div class="funkyradio-primary">
+					<input class="form-control" type="checkbox" name="planilla_reloj" id="planilla_reloj" value="1" {{{PLANILLA_RELOJ}}}>
+					<label for="planilla_reloj" data-toggle="tooltip"
+						title="Se incluirá al empleado en la Planilla Unica Reloj">Planilla Reloj</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<label for="fecha_desde_contrato" class="control-label">
+					Fecha desde Contrato
+					<span class="text-danger">*</span></label>
+				<div class='input-group date' id='fecha_desde_contrato'>
+					<input type='text' class="form-control" data-toggle="tooltip"
+						title="Fecha de inicio del Permiso de Acceso" id="fecha_desde_c" value="{{{DESDE_CONTRATO}}}" name="fecha_desde_c">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="form-group">
+				<label for="fecha_hasta_contrato" class="control-label">
+					Fecha hasta Contrato
+				</label>
+				<div class='input-group date' id='fecha_hasta_contrato'>
+					<input type='text' class="form-control" data-toggle="tooltip"
+						title="Fecha de inicio del Permiso de Acceso" id="fecha_hasta_c" value="{{{HASTA_CONTRATO}}}" name="fecha_hasta_c">
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label class="control-label" for="ubicaciones">Ubicaciones autorizadas <span
+						class="required">*</span></label><br>
+				<select class="form-control" id="ubicaciones" tabindex="16" name="ubicaciones[]" multiple="multiple">
+					{{{UBICACIONES_AUTORIZADAS}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/UBICACIONES_AUTORIZADAS}}}
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="ubicacion_principal" class="control-label">Ubicacion Principal <span
+						class="required">*</span></label>
+				<select name="ubicacion_principal" id="ubicacion_principal" class="form-control" disabled>
+					<option value="">Seleccione una Ubicación Principal</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class='col-md-3'>
+			<div class='form-group'>
+				<label class='control-label' for='observacion'>Observaciones</label>
+				<textarea class='form-control form-control-sm' id='observacion' tabindex='18'
+					name='observacion' > {{{OBSERVACIONES}}} </textarea>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="empleados" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

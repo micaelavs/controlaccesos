@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <title>Control de Accesos | Ministerio de Transporte</title>
+	    <link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+
+	   	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	     <link rel="stylesheet" href="/cdn/estiloIS/3/estilois.css"/>
+	   
+	    <script src="/cdn/js/jquery.js" charset="utf-8"></script>
+	    <script src="/cdn/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/moment.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/es.js" charset="utf-8"></script>
+	</head>
+
+<!-- //// CSS //// -->
+<style>
+		h4, h5, h6 {
+			color:#0072bc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.box-shadow {
+			box-shadow:13px 9px 22px 1px rgba(0,0,0,0.4);
+		}
+
+		.prefijo {
+			margin-top: 30px;
+		}
+
+		 #return-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.7);
+				width: 50px;
+				height: 50px;
+				display: block;
+				text-decoration: none;
+				-webkit-border-radius: 35px;
+				-moz-border-radius: 35px;
+				border-radius: 35px;
+				display: none;
+				-webkit-transition: all 0.3s linear;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				background: black;
+			}
+
+			.active
+			a:active, a:hover {
+			outline: 0;
+			}
+
+			#return-to-top i {
+				color: #fff;
+				margin: 0;
+				position: relative;
+				left: 16px;
+				top: 13px;
+				font-size: 19px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				   background: rgba(0, 0, 0, 0.9);
+			}
+			#return-to-top:hover i {
+				   color: #fff;
+				   top: 5px;
+			}
+
+	</style>
+
+<body>
+
+	<a href="javascript:" id="return-to-top" style="display: block;">
+	        <i class="fa fa-arrow-up">
+	        </i></a>
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	    <div class="container main bar">
+	        <div class="row">
+	            <div role="main" class="col-md-12">
+	                <div class="page-header">
+
+	                </div>
+	            </div>
+	        </div>
+
+	         <h2>Índice</h2> 
+				<li><a href="#sec_introduccion"><b>INTRODUCCIÓN</b></a></li>
+				<li><b>REGISTRO</b></li>
+				<li><a href="#sec_mis_consultas"><b>MIS CONSULTAS</b></a></li>
+				<ul>
+					<li><a href="#sec_mis_horarios">MIS HORARIOS</a></li>
+				</ul>
+
+				<hr>
+	    </div>
+	    <!-- // CONTENIDO // -->
+	<div class="container main">
+		<section>
+			<h4 id="sec_introduccion" class="justificado">INTRODUCCION</h4>
+			<p>La Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación, ha diseñado un Sistema informático para el Acceso de Personas al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos.</p>
+		</section>
+		<h4>ACCESO AL SISTEMA</h4>
+	            <p> Para acceder al sistema de Presentismo, el usuario deberá ingresar a la siguiente dirección:
+	            <a href="https://intranet.transporte.gob.ar/ " target="_blank">intranet.transporte.gob.ar</a> y despues ingresar al modulo <b>Control de Accesos</b>.</p>
+	            <p>Para ingresar al sistema, el usuario deberá usar su usuario y contraseña de dominio, una ves ingresado los datos podra navegar segun las credenciales que posea.</p>
+	            <img src="./img/instructivo/registro_de_acceso/ingreso_al_sistema.jpg" alt="login" class="box-shadow" width="100%">
+	            <section>
+	            	<h4>REGISTRO</h4>
+	            <p>Al ingresar al sistema la primer pantalla que visualizaremos sera la de <i>Registro</i> en la que deberemos seleccionar la ubicacion en la que el usuario debera operar.</p>
+	            <img src="./img/instructivo/registro_de_acceso/registro.jpg" alt="pantalla de registro" class="box-shadow" width="100%">
+	            <p class="prefijo">Al acceder podremos visualizar una pantalla en la que podremos registrar a la persona que accedera en la ubicacion seleccionada. Deberemos ingresar el numero de documento de la persona y el sistema automaticamente detectara si la persona es un empleado o una visita.</p>
+	            <img src="./img/instructivo/registro_de_acceso/registrar_persona.jpg" alt="registrar persona" class="box-shadow" width="100%">
+	            <p class="prefijo">Si la persona es una visita se debera completar un formulario indicando <i>Nombre</i>, <i>Apellido</i>, <i>Origen (Empresa/Particular)</i>, <i>Destino de la Visita</i>, <i>Observaciones</i>, <i>Nombre, Apellido y Documento del Autorizante</i> y <i>Numero de Credencial</i>.<br>Deberemos completar todos los datos y hacer click en <i>Guardar</i>.</p>
+	            <img src="./img/instructivo/registro_de_acceso/persona_registrada.jpg" alt="persona registrada" class="box-shadow" width="100%">
+	            <p class="prefijo">En el reporte podremos visualizar todos los datos ingresados y tambien podremos marcar la salida de la persona haciendo click en el icono <img src="./img/instructivo/iconos_botones/salida.jpg">.<br>Si las personas ingresan a la ubicacion mediante el reloj biometrico los datos apareceran en la pantalla automaticamente si estan registrados en el sistema.<br>Las <i>Visitas Enroladas</i> estaran resaltadas en color <img src="./img/instructivo/iconos_botones/referencia.jpg">.<br>Tambien contaremos con un boton que nos permitira cambiar la ubicacione de ser necesario.</p>
+	            </section>
+	            <h4 id="sec_mis_consultas">MIS CONSULTAS</h4>
+	            <h5 id="sec_mis_horarios">MIS HORARIOS</h5>
+	            <p>En esta seccion el usuario logueado podra visualizar los horarios y sus propios registros dentro del sistema.</p>
+	            <img src="./img/instructivo/registro_de_acceso/horarios.jpg" alt="mis horarios" class="box-shadow" width="100%">
+	            <section id="sec_sesion" class="justificado">
+	            <h4>CERRAR SESIÓN</h4>
+	            <p>Para salir del sistema el usuario debe <b>CERRAR SESIÓN</b> en el botón que se encuentra en la esquina superior derecha.</p>
+	            <img src="./img/instructivo/iconos_botones/cerrar_sesion.png" alt= "Cerrar Sesion." class="box-shadow" style="display: block; margin:auto;">
+	        </section>
+	        <p style="float: right;">Manual de Uso Versión v1.0.0</p>
+	        <script src="../js/ancla.js" charset="utf-8"></script>
+	        </div>
+	</div>
+	</body>
+</html>

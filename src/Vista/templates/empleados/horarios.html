@@ -1,0 +1,106 @@
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <h5><small>Planillas Horarias</small></h5>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <select class="form-control" id="select_horario" name="select_horario">
+                <option value=" ">- Seleccione un Horario-</option>
+                {{{PLANTILLAS}}}
+                <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                {{{/PLANTILLAS}}}
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <h5><small>Grilla Horaria</small></h5>
+    </div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-2 top150"></div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group'>
+                    <div class="hora_icon">Domingo <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[0][0]" id="hora_desde0" value="" />
+                    <input type='text' class="form-control hora" name="horarios[0][1]" id="hora_hasta0" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group'>
+                    <div class="hora_icon">Lunes <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[1][0]" id="hora_desde1" value="" />
+                    <input type='text' class="form-control hora" name="horarios[1][1]" id="hora_hasta1" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group '>
+                    <div class="hora_icon">Martes <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[2][0]" id="hora_desde2" value="" />
+                    <input type='text' class="form-control hora" name="horarios[2][1]" id="hora_hasta2" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group '>
+                    <div class="hora_icon">Miércoles <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[3][0]" id="hora_desde3" value="" />
+                    <input type='text' class="form-control hora" name="horarios[3][1]" id="hora_hasta3" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group '>
+                    <div class="hora_icon">Jueves <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[4][0]" id="hora_desde4" value="" />
+                    <input type='text' class="form-control hora" name="horarios[4][1]" id="hora_hasta4" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group '>
+                    <div class="hora_icon">Viernes <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[5][0]" id="hora_desde5" value="" />
+                    <input type='text' class="form-control hora" name="horarios[5][1]" id="hora_hasta5" value="" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 col-horario">
+            <div class="form-group">
+                <div class='input-group '>
+                    <div class="hora_icon">Sábado <span class="glyphicon glyphicon-time"></span> </div>
+                    <input type='text' class="form-control hora" name="horarios[6][0]" id="hora_desde6" value="" />
+                    <input type='text' class="form-control hora" name="horarios[6][1]" id="hora_hasta6" value="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-xs-6">
+            <div class="form-group text-right">
+                <br>
+                <button class="btn btn-primary" type="submit" name="operacion" value="{{{OPERACION}}}">
+                    Guardar
+                </button>
+                <a href="{{{CANCELAR}}}" class="btn btn-default" type="reset">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</form>

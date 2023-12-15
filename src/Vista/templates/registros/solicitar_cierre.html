@@ -1,0 +1,121 @@
+<form action="" class="form-horizontal" method="post">
+    <div class="row">
+        <div class="col-md-6">
+            <fieldset class="">
+                <legend>Accesante |
+                    <small>
+                        <span class="label label-info">{{{TIPO_ACCESO}}}</span>
+                    </small>
+                </legend>
+                <dl class="dl-horizontal">
+                    <dt>Nombre</dt>
+                    <dd>{{{NOMBRE}}} {{{APELLIDO}}}</dd>
+                    {{{AUTORIZANTE}}}
+                        <dt>Autorizante</dt>
+                        <dd>{{{NOMBRE}}}</dd>
+                    {{{/AUTORIZANTE}}}
+                    {{{CONTRATISTA}}}
+                        <dt>Contratista</dt>
+                        <dd>{{{NOMBRE}}}</dd>
+                    {{{/CONTRATISTA}}}
+                    {{{EMPLEADO}}}
+                        <dt>Ubicación</dt>
+                        <dd>{{{UBICACION}}}</dd>
+                        <dt>Dirección</dt>
+                        <dd>{{{DIRECCION}}}</dd>
+                   {{{/EMPLEADO}}}
+                </dl>
+            </fieldset>
+        </div>
+        <div class="col-md-6">
+            <fieldset class="">
+                <legend>Acceso</legend>
+                <dl class="dl-horizontal">
+                    <dt>Observaciones</dt>
+                    <dd><input type='text' class="form-control" name="observaciones_editable" id="observaciones_editable" value="{{{OBSERVACIONES}}}"></dd>
+                    <dt>Ubicación</dt>
+                    <dd>{{{UBICACION}}}</dd>
+                    {{{VISITANTE}}}
+                        <dt>Origen</dt>
+                        <dd>{{{ORIGEN}}}</dd>
+                        <dt>Destino</dt>
+                        <dd>{{{DESTINO}}}</dd>
+                    {{{/VISITANTE}}}
+                    <dt>Ingreso</dt>
+                    <dd>
+                        <table>
+                            <tr>
+                                <th width="80" class="text-right">Tipo</th>
+                                <td class="text-left">&nbsp;&nbsp;{{{TIPO_INGRESO}}}</td>
+                            </tr>
+                            <tr>
+                                <th width="80" class="text-right">Fecha</th>
+                                <td class="text-left">&nbsp;&nbsp;{{{FECHA_INGRESO}}}</td>
+                            </tr>
+                            <tr>
+                                <th width="80" class="text-right">Hora</th>
+                                <td class="text-left">&nbsp;&nbsp;{{{HORA_INGRESO}}}</td>
+                            </tr>
+                            <tr>
+                                <th width="80" class="text-right">Usuario</th>
+                                <td class="text-left">
+                                    &nbsp;&nbsp;{{{PERSONA_INGRESO}}}</td>
+                            </tr>
+                        </table>
+                    </dd>
+                    <dt>Egreso</dt>
+                    <dd>
+                        <table width="100%" cellpadding="10">
+                            <tr style="height: 4em;">
+                                <th width="80" class="text-right">
+                                    <label for="fecha_egreso" class="control-label">Fecha&nbsp;&nbsp;</label>
+                                </th>
+                                <td>
+                                    <div class='input-group date' id='fecha_acceso_fin'>
+                                        <input type='text' class="form-control" data-toggle="tooltip"
+                                                title="Fecha para el registro de egerso"
+                                                id="fecha_egreso"
+                                                data-placement="left"
+                                                name="fecha_egreso">
+                                        <span class="input-group-addon"><span
+                                                    class="fa fa-calendar"></span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 4em;">
+                                <th width="80" class="text-right">
+                                    <label for="hora_egreso" class="control-label">Hora&nbsp;&nbsp;</label>
+                                </th>
+                                <td>
+                                    <div class='input-group date' id='hora_acceso_fin'>
+                                        <input type='text' class="form-control" data-toggle="tooltip"
+                                                title="Hora para el registro de egerso"
+                                                id="hora_egreso"
+                                                data-placement="left"
+                                                name="hora_egreso">
+                                        <span class="input-group-addon"><span
+                                                    class="fa fa-clock-o"></span></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr style="height: 4em;">
+                                <th width="80" class="text-right">
+                                    <label for="usuario" class="control-label">Usuario&nbsp;&nbsp;</label>
+                                </th>
+                                <td class="text-left">
+                                    {{{USUARIO_NOMBRE}}}
+                                </td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </fieldset>
+        </div>
+        <div class="col-xs-12 text-right">
+            <div class="form-group">
+                <button name="operacion" value="baja" type="submit" class="btn btn-primary">Guardar</button>
+                <a class="btn btn-default" href="{{{CANCELAR}}}">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</form>

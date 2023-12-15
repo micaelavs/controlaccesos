@@ -1,0 +1,90 @@
+<form id="{{{FORM}}}" method='POST' action="">
+<div class= "row">
+    <div style="display:none;" class="alert alert-info fade in alert-dismissable" id="alerta"></div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+      <div class="form-group">
+        <label for="dni" class="control-label">Documento<span class="text-danger"> *</span></label> 
+        <input type='text' required name="dni" id="dni" {{{DISABLED}}} class="form-control" value="{{{DNI}}}">
+        <input type="hidden" class="form-control" id="dni_agente" name="dni_agente" value="{{{DNI}}}"> 
+      </div>
+  </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="control-label" for="nombre">Nombre<span class="required"> *</span></label>
+      <span class="form-control" id="nombre" disabled>{{{NOMBRE}}}</span>
+    </div>
+  </div> 
+</div>
+<div class="row">
+  <div class="col-md-6">
+     <div class="form-group">
+        <label for="tipo_novedad" class="control-label">Tipo Novedad<span class="required"> *</span></label>
+        <select name="tipo_novedad" id="tipo_novedad" class="form-control">
+            <option value="">Seleccione</option>
+            {{{TIPO_NOVEDAD}}}
+            <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+            {{{/TIPO_NOVEDAD}}}
+        </select>
+      </div>
+  </div>
+  <div class="col-md-2">
+      <div class="form-group">
+          <label for="fecha_desde" class="control-label">Fecha Desde<span class="required"> *</span></label>
+          <div class="input-group date fecha_desde">
+              <input type="text" required class="form-control" id="fecha_desde"
+                  name="fecha_desde" value="{{{FECHA_DESDE}}}">
+              <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+          </div>
+      </div>
+  </div>
+  <div class="col-md-2">
+      <div class="form-group">
+          <label for="fecha_hasta" class="control-label">Fecha Hasta<span class="required" id="mostrar"> *</span></label>
+          <div class="input-group date fecha_hasta">
+              <input type="text" class="form-control" id="fecha_hasta"
+                  name="fecha_hasta" value="{{{FECHA_HASTA}}}">
+              <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+          </div>
+      </div>
+  </div>
+</div>
+<div id="fila_horario" style="visibility: hidden;" class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="control-label" for="hora_inicio">Hora Inicio <span class="required">*</span></label>
+      <div class='input-group '>
+        <input value="{{{HORA_INICIO}}}" type='time' class="form-control" name="hora_inicio" id="hora_incio"  />
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label class="control-label" for="hora_fin">Hora Fin <span class="required">*</span></label>
+      <div class='input-group '>
+        <input value="{{{HORA_FIN}}}" type='time' class="form-control" name="hora_fin" id="hora_fin" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6"></div>
+   <div class="col-md-2"></div>
+    <div class="col-md-2 text-right">
+      <button type="submit" class="btn btn-primary" data-placement="left" name="boton_novedades" value="{{{OPERACION}}}" id='boton_novedades' title="Guardar">GUARDAR</button>
+      <a href="{{{CANCELAR}}}" class="btn btn-default" >CANCELAR</a>
+    </div>
+</div>
+</form>
+<br>
+<div class="page-header header-half menos_top">
+    <h4><i  aria-hidden="true"></i> {{{TITULO_2}}}<small> | {{{SUBTITULO_2}}}</small></h4>
+</div>
+<table id="tabla" class="table table-striped dataTables dataTable no-footer dtr-inline novedades_ultimas_siete"></table>
+<div class="row">
+    <div class="col-md-6 exportador">   
+        <button class="btn btn-default accion_exportador" value="{{{BOTON_EXCEL}}}"><span class="fa fa-file-text-o"></span> EXCEL</button> 
+    </div>
+
+</div>

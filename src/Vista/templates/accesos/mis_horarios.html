@@ -1,0 +1,119 @@
+<div class="row">	
+    <div class="col-xs-12" id="mensajes"></div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <a role="button"
+           data-toggle="collapse"
+           href="#collapseFiltros"
+           aria-expanded="false"
+           aria-controls="collapseFiltros"
+           style="display: block;">
+            <span class="">
+                <i class="fa fa-filter"></i> Filtros
+                <i class="fa fa-caret-right fa-fw" id="collapseFiltros_caret"></i>
+            </span>
+        </a>
+        <div class="collapse" id="collapseFiltros">
+            <div class="">
+                <div class="row">
+                    <div class="col-md-3">
+                        <label class="control-label" for="ubicacion">Ubicación</label>
+                        <select id="ubicacion" class="form-control height">
+                            <option value="">Todos</option>
+                            {{{UBICACIONES}}}
+				                <option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+				            {{{/UBICACIONES}}}
+                        </select>
+                    </div>
+                    
+                    <!-- Fechas de filtrado -->
+                    <div class="col-md-2">
+                        <label class="control-label" for="fecha_desde">Fecha Desde</label>
+                        <div class='input-group date' id='datetimeInicialFecha'>
+                            <input type='text' class="form-control height" name="fecha_desde"
+                                   id="fecha_desde"/>
+                            <span class="input-group-addon"><span
+                                        class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="control-label" for="fecha_hasta">Fecha Hasta</label>
+                        <div class='input-group date' id='datetimeFinalFecha'>
+                            <input type='text' class="form-control height" name="fecha_hasta"
+                                   id="fecha_hasta"/>
+                            <span class="input-group-addon"><span
+                                        class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-2"></div>
+    <div class="col-xs-8" id="horario">
+        <div class="col_horario">
+            <div class="div_dia rtl">Domingo</div>
+            <div class="div_hora rbl">
+                {{{DOMINGO}}}
+            </div>
+        </div>
+        <div class="col_horario">
+            <div class="div_dia">Lunes</div>
+            <div class="div_hora">
+                {{{LUNES}}}
+            </div>
+        </div>
+        <div class="col_horario">
+            <div class="div_dia">Martes</div>
+            <div class="div_hora">
+                {{{MARTES}}}
+        </div>
+        </div>
+        <div class="col_horario">
+            <div class="div_dia">Miécoles</div>
+            <div class="div_hora">
+                {{{MIERCOLES}}}    
+            </div>
+        </div>
+        <div class="col_horario">
+            <div class = "div_dia">Jueves</div>
+            <div class = "div_hora">
+                {{{JUEVES}}}
+            </div>
+        </div>
+        <div class="col_horario">
+            <div class = "div_dia">Viernes</div>
+            <div class = "div_hora">
+                {{{VIERNES}}}
+            </div>
+        </div>
+        <div class="col_horario">
+            <div class="div_dia rtr">Sábado</div>
+            <div class="div_hora rbr">
+                {{{SABADO}}}
+            </div> 
+        </div>
+    </div>
+    <div class="col-xs-2"></div>
+</div>
+<div class="row">
+    <div class="alert col-xs-12">
+        <span class="label label-info"><span class="fa fa-fw fa-desktop"></span> On line</span> Registro desde puesto de CIET.&nbsp;&nbsp;
+        <span class="label label-success"><span class="fa fa-fw fa-clock-o"></span>Reloj</span> Registro Biométrico.&nbsp;&nbsp;
+        <span class="label label-bioHacienda"><span class="fa fa-fw fa-clock-o"></span>BIO Hacienda</span> Registro Biométrico MECON.&nbsp;
+        <span class="label label-warning"><span class="fa fa-fw fa-desktop"></span> Off line</span> Registro Manual.&nbsp;&nbsp;
+        <span class="label label-danger"><span class="fa fa-fw fa-desktop"></span> Sin registro</span> Registro sin salida marcada.&nbsp;&nbsp;
+    </div>
+    <div class="col-xs-12 alert alert-warning default-filtro">
+        <b>Filtro por defecto de los últimos 7 días.</b>
+      </div>
+</div>	
+<div class="row">
+    <div class="col-xs-12">
+        <table id="dataTable" class="table table-striped dataTables" width="100%"></table>
+    </div>
+</div>

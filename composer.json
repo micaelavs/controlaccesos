@@ -1,0 +1,35 @@
+{
+    "name": "fmt/crear_proyecto",
+    "description": "Proyecto completo desde cero con API y estructuras",
+    "type": "project",
+    "license": "proprietary",
+    "config": {
+		"secure-http": true
+	},
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://desa.transporte.gob.ar/packages"
+        }
+    ],
+    "autoload": {
+		"psr-4": {
+			"App\\": "src"
+		}
+	},
+    "minimum-stability": "stable", 
+    "require": {
+        "fmt/fmt": "^1.6",
+        "fmt/configuracion": "^1.0",
+        "fmt/validator": "^1.0",
+        "fmt/consola": "^1.1",
+        "fmt/usuarios": "^1.10",
+        "fmt/mailer": "^1",
+        "fmt/logger": "^1",
+        "dompdf/dompdf": "^1.1",
+        "fmt/informacion_fecha" : "^2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    }
+}

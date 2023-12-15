@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <title>Control de Accesos | Ministerio de Transporte</title>
+	    <link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+
+	   	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	     <link rel="stylesheet" href="/cdn/estiloIS/3/estilois.css"/>
+	   
+	    <script src="/cdn/js/jquery.js" charset="utf-8"></script>
+	    <script src="/cdn/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/moment.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/es.js" charset="utf-8"></script>
+	</head>
+
+<!-- //// CSS //// -->
+<style>
+		h4, h5, h6 {
+			color:#0072bc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.box-shadow {
+			box-shadow:13px 9px 22px 1px rgba(0,0,0,0.4);
+		}
+
+		.prefijo {
+			margin-top: 30px;
+		}
+
+		 #return-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.7);
+				width: 50px;
+				height: 50px;
+				display: block;
+				text-decoration: none;
+				-webkit-border-radius: 35px;
+				-moz-border-radius: 35px;
+				border-radius: 35px;
+				display: none;
+				-webkit-transition: all 0.3s linear;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				background: black;
+			}
+
+			.active
+			a:active, a:hover {
+			outline: 0;
+			}
+
+			#return-to-top i {
+				color: #fff;
+				margin: 0;
+				position: relative;
+				left: 16px;
+				top: 13px;
+				font-size: 19px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				   background: rgba(0, 0, 0, 0.9);
+			}
+			#return-to-top:hover i {
+				   color: #fff;
+				   top: 5px;
+			}
+
+	</style>
+
+<body>
+
+	<a href="javascript:" id="return-to-top" style="display: block;">
+	        <i class="fa fa-arrow-up">
+	        </i></a>
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	    <div class="container main bar">
+	        <div class="row">
+	            <div role="main" class="col-md-12">
+	                <div class="page-header">
+
+	                </div>
+	            </div>
+	        </div>
+
+	        <h2>Índice</h2> 
+				<li><a href="#sec_introduccion"><b>INTRODUCCIÓN</b></a></li>
+				<li><b>ALTAS</b></li>
+				<ul>
+					<li><a href="#sec_empleados"><b>EMPLEADOS</b></a></li>
+					<li><a href="#sec_novedades"><b>NOVEDADES</b></a></li>
+					<li><a href="#sec_horarios"><b>HORARIOS</b></a></li>
+				</ul>
+
+				<li><b>REPORTES</b></li>
+				<ul>
+					<li><a href="#sec_reporte_empleados"><b>EMPLEADOS</b></a></li>
+					<li><a href="#sec_planilla_unica_reloj"><b>PLANILLA UNICA RELOJ</b></a></li>
+					<li><a href="#sec_informe_mensual"><b>INFORME MENSUAL</b></a></li>
+					<li><a href="#sec_reporte_desvios_horarios"><b>REPORTE DESVIOS HORARIOS</b></a></li>
+					<li><a href="#sec_calendario_planilla"><b>CALENDARIO</b></a></li>	
+				</ul>
+
+				<li><b>MIS CONSULTAS</b></li>
+				<ul>
+					<li><a href="#sec_mis_horarios"><b>MIS HORARIOS</b></a></li>
+				</ul>
+
+				<li><a href="#sec_sesion"><b>CERRAR SESIÓN</b></a></li>
+
+				<hr>
+	    </div>
+	    	    <!-- // CONTENIDO // -->
+	<div class="container main">
+		<section>
+			<h4 id="sec_introduccion" class="justificado">INTRODUCCION</h4>
+			<p>La Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación, ha diseñado un Sistema informático para el Acceso de Personas al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos.</p>
+		</section>
+		<h4>ACCESO AL SISTEMA</h4>
+				<p> Para acceder al sistema de Presentismo, el usuario deberá ingresar a la siguiente dirección:
+	            <a href="https://intranet.transporte.gob.ar/ " target="_blank">intranet.transporte.gob.ar</a> y despues ingresar al modulo <b>Control de Accesos</b>.</p>
+	            <p>Para ingresar al sistema, el usuario deberá usar su usuario y contraseña de dominio, una ves ingresado los datos podra navegar segun las credenciales que posea.</p>
+	            <img src="./img/instructivo/RCA/ingreso_al_sistema.png" alt="login" class="box-shadow" width="100%">
+	            <section>
+	            	<h4>ALTAS</h4>	            	
+	            	<h5 id="sec_empleados" class="prefijo">EMPLEADOS</h5>
+	            <p>En esta seccion podremos visualizar el listado completo de los <i>Empleados</i> con sus correspondientes datos:</p>
+	            	<ul>
+	            		<li>Documento</li>
+	            		<li>Nombre</li>
+	            		<li>Apellido</li>
+	            		<li>Ubicacion Principal</li>
+	            		<li>Ubicaciones Autorizadas</li>
+	            		<li>Dependencia Principal</li>
+	            		<li>Contrato</li>
+	            		<li>Enrolado</li>	            		
+	            	</ul>
+	            <p>Tambien contaremos con opciones de filtrado como <i>Dependencias</i>, <i>Ubicaciones</i>, <i>Ubicacion Principal</i>, <i>Tipo de Contrato</i>, <i>Enrolado</i> y un boton para poder visualizar el listado de empleados <i>inactivos</i>.</p>
+	            <img src="./img/instructivo/RCA/pantalla_empleados.png" alt="pantalla de empleados" class="box-shadow" width="100%">
+	            <p class="prefijo">Cada empleado contara con una columna llamada <i>Acciones</i> que contendra un icono llamado <i>Horario</i> (<img src="./img/instructivo/iconos_botones/icono_horario.png">). Al ingresar en la pantalla de <i>Horarios</i> podremos cargar una <i>Plantilla Horario</i> precargada o asignar los horarios de cada dia individualmente en la <i>Grilla Horaria</i>.</p>
+	            <img src="./img/instructivo/RCA/pantalla_horarios.png" alt="pantalla de horarios" class="box-shadow" width="100%">
+	            <h5 id="sec_novedades" class="prefijo">NOVEDADES</h5>
+	            <p>En esta seccion podremos dar de alta las <i>Novedades</i> de los empleados, contaremos con opciones de filtrado y un listado completo con todas las novedades cargadas.<br>Tambien contaremos con un exportador a Excel para tener la informacion mas detallada y podremos <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) las novedades.</p>
+	            <img src="./img/instructivo/RCA/pantalla_novedades.png" alt="pantalla de novedades" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta una <i>Novedad</i> deberemos hacer click en el boton <b>Nuevo</b>, deberemos ingresar el documento del empleado, seleccionar el <i>tipo de novedad</i> que se le asignara y la <i>fecha desde/fecha hasta.</i><br>Tambien contaremos con un listado en la parte inferior de la pantalla con todas las novedades que fueron ingresadas para el empleado y un exportador a Excel de las novedades propias del empleado. En esta misma pantalla se podran editar las novedades de ser necesario.<br>Para finalizar el proceso seleccionamos <i>Guardar</i></p>
+	            <img src="./img/instructivo/RCA/registrar_novedades.png" alt="registrar novedades" class="box-shadow" width="100%">
+	            <h5 id="sec_horarios" class="prefijo">HORARIOS</h5>
+	            <p>En esta seccion podremos registrar una banda horaria, tambien podremos <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) la misma.</p>
+	            <img src="./img/instructivo/RCA/horarios.png" alt="horarios" class="box-shadow" width="100%">
+	            <p class="prefijo">Para poder registrar una banda horaria deberemos hacer click en el boton <i>Nuevo</i> y completar los datos <i>Nombre</i>, <i>Rango de dias</i> y <i>Rango de Horario</i>.<br>Para finalizar hacemos click en <i>Guardar</i></p>
+	            <img src="./img/instructivo/RCA/registrar_horario.png" alt="registrar horario" class="box-shadow" width="100%">
+	            </section>
+	            <section>
+	            	<h4>REPORTES</h4>
+	            	<h5 id="sec_reporte_empleados">EMPLEADOS</h5>
+	            	<p>En esta seccion se podra obtener informacion acerca de los ingresos y egresos de los empleados, contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Dependencia</i>, <i>Fecha Desde</i>, <i>Fecha Hasta</i> y <i>Otros Criterios</i>, para realizar la busqueda debemos hacer click en el boton <b>Filtrar</b>.<br>En el listado cada tipo de <i>Ingreso</i> y <i>Egreso</i> estaran diferenciados por:</p>
+	            <ul>
+	            	<li>Registro de Comision Horaria <img src="./img/instructivo/iconos_botones/comision_horaria.png"></li>
+	            	<li>Registro desde puesto CIET <img src="./img/instructivo/iconos_botones/online.png"></li>
+	            	<li>Registro Biometrico <img src="./img/instructivo/iconos_botones/reloj.png"></li>
+	            	<li>Registro Biometrico MECON <img src="./img/instructivo/iconos_botones/biohacienda.png"></li>
+	            	<li>Registro Manual <img src="./img/instructivo/iconos_botones/offline.png"></li>
+	            	<li>Sin Registro <img src="./img/instructivo/iconos_botones/sinregistro.png"></li>
+	            </ul>
+	            <img src="./img/instructivo/RCA/reporte_empleados.png" alt="reportes de empleados" class="box-shadow" width="100%">
+	            <p class="prefijo">Tambien contaremos con un exportador mediante <b>Excel</b> para obtener el listado de datos de los empleados mas detalladamente.</p>
+	            <h5 id="sec_planilla_unica_reloj" class="prefijo">PLANILLA RELOJ</h5>
+	            <p>En esta seccion podremos <b>Descargar</b> la planilla que contiene los horarios de los empleados, deberemos ingresar la <i>Dependencia</i> y la <i>Fecha</i> y seleccionar el boton <i>Planilla Otras Modalidades</i> o <i>Planilla Ley Marco</i>.</p>
+	            <img src="./img/instructivo/RCA/planilla_reloj.png" alt="planilla unica reloj" class="box-shadow" width="100%">
+	            <h5 id="sec_informe_mensual" class="prefijo">INFORME MENSUAL</h5>
+	            <p>En esta seccion podremos imprimir el <i>Informe Mensual</i> de accesos de los empleados de una determinada dependencia. Deberemos ingresar la <i>Dependencia</i>, <i>Mes</i> y <i>año</i> y luego seleecionar una de las opciones para que el sistema imprima el Informe que seran <b>Otras Modalidades</b>, <b>Empleados</b> o <b>Ambos</b> de acuerdo a la informacion que necesitemos.</p>
+	            <img src="./img/instructivo/RCA/informe_mensual.png" alt="Planilla de informe mensual" class="box-shadow" width="100%">
+	            <h5 id="sec_reporte_desvios_horarios" class="prefijo">REPORTE DESVIOS DE HORARIOS</h5>
+	            <p>En esta seccion podremos generar el informe de desvios de horarios, deberemos completar un formulario ingresando la <i>Dependencia</i>, <i>Tipo de Contrato</i>, <i>Fecha Desde</i> y <i>Fecha Hasta</i>. Tambien podremos realizar un informe de un empleado especifico que necesitemos ingresando el <i>Documento.</i><br>Para generar el informe seleciconamos el boton <b>Generar Informe</b>.</p>
+	            <img src="./img/instructivo/RCA/desvios_horarios.png" alt="Rerporte de desvios de horarios" class="box-shadow" width="100%">
+	            <h5 id="sec_calendario_planilla" class="prefijo">CALENDARIO PLANILLA</h5>
+	            <p>En esta seccion podremos consultar la <i>Planilla Calendario</i> mensual, en la misma podremos verificar los datos de <i>Presentes</i>, <i>Ausentes</i> y <i>Novedades</i> de los empleados.<br>Para realizar la consulta deberemos ingresar la <i>Dependencia</i>, el <i>Contrato</i> los cuales podremos seleccion individualmente o todos los contratos haciendo click en la opcion <b>Seleccionar Todos</b> y la <i>Fecha</i> la cual sera solo el <b>Mes</b> y <b>Año</b>. Una vez ingresados los datos seleccionaremos el boton <i>Consultar</i> para cargar el <i>Calendario</i>.</p>
+	            <img src="./img/instructivo/RCA/calendario_planilla.png" alt="pantalla de calendario planilla" class="box-shadow" width="100%">
+	            </section>
+	            <section>
+	            <h4>MIS CONSULTAS</h4>
+	            <h5 id="sec_mis_horarios">MIS HORARIOS</h5>
+	            <p>En esta seccion el usuario logueado podra visualizar los horarios y sus propios registros dentro del sistema.</p>
+	            <img src="./img/instructivo/RCA/mis_horarios.png" alt="pantalla de mis horarios" class="box-shadow" width="100%">
+	            </section>
+
+	            <section id="sec_sesion" class="justificado">
+	            <h4>CERRAR SESIÓN</h4>
+	            <p>Para salir del sistema el usuario debe <b>CERRAR SESIÓN</b> en el botón que se encuentra en la esquina superior derecha.</p>
+	            <img src="./img/instructivo/iconos_botones/cerrar_sesion.png" alt= "Cerrar Sesion." class="box-shadow" style="display: block; margin:auto;">
+	        </section>
+	        <p style="float: right;">Manual de Uso Versión v1.3.0</p>
+	        <script src="../js/ancla.js" charset="utf-8"></script>
+	        </div>
+	</div>
+	</body>
+</html>

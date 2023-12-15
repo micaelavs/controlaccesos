@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="keywords" content="">
+	    <title>Control de Accesos | Ministerio de Transporte</title>
+	    <link rel="shortcut icon" href="http://www.transporte.gob.ar/_img/favicon.png">
+
+	   	<link rel="stylesheet" href="/cdn/bootstrap/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/roboto-fontface.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/droid-serif.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="/cdn/poncho-v01/css/poncho.min.css">
+	     <link rel="stylesheet" href="/cdn/estiloIS/3/estilois.css"/>
+	   
+	    <script src="/cdn/js/jquery.js" charset="utf-8"></script>
+	    <script src="/cdn/bootstrap/js/bootstrap.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/moment.min.js" charset="utf-8"></script>
+	    <script src="/cdn/momentjs/2.14.1/es.js" charset="utf-8"></script>
+	</head>
+
+<!-- //// CSS //// -->
+<style>
+		h4, h5, h6 {
+			color:#0072bc;
+		}
+
+		p {
+			font-size: 20px;
+		}
+
+		.box-shadow {
+			box-shadow:13px 9px 22px 1px rgba(0,0,0,0.4);
+		}
+
+		.prefijo {
+			margin-top: 30px;
+		}
+
+		 #return-to-top {
+				position: fixed;
+				bottom: 20px;
+				right: 20px;
+				background: rgb(0, 0, 0);
+				background: rgba(0, 0, 0, 0.7);
+				width: 50px;
+				height: 50px;
+				display: block;
+				text-decoration: none;
+				-webkit-border-radius: 35px;
+				-moz-border-radius: 35px;
+				border-radius: 35px;
+				display: none;
+				-webkit-transition: all 0.3s linear;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				background: black;
+			}
+
+			.active
+			a:active, a:hover {
+			outline: 0;
+			}
+
+			#return-to-top i {
+				color: #fff;
+				margin: 0;
+				position: relative;
+				left: 16px;
+				top: 13px;
+				font-size: 19px;
+				-webkit-transition: all 0.3s ease;
+				-moz-transition: all 0.3s ease;
+				-ms-transition: all 0.3s ease;
+				-o-transition: all 0.3s ease;
+				transition: all 0.3s ease;
+			}
+
+			#return-to-top:hover {
+				   background: rgba(0, 0, 0, 0.9);
+			}
+			#return-to-top:hover i {
+				   color: #fff;
+				   top: 5px;
+			}
+
+	</style>
+
+<body>
+
+	<a href="javascript:" id="return-to-top" style="display: block;">
+	        <i class="fa fa-arrow-up">
+	        </i></a>
+
+<!-- //// HEADER //// -->
+<div class="fondo">
+	    <div class="container main bar">
+	        <div class="row">
+	            <div role="main" class="col-md-12">
+	                <div class="page-header">
+
+	                </div>
+	            </div>
+	        </div>
+
+	        <h2>Índice</h2> 
+				<li><a href="#sec_introduccion"><b>INTRODUCCIÓN</b></a></li>
+				<li><b>ALTAS</b></li>
+				<ul>
+					<li><a href="#sec_usuarios"><b>USUARIOS</b></a></li>
+					<li><a href="#sec_dependencias"><b>DEPENDENCIAS</b></a></li>
+					<li><a href="#sec_personas"><b>PERSONAS</b></a></li>
+					<li><a href="#sec_empleados"><b>EMPLEADOS</b></a></li>
+						<ul>
+							<li><a href="#sec_modificar_empleado">MODIFICAR EMPLEADO</a></li>
+							<li><a href="#sec_modificar_contrato">MODIFICAR CONTRATO</a></li>
+							<li><a href="#sec_borrar_empleado">BORRAR EMPLEADO</a></li>
+							<li><a href="#sec_horario">HORARIO</a></li>
+						</ul>
+					<li><a href="#sec_ubicaciones"><b>UBICACIONES</b></a></li>
+					<li><a href="#sec_novedades"><b>NOVEDADES</b></a></li>
+					<li><a href="#sec_horarios"><b>HORARIOS</b></a></li>
+						<ul>
+							<li><a href="#sec_carga_masiva">CARGA MASIVA</a></li>
+						</ul>
+				</ul>
+				
+				<li><b>REGISTRO</b></li>
+				<ul>
+					<li><a href="#sec_carga_offline_para_empleados">CARGA OFFLINE PARA EMPLEADOS</a></li>
+				</ul>
+
+				<li><b>REPORTES</b></li>
+				<ul>
+					<li><a href="#sec_reporte_empleados"><b>EMPLEADOS</b></a></li>
+					<li><a href="#sec_planilla_reloj"><b>PLANILLA UNICA RELOJ</b></a></li>
+					<li><a href="#sec_reporte_desvios_horarios"><b>REPORTE DESVIOS HORARIOS</b></a></li>
+					<li><a href="#sec_calendario_planilla"><b>CALENDARIO PLANILLA</b></a></li>
+					<li><a href="#sec_ausentismo_online"><b>AUSENTISMO ONLINE</b></a></li>
+					<li><a href="#sec_configuracion_informe_mensual"><b>CONFIGURACION INFORME MENSUAL</b></a></li>
+				</ul>
+
+				<li><b>ADMINISTRACION</b></li>
+				<ul>
+					<li><a href="#sec_solicitudes"><b>SOLICITUDES</b></a></li>
+				</ul>
+
+				<li><b>MIS CONSULTAS</b></li>
+				<ul>
+					<li><a href="#sec_mis_horarios"><b>MIS HORARIOS</b></a></li>
+				</ul>
+
+				<li><a href="#sec_sesion"><b>CERRAR SESIÓN</b></a></li>
+		<hr>
+	    </div>
+	    	    <!-- // CONTENIDO // -->
+	<div class="container main">
+		<section>
+			<h4 id="sec_introduccion" class="justificado">INTRODUCCION</h4>
+			<p>La Dirección de Integración de Sistemas del Ministerio de Transporte de la Nación, ha diseñado un Sistema informático para el Acceso de Personas al Ministerio y sus distintas dependencias, permitiendo su implementación a otros organismos.</p>
+		</section>
+		<h4>ACCESO AL SISTEMA</h4>
+				<p> Para acceder al sistema de Presentismo, el usuario deberá ingresar a la siguiente dirección:
+	            <a href="https://intranet.transporte.gob.ar/ " target="_blank">intranet.transporte.gob.ar</a> y despues ingresar al modulo <b>Control de Accesos</b>.</p>
+	            <p>Para ingresar al sistema, el usuario deberá usar su usuario y contraseña de dominio, una ves ingresado los datos podra navegar segun las credenciales que posea.</p>
+	            <img src="./img/instructivo/Admin_RRHH/ingreso_al_sistema.jpg" alt="login" class="box-shadow" width="100%">
+	            <section>
+	            	<h4>ALTAS</h4>
+	            	<h5 id="sec_usuarios">USUARIOS</h5>
+	            	<p>Este apartado permite dar de alta nuevos usuarios completando obligatoriamente los campos Nombre y Apellido y DNI; o dar de baja usuarios pre-existentes. Es condición excluyente para ser registrado como usuario, haber sido registrado previamente como empleado.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/pantalla_usuarios.jpg" alt="pantalla de usuarios" class="box-shadow" width="100%">
+	            	<p class="prefijo">Para ingresar a la pantalla de <b>Registrar Usuario</b> hacemos click en el boton <i>Nuevo</i>.<br>Ingresaremos en la siguiente pantalla:</p>
+	            	<img src="./img/instructivo/Admin_RRHH/registro_usuario.jpg" alt="registro de usuarios" class="box-shadow" width="100%">
+	            	<p class="prefijo">Deberemos completar los campos <i>Nombre de Usuario</i> y <i>Documento</i> para poder asociar el usuario a los datos del empleado. Se podrá modificar los datos y el perfil de cada usuario, a fin de restringir o brindarle acceso a otras tareas.</p>
+	            	<h5 id="sec_dependencias" class="prefijo">DEPENDENCIAS</h5>
+	            	<p>En esta seccion se podran visualizar el listado completo de las dependencias cargadas dentro del sistema.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/listado_dependencias.png" alt="listado de dependencias" class="box-shadow" width="100%">
+	            	<h5 id="sec_personas" class="prefijo">PERSONAS</h5>
+	            	<p>En esta seccion podremos visualizar el listado completo de las <i>Personas</i> dentro del sistema.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/pantalla_personas.png" alt="listado de personas" class="box-shadow" width="100%">
+	            	<p class="prefijo">Tambien agregar personas seleccionando el boton <strong>Agregar</strong>, deberemos completar los campos <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i> y <i>Genero</i>.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/agregar_persona.png" alt="agregar personas" class="box-shadow" width="100%">
+	            	<h5 id="sec_empleados" class="prefijo">EMPLEADOS</h5>
+	            <p>En esta seccion podremos visualizar el listado completo de los <i>Empleados</i> con sus correspondientes datos:</p>
+	            	<ul>
+	            		<li>Documento</li>
+	            		<li>Nombre</li>
+	            		<li>Apellido</li>
+	            		<li>Ubicacion Principal</li>
+	            		<li>Ubicaciones Autorizadas</li>
+	            		<li>Dependencia Principal</li>
+	            		<li>Contrato</li>
+	            		<li>Enrolado</li>	            		
+	            	</ul>
+	            	<p>Tambien contaremos con opciones de filtrado como <i>Dependencias</i>, <i>Ubicaciones</i>, <i>Ubicacion Principal</i>, <i>Tipo de Contrato</i>, <i>Enrolado</i> y un boton para poder visualizar el listado de empleados <i>inactivos</i>.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/listado_empleados.png" alt="listado de empleados" class="box-shadow" width="100%">
+	            	<p class="prefijo">Para dar de alta un <i>Empleado</i> deberemos seleccionar el boton <b>Nuevo</b> ingresaremos en una pantalla donde visualizaremos un formulario el cual deberemos completar ingresando todos los datos obligatorios como <i>Documento</i>, <i>Nombre</i>, <i>Apellido</i>, <i>CUIT</i>, <i>Email</i>, <i>Genero</i>, <i>Dependencia Principal</i>, <i>Fecha Desde</i>, <i>Fecha Hasta</i>, <i>Cargo</i>, <i>Ubicaciones Autorizadas</i> y <i>Ubicacion Principal</i>.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/alta_empleados.png" alt="alta de empleados" class="box-shadow" width="100%">
+	            	<p class="prefijo">Cada empleado contara en la pantalla principal con una columna llamada <i>Acciones</i> que contendra cuatro iconos <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) <i>Modificar Contrato</i> (<img src="./img/instructivo/iconos_botones/icono_modificar_ubicacion.png">) <i>Borrar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) y <i>Horario</i> (<img src="./img/instructivo/iconos_botones/icono_horario.png">). <br>Tambien contaremos con un exportador a <b>Excel</b> donde podremos visualizar todos los datos de los empleados. Tambien dispondremos de un boton para poder visualizar el listado de empleados <i>Inactivos</i> dentro del sistema y opciones de <b>Filtrado</b>.</p>
+	            	<h6 id="sec_modificar_empleado" class="prefijo">MODIFICAR EMPLEADO</h6>
+	            	<p>En este apartado podremos modificar los datos del empleado, la pantalla es igual a la que se nos presenta cuando damos de alta un nuevo empleado</p>
+	            	<img src="./img/instructivo/Admin_RRHH/modificar_empleado.png" alt="modificar empleado" class="box-shadow" width="100%">
+	            	<h6 id="sec_modificar_contrato" class="prefijo">MODIFICAR CONTRATO</h6>
+	            	<p>En este apartado podremos modificar el contrato del empleado, ya sea finalizarlo o renovar el mismo</p>
+	            	<img src="./img/instructivo/Admin_RRHH/modificar_contrato.png" alt="modificar contrato" class="box-shadow" width="100%">
+	            	<h6 id="sec_borrar_empleado" class="prefijo">BORRAR EMPLEADO</h6>
+	            	<p>Al selecciona este icono se podra dar de baja al empleado dentro del sistema, la condicion sera que no debera tener movimientos dentro del sistema para poder borrarlo/</p>
+	            	<h6 id="sec_horario" class="prefijo">HORARIO</h6>
+	            	<p>En este apartado podremos visualizar el horario asignado del empleado. Tambien podremos asignarle una <i>Plantilla Horaria</i> o asignales los horarios manualmente en cada uno de los dias de la semana.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/horarios_del_empleado.png" alt="horarios del empleado" class="box-shadow" width="100%">
+	            	<h5 id="sec_ubicaciones" class="prefijo">UBICACIONES</h5>
+	            	<p>En este aparte podremos visualizar el listado de las <i>Ubicaciones</i> dentro del sistema en las cuales estaran asociados los diferentes empleados.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/ubicaciones.png" alt="Ubicaciones" class="box-shadow" width="100%">
+	            	<p class="prefijo">Para agregar una nueva ubicacion deberemos seleccionar el boton <i>Nuevo</i> y completar los tres campos obligatorios <i>Nombre</i>, <i>Calle</i> y <i>Numero</i>.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/registrar_ubicacion.png" alt="Registrar ubicacion" class="box-shadow" width="100%">
+	            	<p class="prefijo">Tambien contaremos con dos iconos en la columna <i>Acciones</i> que son <b>Editar</b> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <b>Borrar</b> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) .<br>En los cuales si seleccionamos el primero podremos editar los datos de la ubicacion y si selecciona el segundo procederemos a borrar la ubicacion, siempre y cuando la mismo no tenga empleados asociados.</p>
+	            	<h5 id="sec_novedades" class="prefijo">NOVEDADES</h5>
+	            <p>En esta seccion podremos dar de alta las <i>Novedades</i> de los empleados, contaremos con opciones de filtrado y un listado completo con todas las novedades cargadas.<br>Tambien contaremos con un exportador a Excel para tener la informacion mas detallada y podremos <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) y <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) las novedades.</p>
+	            <img src="./img/instructivo/Admin_RRHH/pantalla_novedades.png" alt="pantalla de novedades" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta una <i>Novedad</i> deberemos hacer click en el boton <b>Nuevo</b>, deberemos ingresar el documento del empleado, seleccionar el <i>tipo de novedad</i> que se le asignara y la <i>fecha desde/fecha hasta.</i><br>Tambien contaremos con un listado en la parte inferior de la pantalla con todas las novedades que fueron ingresadas para el empleado y un exportador a Excel de las novedades propias del empleado. En esta misma pantalla se podran editar las novedades de ser necesario.<br>Para finalizar el proceso seleccionamos <i>Guardar</i></p>
+	            <img src="./img/instructivo/Admin_RRHH/registrar_novedades.png" alt="registrar novedades" class="box-shadow" width="100%">
+	            <h5 id="sec_horarios" class="prefijo">HORARIOS</h5>
+	            <p>En esta seccion podremos registrar una banda horaria, tambien podremos <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">), <i>Eliminar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) y realizar una <i>Carga Masiva</i> (<img src="./img/instructivo/iconos_botones/carga_masiva.png">) para la misma.</p>
+	            <img src="./img/instructivo/Admin_RRHH/pantalla_horarios.png" alt="Pantalla de Horarios" class="box-shadow" width="100%">
+	            <p class="prefijo">Para poder registrar una banda horaria deberemos hacer click en el boton <i>Nuevo</i> y completar los datos <i>Nombre</i>, <i>Rango de dias</i> y <i>Rango de Horario</i>.<br>Para finalizar hacemos click en <i>Guardar</i></p>
+	            <img src="./img/instructivo/Admin_RRHH/registrar_horario.png" alt="registrar horario" class="box-shadow" width="100%">
+	            <h6 id="sec_carga_masiva" class="prefijo">CARGA MASIVA</h6>
+	            <p>Dentro de este apartado podremos realizar una carga masiva de una planilla horaria para los agentes de una dependencia especifica, para asi de esta forma no tener que realizarlo de una forma individual.</p>
+	            <img src="./img/instructivo/Admin_RRHH/carga_masiva_horarios.png" alt="carga masiva de horarios" class="box-shadow" width="100%">
+	            <p class="prefijo">Podremos <b>Guardar</b> o <b>Guardar y Continuar</b>.</p>
+	            </section>
+	            <section>
+	            	<h4>REGISTRO</h4>
+	            	<h5 id="sec_carga_offline_para_empleados">CARGA OFFLINE PARA EMPLEADOS</h5>
+	            	<p>En este formulario podremos realizar una carga manual para los empleados completando los campos obligatorios como <i>Ubicacion</i>, <i>Fecha</i>, <i>Documento</i>, <i>Nombre y Apellido del Empleado</i>, <i>Horario de Ingreso</i> y <i>Horario de Egreso.</i> Tambien se podran cargar observaciones.</p>
+	            <img src="./img/instructivo/Admin_RRHH/carga_offline_empleados.jpg" alt="carga offline para empleados" class="box-shadow" width="100%">
+	            </section>
+	            <section>
+	            	<h4>REPORTES</h4>
+	            	<h5 id="sec_reporte_empleados">EMPLEADOS</h5>
+	            	<p>En este apartado se podrá obtener la información que se requiera respecto a los empleados, Contaremos con un filtro desplegable en donde podremos filtrar por <i>Ubicacion</i>, <i>Dependencia</i>, <i>Fecha Desde</i>, <i>Fecha Hasta</i> y <i>Otros Criterios</i>, para realizar la busqueda debemos hacer click en el boton <b>Filtrar</b>.<br>En el listado cada tipo de <i>Ingreso</i> y <i>Egreso</i> estaran diferenciados por:</p>
+	            <ul>
+	            	<li>Registro de Comision Horaria <img src="./img/instructivo/iconos_botones/comision_horaria.png"></li>
+	            	<li>Registro desde puesto CIET <img src="./img/instructivo/iconos_botones/online.png"></li>
+	            	<li>Registro Biometrico <img src="./img/instructivo/iconos_botones/reloj.png"></li>
+	            	<li>Registro Biometrico MECON <img src="./img/instructivo/iconos_botones/biohacienda.png"></li>
+	            	<li>Registro Manual <img src="./img/instructivo/iconos_botones/offline.png"></li>
+	            	<li>Sin Registro <img src="./img/instructivo/iconos_botones/sinregistro.png"></li>
+	            </ul>
+	            <img src="./img/instructivo/Admin_RRHH/reportes_empleados.jpg" alt="reportes de empleados" class="box-shadow" width="100%">
+	            <h5 id="sec_planilla_reloj" class="prefijo">PLANILLA RELOJ</h5>
+	            <p>En esta seccion podremos <b>Descargar</b> la planilla que contiene los horarios de los empleados, deberemos ingresar la <i>Dependencia</i> y la <i>Fecha</i> y seleccionar el boton <i>Planilla Otras Modalidades</i> o <i>Planilla Ley Marco</i>.</p>
+	            <img src="./img/instructivo/Admin_RRHH/planilla_reloj.png" alt="planilla unica reloj" class="box-shadow" width="100%">
+	            <h5 id="sec_reporte_desvios_horarios" class="prefijo">REPORTE DESVIOS DE HORARIOS</h5>
+	            <p>En esta seccion podremos generar el informe de desvios de horarios, deberemos completar un formulario ingresando la <i>Dependencia</i>, <i>Tipo de Contrato</i>, <i>Fecha Desde</i> y <i>Fecha Hasta</i>. Tambien podremos realizar un informe de un empleado especifico que necesitemos ingresando el <i>Documento.</i><br>Para generar el informe seleciconamos el boton <b>Generar Informe</b>.</p>
+	            <img src="./img/instructivo/Admin_RRHH/desvios_horarios.png" alt="Rerporte de desvios de horarios" class="box-shadow" width="100%">
+	            <h5 id="sec_calendario_planilla" class="prefijo">CALENDARIO PLANILLA</h5>
+	            <p>En esta seccion podremos consultar la <i>Planilla Calendario</i> mensual, en la misma podremos verificar los datos de <i>Presentes</i>, <i>Ausentes</i> y <i>Novedades</i> de los empleados.<br>Para realizar la consulta deberemos ingresar la <i>Dependencia</i>, el <i>Contrato</i> los cuales podremos seleccion individualmente o todos los contratos haciendo click en la opcion <b>Seleccionar Todos</b> y la <i>Fecha</i> la cual sera solo el <b>Mes</b> y <b>Año</b>. Una vez ingresados los datos seleccionaremos el boton <i>Consultar</i> para cargar el <i>Calendario</i>.</p>
+	            <img src="./img/instructivo/Admin_RRHH/calendario_planilla.png" alt="pantalla de calendario planilla" class="box-shadow" width="100%">
+	            <h5 id="sec_ausentismo_online" class="prefijo">AUSENTISMO ONLINE</h5>
+	            <p>Dentro de este apartado podremods visualizar en tiempo real la cantidad de ausentes de cada uno de las dependecias de los tres tipos de contratacion <i>Ley marco, Planta Permanente</i>, <i>Asistencia Tecnica</i> y poder verificar el <i>Total General</i>.</p>
+	            <img src="./img/instructivo/Admin_RRHH/ausentismo_online.png" alt="ausentismo online" class="box-shadow" width="100%">
+	            <h5 id="sec_configuracion_informe_mensual" class="prefijo">CONFIGURACION INFORME MENSUAL</h5>
+	            <p>En este apartado podremos generar un informe mensual de manera manual de la dependencia que seleccionemos y de los datos de los tipos de <i>Contratos</i> que contenga la misma.</p>
+	            <img src="./img/instructivo/Admin_RRHH/configuracion_informe_mensual.png" alt="configuracion de informe mensual" class="box-shadow" width="100%">
+	            <p class="prefijo">Para dar de alta una <i>Configuracion de Informe Mensual</i> deberemos seleecionar el boton <b>Nuevo</b> y completar los campos obligatorios del formulario en pantalla.</p>
+	            <img src="./img/instructivo/Admin_RRHH/alta_configuracion.png" alt="ausentismo online" class="box-shadow" width="100%">
+	            <p class="prefijo">Tambien contaremos con opciones en la columna <i>Acciones</i> que son <i>Editar</i> (<img src="./img/instructivo/iconos_botones/boton_editar.png">) , <i>Borrar</i> (<img src="./img/instructivo/iconos_botones/icono_eliminar.png">) y <i>Envio Mensual</i> (<img src="./img/instructivo/iconos_botones/mail.png">) , este ultimo permitira enviar un mail al empleado en el cual se encuentre configurado el <i>Informe Mensual</i> con todos los datos de dicho informe.</p>
+	            </section>
+	            <section>
+	            	<h4>ADMINISTRACION</h4>
+	            	<h5 id="sec_solicitudes">SOLICITUDES</h5>
+	            	<p>En este apartado podremos visualizar todas las <i>Solicitudes</i> que se realizen dentro del sistema y administrar las mismas.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/listado_solicitudes.png" alt="listado de solicitudes" class="box-shadow" width="100%">
+	            </section>
+	            <section>
+	            	<h4>MIS CONSULTAS</h4>
+	            	<h5 id="sec_mis_horarios">MIS HORARIOS</h5>
+	            	<p>En este apartado se podra visualizar el horario del usuario logueado.</p>
+	            	<img src="./img/instructivo/Admin_RRHH/mis_horarios.jpg" alt="listado de horarios" class="box-shadow" width="100%">
+	            </section>
+
+
+
+	            <section id="sec_sesion" class="justificado">
+	            <h4>CERRAR SESIÓN</h4>
+	            <p>Para salir del sistema el usuario debe <b>CERRAR SESIÓN</b> en el botón que se encuentra en la esquina superior derecha.</p>
+	            <img src="./img/instructivo/iconos_botones/cerrar_sesion.png" alt= "Cerrar Sesion." class="box-shadow" style="display: block; margin:auto;">
+	        </section>
+	        <p style="float: right;">Manual de Uso Versión v1.2.0</p>
+	        <script src="../js/ancla.js" charset="utf-8"></script>
+	        </div>
+	</div>
+	</body>
+</html>

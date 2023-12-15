@@ -1,0 +1,104 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA}}}" id="buscarDatosPersonaAjax" />
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_EMPLEADO}}}" id="buscarDatosEmpleadoAjax" />
+	<div class="row">
+		<fieldset class="col-md-4">
+			<legend>
+				Persona
+			</legend>
+			<dl class="dl-horizontal">
+				<dt>Documento:</dt><dd>{{{DOCUMENTO}}}</dd>
+				<dt>Apellido:</dt><dd>{{{APELLIDO}}}</dd>
+				<dt>Nombre:</dt><dd>{{{NOMBRE}}}</dd>
+			</dl>
+		</fieldset>
+
+		<fieldset class="col-md-4">
+			<legend>Empleado</legend>
+			<dl class="dl-horizontal">
+				<dt>Dependendencia Principal:</dt>
+				<dd>{{{DEPENDENCIA}}}</dd>
+			</dl>
+		</fieldset>
+
+		<fieldset class="col-md-4">
+			<legend>Ubicaciones</legend>
+			<ul class="list-group">
+				{{{SPAN_UBICACION}}}
+			</ul>
+		</fieldset>
+
+	</div>
+	<hr>
+	<div class="row m-b-0">
+		<div class="col-md-6 m-b-0">
+			{{{ESTA_ENROLADO}}}
+		</div>
+	</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-xs-12">
+						{{{ENROLAMIENTO}}}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-4">
+						<button class="btn btn-primary" id="buscar-template" data-access-id="{{{DOC_PERSONA}}}" type="button">
+							Buscar
+						</button>
+					</div>
+					<div class="col-xs-8">
+						<div class="x" id="template-data" style="display: none;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="well well-sm">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="section-title celeste">Re envio de huellas a ubicación</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-9">
+
+						<select name="ubicacion_id" id="ubicacion_id" class="form-control">
+							<option value="">Seleccione una Ubicación</option>
+							{{{UBICACIONES_AUT}}}
+						</select>
+					</div>
+					<div class="col-xs-3">
+						<div class="form-group text-right">
+							<button class="btn btn-primary" id="actualizar-template" data-access-id="{{{DOC_PERSONA}}}" type="button">
+								Enviar
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="empleados" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

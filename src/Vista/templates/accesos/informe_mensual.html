@@ -1,0 +1,55 @@
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-3">
+                <div class="form-group">
+                    <label for="dependencia" class="control-label">Dependencia: </label>
+                    <select name="dependencia" id="dependencia" class="form-control">
+                        <option value="">Seleccione</option>
+                        {{{DEPENDENCIA}}}
+                        <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                        {{{/DEPENDENCIA}}}
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="mes" class="control-label">
+                        Mes
+                        <span class="text-danger">*</span></label>
+                    <div class='input-group date' id='mes'>
+                        <input type='text' class="form-control" data-toggle="tooltip" title="Mes"
+                            id="mes_fecha" value="{{{mes}}}" name="mes_fecha">
+                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="anio" class="control-label">
+                        Año
+                        <span class="text-danger">*</span></label>
+                    <div class='input-group date' id='anio'>
+                        <input type='text' class="form-control" data-toggle="tooltip" title="Año"
+                            id="anio_fecha" value="{{{anio}}}" name="anio_fecha">
+                        <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div>
+    <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="submit" class="btn btn-primary" data-placement="left" name="otras" value="{{{OPERACION_OTRAS}}}" id='boton_titulo' title="Otras Modalidades">OTRAS MODALIDADES</button>
+            <button type="submit" class="btn btn-primary" data-placement="left" name="empleados" value="{{{OPERACION_EMPLEADOS}}}" id='boton_titulo' title="Otras Modalidades">EMPLEADOS</button>
+            <button type="submit" class="btn btn-primary" data-placement="left" name="ambos" value="{{{OPERACION_AMBOS}}}" id='boton_titulo' title="Otras Modalidades">AMBOS</button>
+        </div>
+    </div>
+</div>
+</form>

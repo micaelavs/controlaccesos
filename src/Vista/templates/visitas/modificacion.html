@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3 text-right">
+        <label class="float-md-right control-label">
+            <p><i>Campos requeridos(<span class="text-danger">*</span>)</i></p>
+        </label>
+    </div>
+</div>
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label" for="documento_persona">Documento<span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control tabulable" name="documento_persona" id="documento_persona"
+                        maxlength="10" value="{{{DOCUMENTO}}}" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" id="btn_buscar_documento" type="button" data-toggle="tooltip"
+                            title="" data-original-title="Buscar documento">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+                <span id="error_persona" style="display: none;" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Nombre<span class="text-danger">*</span></label>
+                <span class="form-control" id="nombre_persona"  disabled>{{{NOMBRE}}}</span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Apellido<span class="text-danger">*</span></label>
+                <span class="form-control" id="apellido_persona" disabled>{{{APELLIDO}}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Ubicacion Autorizada<span class="text-danger">*</span></label>
+                <select id="ubicacion_autorizada" name="ubicacion_autorizada" class="form-control heigh">
+                    {{{UBICACIONES_AUTORIZADAS}}}
+                    <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                    {{{/UBICACIONES_AUTORIZADAS}}}
+                </select>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Nombre y Apellido del Autorizante<span class="text-danger">*</span></label>
+                <input class="form-control" name="autorizante_nombre" id="autorizante_nombre" value="{{{NOMBRE_AUTORIZANTE}}}">
+                <input type="hidden"  name="id_empleado_autorizante" id="id_empleado_autorizante" value="{{{AUTORIZANTE_ID}}}">
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Observaciones</label>
+                <input class="form-control" name="aclaracion_autorizacion" id="aclaracion_autorizacion" value="{{{ACLARACION_AUTORIZACION}}}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <label class="form-group control-label" for="fecha_desde">Fecha Desde<span class="text-danger">*</span></label>
+            <div class='input-group date' id='datetimeInicialFecha'>
+                <input type='text' class="form-control" value="{{{FECHA_DESDE}}}" name="fecha_desde" id="fecha_desde" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+        </div>
+        <div class=" col-12 col-md-6">
+            <label class="form-group control-label" for="fecha_hasta">Fecha Hasta<span class="text-danger">*</span></label>
+            <div class='input-group date' id='datetimeInicialFecha'>
+                <input type='text' class="form-control" value="{{{FECHA_HASTA}}}" name="fecha_hasta" id="fecha_hasta" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+            <fieldset class="alert alert-warning"> El máximo permitido para el campo <b>Fecha Hasta</b> es de 180 días a partir de la <b>Fecha Desde</b></fieldset>
+
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-8"></div>
+        <div class="col-md-4 text-right">
+            <button type="submit" class="btn btn-primary" data-placement="left" name="operacion" value="{{{OPERACION}}}"
+                id='boton_titulo' title="Guardar">GUARDAR</button>
+            <a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3 text-right">
+        <label class="float-md-right control-label">
+            <p><i>Campos requeridos(<span class="text-danger">*</span>)</i></p>
+        </label>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-4">
+        <div class="form-group">
+            <label class="control-label">Dirección IP</label>
+            <span class="form-control" disabled>{{{IP}}}</span>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <div class="form-group">
+            <label class="control-label">Número de Nodo</label>
+            <span class="form-control" disabled>{{{NODO}}}</span>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <div class="form-group">
+            <label class="control-label">Ubicación</label>
+            <span class="form-control" disabled>{{{UBICACION}}}</span>
+        </div>
+    </div>
+</div>
+<hr/>
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="documento_persona">Documento<span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="number" class="form-control tabulable" name="documento_persona" id="documento_persona" maxlength="10" value="{{{DOCUMENTO}}}"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" id="btn_buscar_documento" type="button" data-toggle="tooltip" title="" data-original-title="Buscar documento">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+                <span id="error_persona" style="display: none;" class="text-danger"></span>
+
+			</div>
+		</div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <span class="form-control" id="nombre_persona" disabled></span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Apellido</label>
+                <span class="form-control" id="apellido_persona" disabled></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+		<div class="col-md-8"></div>
+		<div class="col-md-4 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="operacion" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,69 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<input type="hidden" value="{{{LINK_AJAX_BUSCAR_PERSONA}}}" id="linkAjaxBuscarPersona" />
+	<div style="display:none;" class="alert alert-danger fade in alert-dismissable" id="alerta"></div>
+	<div style="display:none;" class="alert alert-success fade in alert-dismissable" id="alerta_success"></div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="form-group col-md-4">
+			<label class="control-label" for="documento">Documento<span class="text-danger">*</span></label>
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Buscar&hellip;" id="documento" name="documento"
+					value="{{{DOCUMENTO}}}">
+				<span class="input-group-btn"> -->
+					<button type="button" class="btn btn-default" onclick="buscarPersona()"><i
+							class="fa fa-search"></i></button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="nombre">Nombre<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="nombre" name="nombre" value="{{{NOMBRE}}}">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="apellido">Apellido<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="apellido" name="apellido" value="{{{APELLIDO}}}">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<label class="form-check-label control-label" for="genero">
+				Genero
+			</label>
+			<select class="form-control" id="genero" name="genero">
+				<option value="">Seleccione</option>
+				{{{GENERO}}}
+				<option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+				{{{/GENERO}}}
+			</select>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="personas" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

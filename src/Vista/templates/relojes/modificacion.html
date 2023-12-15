@@ -1,0 +1,125 @@
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3 text-right">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(<span class="text-danger">*</span>)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<div class="row">
+		<div class="col-12 col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="numero_serie">Número de Serie<span class="text-danger">*</span></label>
+				<input type="text" class="form-control tabulable" name="numero_serie" id="numero_serie" maxlength="65" placeholder="00000000000000000000" value="{{{NUMERO_SERIE}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-4">
+			<div class="form-group">
+				<div class="funkyradio">
+					<div class="funkyradio-primary">
+						<input class="form-control" type="checkbox" name="acceso_tarjeta" id="acceso_tarjeta" value="{{{ACCESO_TARJETA}}}">
+						<label for="acceso_tarjeta" data-toggle="tooltip" title="" data-original-title="Asignarle acceso con tarjetas al reloj">Acceso con Tarjetas</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-4">
+			<div class="form-group">
+				<div class="funkyradio">
+					<div class="funkyradio-primary">
+						<input class="form-control" type="checkbox" name="acceso_restringido" id="acceso_restringido" value="{{{ACCESO_RESTRINGIDO}}}">
+						<label for="acceso_restringido" data-toggle="tooltip" title="" data-original-title="Asignarle acceso restringido al reloj">Acceso restringido</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="marca">Marca<span class="text-danger">*</span></label>
+				<input type="text" class="form-control tabulable" name="marca" id="marca" maxlength="64" placeholder="Marca del equipo" value="{{{MARCA}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="marca">Modelo<span class="text-danger">*</span></label>
+				<input type="text" class="form-control tabulable" name="modelo" id="modelo" maxlength="64" placeholder="Modelo del equipo" value="{{{MODELO}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="tipo_id">Tipo de Reloj<span class="text-danger">*</span></label>
+				<select class="form-control" id="tipo_id" type="text" name="tipo_id">
+					<option value="">--- Seleccione un Tipo de Reloj ---</option>
+					{{{TIPOS_RELOJES}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/TIPOS_RELOJES}}}
+				</select>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-3">
+			<div class="form-group">
+				<label class="control-label" for="ip">Dirección IP<span class="text-danger">*</span></label>
+				<input type="text" class="form-control tabulable" name="ip" id="ip" maxlength="15" placeholder="192.168.1.100" value="{{{IP}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-3">
+			<div class="form-group">
+				<label class="control-label" for="puerto">Puerto de Comunicación<span class="text-danger">*</span></label>
+				<input type="text" class="form-control tabulable" name="puerto" id="puerto" maxlength="5" placeholder="65535" value="{{{PUERTO}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-3">
+			<div class="form-group">
+				<label class="control-label" for="dns">DNS</label>
+				<input type="text" class="form-control tabulable" name="dns" id="dns" maxlength="20" value="{{{DNS}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-3">
+			<div class="form-group">
+				<label class="control-label" for="nodo">Número de Nodo<span class="text-danger">*</span></label>
+				<input type="text" class="form-control tabulable" name="nodo" id="nodo" maxlength="3" placeholder="" value="{{{NODO}}}"/>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-12">
+			<div class="form-group">
+				<label class="control-label" for="ubicacion_id">Ubicación<span class="text-danger">*</span></label>
+				<select class="form-control" id="ubicacion_id" type="text" name="ubicacion_id">
+					<option value="">--- Seleccione una Ubicación ---</option>
+					{{{UBICACIONES}}}
+					<option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+					{{{/UBICACIONES}}}
+				</select>
+			</div>
+		</div>
+
+		<div class="col-12 col-md-12">
+			<div class="form-group">
+				<label class="control-label" for="nodo">Descripción de la Ubicación</label>
+				<textarea style="resize: none;" class="form-control tabulable" name="notas" id="notas">{{{NOTAS}}}</textarea>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-md-8"></div>
+		<div class="col-md-4 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="operacion" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+
+</form>

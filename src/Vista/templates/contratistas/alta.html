@@ -1,0 +1,85 @@
+<div class="row">	
+	<div style="display:none;" class="alert alert-info fade in alert-dismissable" id="alerta"></div>
+</div>
+
+<div class="row">
+	<div class="col-md-9"></div>
+	<div class="col-md-3">
+		<label class="float-md-right control-label">
+			<p><i>Campos requeridos(*)</i></p>
+		</label>
+	</div>
+</div>
+
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="form-group col-md-4">
+			<label class="control-label" for="cuit">Cuit<span class="text-danger">*</span></label>
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Buscar&hellip;" id="cuit" name="cuit"
+					value="{{{CUIT}}}">
+				<span class="input-group-btn"> 
+					 <button type="button" class="btn btn-default" onclick="buscarContratista()"><i
+							class="fa fa-search"></i></button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="nombre">Nombre<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="nombre" name="nombre" value="{{{NOMBRE}}}">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="direccion">Direccion<span class="text-danger">*</span></label>
+				<input type="text" class="form-control" id="direccion" name="direccion" value="{{{DIRECCION}}}">
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<label class="form-check-label control-label" for="provincia">
+				Provincia
+			</label>
+			<select class="form-control" id="provincia" name="provincia">
+				<option value="">Seleccione</option>
+				{{{PROVINCIA}}}
+				<option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+				{{{/PROVINCIA}}}
+			</select>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-4">
+			<label class="form-check-label control-label" for="localidad">
+				Localidad
+			</label>
+			<select class="form-control" id="localidad" name="localidad">
+				<option value="">Seleccione</option>
+				{{{LOCALIDAD}}}
+				<option value="{{{VALUE}}}" {{{SELECTED}}}>{{{TEXT}}}</option>
+				{{{/LOCALIDAD}}}
+			</select>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="contratista" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>

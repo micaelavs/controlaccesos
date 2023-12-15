@@ -1,0 +1,6 @@
+.hora {width: 49.5% !important; padding: 2px !important; border-radius: 4px !important;text-align: center;}
+	.hora_icon {background-color: #eee;border: 1px solid #ccc;width: 100%;text-align: center;padding:3px 0;color:#1193D2; border-radius: 4px !important;}
+	.col-horario {padding: 0 0 0 5px}
+	h5 {margin-top: 10px;}
+	h5 small{color: #1193D2;font-weight: 500;}
+	.top150 {margin-top: 150px;}

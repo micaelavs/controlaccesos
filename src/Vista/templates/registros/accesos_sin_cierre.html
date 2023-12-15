@@ -1,0 +1,70 @@
+<div class="row" id="url-base" data_url='{{{URL_BASE}}}'>
+    <div class="col-xs-12">
+      <a role="button" data-toggle="collapse" href="#collapseFiltros" aria-expanded="false" aria-controls="collapseFiltros"
+        style="display: block;">
+        <span class="">
+          <i class="fa fa-filter"></i> Filtros
+          <i class="fa fa-caret-right fa-fw" id="collapseFiltros_caret"></i>
+        </span>
+      </a>
+      <div class="collapse" id="collapseFiltros">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="ubicaciones_filtro" class="control-label">Ubicaciones</label>
+                        <select name="ubicacion_filtro" id="ubicacion_filtro" class="form-control">
+                        <option value="">Todos</option>
+                        {{{UBICACIONES}}}
+                            <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                        {{{/UBICACIONES}}}
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="tipo_filtro" class="control-label">Tipo</label>
+                        <select name="tipo_filtro" id="tipo_filtro" class="form-control">
+                        <option value="">Todos</option>
+                        {{{TIPOS}}}
+                            <option value="{{{VALUE}}}" {{{SELECTED}}}{{{BORRADO}}}>{{{TEXT}}}</option>
+                        {{{/TIPOS}}}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="fecha_desde_filtro" class="control-label">Fecha Desde</label>
+                        <div class="input-group date fecha_desde_filtro">
+                            <input type="text" class="form-control" id="fecha_desde_filtro"
+                                name="fecha_desde_filtro" value="">
+                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" >
+                    <div class="form-group">
+                        <label for="filtrar_btn" class="control-label">&nbsp;</label>
+                        <div class="input-group">
+                            <button class="btn btn-primary" id="filtrar_btn" value="filtrar">FILTRAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+<div class="row">
+	<div class="col-sm-12">
+        <div style="display:none;" class="alert alert-info fade in alert-dismissable" id="alerta"></div>
+	</div>
+    <div class="col-sm-12">
+        <table id="tabla" class="table table-striped dataTables dataTable no-footer dtr-inline" style="width:100%;"></table> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">   
+    </div>
+    <div class="col-md-6 text-right">
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+    </div>
+</div>

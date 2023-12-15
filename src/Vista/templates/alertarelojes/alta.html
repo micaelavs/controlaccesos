@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-md-9"></div>
+    <div class="col-md-3 text-right">
+        <label class="float-md-right control-label">
+            <p><i>Campos requeridos(<span class="text-danger">*</span>)</i></p>
+        </label>
+    </div>
+</div>
+<form id="{{{FORM}}}" method='POST' action="" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-12 col-md-4">
+			<div class="form-group">
+				<label class="control-label" for="email">Email<span class="text-danger">*</span></label>
+                <div class="input-group">
+                    <input type="text" class="form-control tabulable" name="email" id="email" maxlength="100" value=""/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" id="btn_buscar_empleado" type="button" data-toggle="tooltip" title="" data-original-title="Buscar Empleado">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+                <span id="error_persona" style="display: none;" class="text-danger"></span>
+
+			</div>
+		</div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Nombre</label>
+                <span class="form-control" id="nombre_persona" disabled></span>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="form-group">
+                <label class="control-label">Apellido</label>
+                <span class="form-control" id="apellido_persona" disabled></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+		<div class="col-md-8"></div>
+		<div class="col-md-4 text-right">
+			<button type="submit" class="btn btn-primary" data-placement="left" name="operacion" value="{{{OPERACION}}}"
+				id='boton_titulo' title="Guardar">GUARDAR</button>
+			<a href="{{{CANCELAR}}}" class="btn btn-default">CANCELAR</a>
+		</div>
+	</div>
+</form>
